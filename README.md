@@ -1,100 +1,85 @@
 # AnalogFit
 
-A map for finding places on Earth that are good analogs for a specific test on the Moon or Mars.
-Open **`index.html` with a double click**. No server or account is needed.
-English is the default for international review; the ID button switches to
-Indonesian. A language choice that has already been saved is respected.
+**Which places on Earth can stand in for the Moon or Mars, and for which test?**
 
-The interface uses the pitch-deck palette: Deep Space #080D18, Midnight Navy #111B2D,
-Slate Blue #1C2B45, Signal Blue #3B82F6, Data Cyan #8EC5FF, Mars Amber #D99A52,
-and text #F4F7FB. A **five-second 3D WebGL opening** moves the camera from Earth,
-past the Moon and Mars, shows the AnalogFit logo, then enters the workspace
-with a perspective transition. Earth uses a local NASA Blue Marble texture;
-the Moon and Mars are procedural illustrations. The scale and paths in the opening are
-cinematic decoration, not an orbit simulation or mission data.
-A Skip button is available; the opening can be switched off or replayed
-from the **Settings** gear icon. The percentage indicator
-shows readiness of local components, not a simulated download time.
-Switch off animations in Settings for a still interface. If WebGL is not
-available, the opening falls back to CSS. The renderer stops after entry;
-it does not affect data, scores or the map.
+AnalogFit is an open web map that screens Earth locations as analogs for lunar and Martian sites, one test at a time. It was built by **Team H.E.N.K.** for the **2026 NASA Space Apps Challenge**, challenge *"Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars"*.
 
-## How to use
+A place can be a good analog for rover navigation and a poor one for resource extraction. AnalogFit therefore scores a triple (an Earth site, a target, a test) and shows, next to every score, how much of the evidence that test needs is actually covered by data.
 
-1. Choose the test type and the target in the questions at the top.
-2. Use **Supported comparisons** for screening results. Check the coverage percentage before comparing numbers.
-3. Select a location on the map or in the rankings to open its dossier, which slides in.
-   The right-hand panel is closed by default; close it with the × button or Escape and
-   reopen it with the selected-location button. The summary shows the similarity index,
-   observed/modeled coverage, DEM elevation, temperature, precipitation and real relief.
-   Scroll to see the Earth values, NASA target, sources and the limits of the analog.
-4. Choose Map or 3D Globe. Land outlines, scores and the NASA globe texture work offline; extra imagery layers need internet.
-5. Illustrative preview includes manual assumptions and must not be reported as observed results.
-6. The **Configuration** and **Site rankings** tabs separate the parameters from the candidate list.
-7. The **Resources** menu holds the 11 links from the challenge list: 5 NASA and 6
-   CSA/ESA/JAXA partner sources. Use the filters or search. The status labels separate data
-   in use, visual context, and references not yet integrated.
-8. The **Science** menu links the implementation to the team's paper:
-   observed vs modeled coverage, the 70% threshold, local ablation, and JSON evidence cards.
-9. Terrain imagery offers historical Landsat, dated MODIS, ASTER relief, and a
-   swipe comparison. Source and service time are always shown. Historical
-   Landsat is not evidence of current site conditions; imagery does not enter the score.
-10. In 3D terrain, choose **Elevation colour** or **Relative depth**. The legend
-    uses metres. Depth is measured from the highest sample point, not below
-    ground. Use the VE slider, arrow keys, drag, or Rotate to inspect.
-    Global samples and Mount Howe now use a 3×3 grid with 500 m spacing;
-    other curated sites keep the older 100 m display grid where available.
-    Sample spacing, source and VE are always shown.
-11. Open the **Settings** gear icon for SFX, music and volume.
-    Both are on by default and start with the first click or key press, as browsers
-    require; music pauses while the tab is in the background.
-12. Settings also controls animations, imagery, 3D terrain, compact statistics, detailed
-    science notes, globe rotation, default view and language. Interface preferences
-    are saved on the device when browser storage is available. Scores and data do not
-    change. Evidence coverage and key limits stay visible.
-13. Choose **Expand map** for a viewport-sized map, or the **Fullscreen** icon
-    for browser fullscreen. Where fullscreen is not supported, the large map is still
-    available. Target, test type and the parameter/site panel can be reached
-    directly from the large map. Exit with the same button or Escape.
-14. **Evidence tour** opens two comparison studies with live scores,
-    sources and limits. This is hypothesis testing, not a discovery claim.
+## Try it
 
-Changes made in response to evaluation: [EVALUATION_RESPONSE.md](EVALUATION_RESPONSE.md).
-The synchronised empirical paper: [paper/analogfit.pdf](paper/analogfit.pdf),
-with source [paper/analogfit.tex](paper/analogfit.tex). The earlier protocol is archived
-separately; the empirical version does not claim that every planned study is complete.
+1. Download or clone this repository.
+2. Open **`index.html`** with a double click.
 
-An assessment of how useful each feature group is for analyst work is in
-[FEATURE_USEFULNESS_REVIEW.md](FEATURE_USEFULNESS_REVIEW.md). It is based on
-the tasks and the paper, not on user testing with NASA staff.
+No server, account, or install is needed. The map, the 3D globe, and all scores work offline. Extra imagery layers need an internet connection. The interface is in English by default; the **ID** button switches to Indonesian.
 
-To improve the research method, see [SCIENCE_ROADMAP.md](SCIENCE_ROADMAP.md),
-which maps the real gaps against sections 5–10 of the original paper.
+## What you can do
 
-## Data actually used
+- Choose one of **3 targets** and one of **10 test types**, then see **599 Earth locations** ranked for that combination on a 2D map or a 3D globe.
+- Open a location's dossier: similarity index, evidence coverage, Earth and target values side by side, data sources, 3D terrain, dated NASA imagery, and the limits of the comparison.
+- Take the **Evidence tour**, which walks through two hypothesis sites (Mount Howe and Harrat Khaybar) with live scores.
+- Open the **Science** panel for coverage breakdowns, feature ablations, baseline comparisons, and a downloadable evidence card with sources and checksums.
+- Open **Resources** for the 11 links on the challenge list, each labeled as used in the score, used as context, or reference only.
 
-| Data | Use and limits |
+| Target | Location | Body |
+| --- | --- | --- |
+| T1 | Lunar south-polar reference patch, 89.6° S | Moon |
+| T2 | Surface beside the Mare Tranquillitatis pit, 8.34° N, 33.22° E | Moon |
+| T3 | Arcadia Planitia patch, 45° N, 200° E | Mars |
+
+Test types: landing hazard detection, landing plume and touchdown, navigation, mobility, robotics, construction, in situ resource utilization (ISRU), thermal and hardware endurance, human operations procedures, suit and physiology.
+
+Earth locations: 585 global land samples, 7 well-known analog sites, 4 hypothesis sites, and 3 rainforest negative controls.
+
+## How it works
+
+1. **Evidence rule.** A feature enters the score only if it is supported on both Earth and the target at a matched scale. In this version that feature is terrain slope: the median of four gradients on a 3 × 3 grid with a 500 m baseline, over a patch of about 1 km, computed the same way on both worlds. Low-Sun lighting comes from an idealized solar-geometry model and is labeled as modeled.
+2. **Score.** Each feature gets a Gaussian similarity to the target value. Features are combined with a weighted geometric mean, so one bad mismatch cannot be hidden by a good match elsewhere. The result is multiplied by a penalty for Earth-only contamination, currently annual rainfall. The index runs from 0 to 100. It is a screening index, not a probability of mission success.
+3. **Coverage.** Coverage is the share of the test's total weight that is supported by data. Missing features are never treated as zero and never filled in. A high score with low coverage describes only the features that are present.
+4. **Sensitivity.** A Monte Carlo run (1,000 draws) varies the weights and tolerances and reports the range of each score. The range shows sensitivity to assumptions, not measurement confidence.
+5. **Physics Earth cannot copy.** Gravity, atmospheric pressure, and radiation differ at every Earth site. The app explains this for each test in plain words.
+6. **Provenance.** Original responses are kept in `data/raw/`. URLs, UTC timestamps, PDS labels, byte ranges, and SHA-256 checksums are recorded in `verified_observations.json` and `data/source_manifest.json`.
+
+## Data used
+
+| Source | Use in AnalogFit |
 | --- | --- |
-| NASA PDS LRO LOLA | Two lunar reference patches; slope derived from the original DEM, not hand-entered target values. |
-| NASA PDS MGS MOLA | One Arcadia Planitia patch; slope derived from the original DEM. |
-| NASA/METI ASTER GDEM v3 and NASA SRTM GL1 v3 via OpenTopoData | Earth terrain. The third-party API provider is named explicitly. |
-| Copernicus GLO-30 Public (EU/ESA, DLR/Airbus) | Ten empty patches filled from 14 original COGs; Earth terrain covers 599/599 sample sites. 500 m baseline. The DSM can represent snow/ice. See DATA_LICENSES.md. |
-| NASA PDS LRO Diviner PRP | T1 thermal context from the triangle containing the target. The 85.378 K mean at 2 cm depth and the 227.004 K surface maximum are thermal-model outputs. They add no temperature/ice evidence to the score. |
-| NASA POWER, MERRA-2 / CERES | 599 original 2001–2025 climatology responses. Uses the service's ANN value, not a rounded simple mean of 12 months. Rainfall becomes a screening penalty; Earth temperature is shown as context. |
-| NASA GIBS / Worldview | Context imagery and the offline Blue Marble texture. Imagery does not enter the numeric score. |
-| Solar geometry | Idealised model with a flat horizon. Not a measurement of illumination or permanent shadow. |
+| [NASA LRO LOLA](https://pds-geosciences.wustl.edu/missions/lro/lola.htm) | Slope for lunar targets T1 and T2, derived from the archived elevation grids. |
+| [NASA MGS MOLA](https://pds-geosciences.wustl.edu/mgs/urn-nasa-pds-mgs_mola_topography_derived/meg128/megt88n180hb.lbl) | Slope for Mars target T3. |
+| [NASA LRO Diviner](https://pds-geosciences.wustl.edu/missions/lro/diviner.htm) | Thermal-model context for T1. Shown as context only; not scored. |
+| NASA SRTM GL1 v3 and NASA/METI ASTER GDEM v3 ([Earthdata Search](https://search.earthdata.nasa.gov/)) | Earth elevation for 589 locations, retrieved through the third-party [OpenTopoData](https://www.opentopodata.org/) API. |
+| [NASA POWER](https://power.larc.nasa.gov/docs/services/api/temporal/climatology/) | 2001–2025 climatology: rainfall penalty and temperature context. |
+| [NASA GIBS](https://gibs.earthdata.nasa.gov/) / [Worldview](https://worldview.earthdata.nasa.gov/) | Blue Marble globe texture and dated context imagery. Images do not enter the score. |
+| [ESA Copernicus DEM GLO-30](https://dataspace.copernicus.eu/) | Earth elevation for 10 polar locations that SRTM and ASTER do not cover, including Mount Howe. |
 
-LOLA/MOLA and NASA PDS are among the source paths in the challenge Resources supplied by the user. POWER is an additional NASA source. See [DATA_SOURCES.md](DATA_SOURCES.md) for how the sources relate to the challenge Resources, and [AUDIT_KEAKURATAN.md](AUDIT_KEAKURATAN.md) (accuracy audit, in Indonesian) for the audit results.
+Details, product IDs, and attribution notices: [DATA_SOURCES.md](DATA_SOURCES.md) and [DATA_LICENSES.md](DATA_LICENSES.md).
 
-## What the score and coverage mean
+## What the tests show
 
-The score is a 0–100 screening index: a weighted geometric mean of the similarity of the available features, multiplied by environmental penalties. Weights, Gaussian tolerances and penalty thresholds are model assumptions.
+We report the results as they are.
 
-A feature enters supported mode only when the **Earth and target** inputs are both supported and at comparable scale. Slope uses a **500 m** baseline on a 1 km patch on both worlds. Coverage uses **all of the test's weights**, including features not yet available. A high score with low coverage does not prove a match for the whole test, or mission readiness.
+- **Known analogs.** Of 14 documented roles of well-known analog sites, 3 can be tested with the data now in the score. **None of the 3 pass** our threshold (coverage of at least 50%, score of at least 50, rank in the top 5% of global samples).
+- **Baselines.** Two simple distance-based baselines also pass 0 of 3. This version does not yet show an advantage over a simple distance measure.
+- **Negative controls.** Rainforest sites are rejected in 81 of 90 comparisons; 9 are untestable and none are wrongly accepted. Rainfall drives most of this rejection.
+- **Integrity.** The audit verifies 680 original source files by checksum and decodes the planetary elevations again from the archived bytes. Browser tests compare Python and browser scores across 35,940 values.
 
-Currently only slope is backed by terrain observations on both worlds. Illumination comes from a model. Minerals, grain size, CPR, ground ice, dust, and local target temperature are not yet verified and are excluded from supported mode. The 210 K global mean temperature of Mars is not treated as an Arcadia observation. Missing data is not treated as zero.
+AnalogFit is therefore an **audited prototype, not a validated site selector**. We did not tune weights to make the validation pass. The full account is in the paper, [paper/analogfit.pdf](paper/analogfit.pdf).
 
-## Re-running
+## Limits
+
+- Slope is the only feature supported by observations on both worlds. Mineralogy, grain size, radar, ground ice, dust, and local target temperature are not yet comparable, so ISRU cannot be scored.
+- The 585 global points are a coarse sample, not a scan of every land pixel. A high-ranking sample is a candidate to examine, not a discovered analog.
+- Each target is one reference patch of about 1 km. It does not describe a whole region, a cave interior, boulders, or landing safety.
+- Matching the slope baseline does not remove differences in native resolution, datum, or instrument uncertainty.
+- NASA POWER is regional reanalysis data at roughly 0.5° × 0.625°.
+- The rainfall penalty suits screening for barren surfaces. It is not appropriate for every analog question.
+- Weights, tolerances, and thresholds are stated assumptions. They are not calibrated against field data and are not NASA criteria.
+
+## What comes next
+
+Add features that are comparable on both worlds (target temperature, mineralogy, ground ice, radar roughness), replace the single reference patches with fixed target regions, estimate measurement uncertainty, and repeat the validation. Only after it passes would new sites be presented as discoveries. See [SCIENCE_ROADMAP.md](SCIENCE_ROADMAP.md).
+
+## Reproduce the results
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -109,9 +94,7 @@ python build_empirical_paper.py
 python -m unittest discover -s tests -v
 ```
 
-The default downloader uses `fetch_verified.py`. It keeps the original responses in `data/raw/`, records the URL, UTC timestamp, PDS label, byte range and SHA-256 in `verified_observations.json`, and resumes missing data. Cached data that is already complete is not downloaded again. `--legacy` runs the old downloader for compatibility; its output does not automatically count as verified evidence.
-
-For developer browser tests, install Playwright locally into `.test-tools/` (excluded from the repository):
+Data that is already cached is not downloaded again. Browser tests use Playwright with an installed Chrome:
 
 ```powershell
 npm install --prefix .test-tools --no-audit --no-fund playwright
@@ -123,43 +106,27 @@ node tests/evaluation.cjs
 node tests/intro-3d.cjs
 ```
 
-The tests use the installed Chrome, open the app over `file://`, compare Python and browser scores, and check offline mode and a 390 px screen. Evidence is saved to `test-artifacts/`.
-
-## Limits that still apply
-
-- The 585 global points are a coarse sample, not a scan of every land pixel. Candidates outside a 100 km buffer around known analogs do not yet prove the discovery of a new analog.
-- The Moon/Mars patches are explicit reference points. A 1 km patch does not describe a whole region, cave interiors, boulders, or landing safety.
-- The instruments' coverage and native resolution differ. A common baseline does not remove interpolation or DEM uncertainty.
-- POWER is reanalysis/regional: meteorology at about 0.5° latitude by 0.625° longitude; albedo is coarser.
-- Rainfall is not relevant to every analog question. The current penalty targets screening for barren surfaces, not full geological, astrobiological or resource validation.
-- The Monte Carlo ranges are sensitivity to assumptions, not observational confidence intervals.
-- Earth's gravity, atmosphere and radiation remain different. The old `ceiling` and `F_total` columns are kept for compatibility with status **ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT**; they are not shown as a calibrated accuracy limit.
-
-## Main files
+## Repository guide
 
 | File | Purpose |
 | --- | --- |
-| `science.py` | Source integrity and the two-world evidence rules. |
-| `fetch_verified.py` | NASA and Earth terrain downloads with data provenance. |
-| `fetch_evaluation_data.py` | Polar Copernicus downloads, Diviner context and strict observable definitions. |
-| `evaluation_report.py` | Two naive baselines and 144 ablation summaries across all samples. |
-| `build_empirical_paper.py` | Empirical paper built from the current CSV and audit results. |
-| `analogfit_pipeline.py` | Features, baselines and solar geometry. |
-| `analogfit.py` | Scores, sensitivity, diagnostics, CSV/GeoJSON and app data. |
-| `analogfit_config.json` | Weight/tolerance assumptions and illustrative values; verified terrain targets are loaded at build time. |
-| `analogfit_background_scores.csv` | Scores for all 585 global samples, for re-checking. |
-| `index.html`, `app.js`, `vendor/` | The serverless app and its local assets. |
-| `explorer.js`, `explorer.css`, `walkthrough.js` | Large map, fullscreen and the evidence tour. |
+| `index.html`, `app.js`, `ui.js`, `vendor/` | The serverless app and its bundled libraries. |
+| `analogfit_pipeline.py` | Features, slope baselines, and solar geometry. |
+| `analogfit.py` | Scores, sensitivity, diagnostics, CSV/GeoJSON, and app data. |
+| `science.py` | Source integrity and the two-world evidence rule. |
+| `fetch_verified.py`, `fetch_evaluation_data.py`, `fetch_terrain_media.py` | Downloads with provenance records. |
+| `evaluation_report.py` | Naive baselines and ablation summaries. |
+| `audit_data.py` | Checksum and re-decoding audit. |
+| `analogfit_config.json` | Targets, test weights, tolerances, and other stated assumptions. |
+| `analogfit_*_report.csv`, `analogfit_*_scores.csv` | Validation, negative-control, baseline, and per-sample outputs. |
+| `paper/` | The empirical paper, and the earlier research protocol kept as `protocol_draft_v1.tex`. |
+| `tests/` | Python science tests and browser tests. |
 
-Theme, logo, opening and the source catalogue are in `ui.css`, `ui.js` and
-`assets/analogfit-mark.svg`. UI tests are in `tests/ui.cjs`; results are
-saved to `test-artifacts/ui-report.json`.
+More documentation: [EVALUATION_RESPONSE.md](EVALUATION_RESPONSE.md), [FEATURE_USEFULNESS_REVIEW.md](FEATURE_USEFULNESS_REVIEW.md), and [AUDIT_KEAKURATAN.md](AUDIT_KEAKURATAN.md) (accuracy audit, in Indonesian).
 
-The imagery, science panel and audio extensions are in `terrain-view.js`, `science-view.js`,
-`audio.js` and `experience.css`. Run `python fetch_terrain_media.py` to
-prepare or resume the NASA imagery cache; output is saved to
-`assets/terrain/`, `terrain_media.js` and `data/terrain_media_manifest.json`.
-Pillow is used only to detect blank imagery responses; the original NASA images
-are stored unmodified. New feature test results: `test-artifacts/experience-report.json`.
+## Tools and credits
 
-Code and documentation were written and revised with help from Claude (Anthropic) and OpenAI Codex. The NASA name identifies data sources, not NASA endorsement or certification of the app.
+- Python (NumPy, pandas, requests, rasterio, Pillow); HTML, CSS, and JavaScript; [Leaflet](https://leafletjs.com/) 1.9.4 and [globe.gl](https://globe.gl/), both bundled in `vendor/` with their licences; Natural Earth land outlines; Playwright for tests; LaTeX for the paper.
+- **Use of AI.** Code and documentation were written and revised with help from Claude (Anthropic) and OpenAI Codex. The AnalogFit logo, the intro animation, and the Moon and Mars in the intro are drawn by code and are illustrations, not mission data. All scores are computed by the Python scripts from the downloaded data.
+- The code is under the [MIT License](LICENSE). Data keeps the terms of its providers; see [DATA_LICENSES.md](DATA_LICENSES.md).
+- The NASA name identifies data sources. It does not imply NASA endorsement or certification of this app. No NASA logos or mission identifiers are used as product branding.

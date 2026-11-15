@@ -1,0 +1,443 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{enumitem}
+\setlist[description]{style=nextline,leftmargin=1.2em}
+\usepackage{xurl}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{4pt}
+
+\title{AnalogFit: Task-Conditioned, Physics-Consistent Fidelity Mapping of Terrestrial Analogs for Permanent Lunar Base and Mars Exploration Sites}
+\author{Team H.E.N.K.\\[2pt] \small 2026 NASA Space Apps Challenge\\ \small Challenge: ``Identify Earth Locations that Analog the\\ \small Permanent Moon Base Locations and Mars''}
+\date{Draft v1, 14 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Terrestrial analogs are used to rehearse lunar and Martian operations, yet they are usually chosen by expert judgement and visual resemblance, and their fidelity is rarely quantified. We present AnalogFit, a method and open web map that scores every land cell on Earth against a named Moon or Mars target site for a named operational test. The method rests on three principles. First, an analog is a triple (Earth site, target site, task), not a place. Second, only quantities that mean the same thing on both worlds are compared; quantities that depend on the planetary regime are harmonised or excluded. Third, mismatch is split into a site-reducible part, which a better Earth site can fix, and an Earth-irreducible ceiling set by gravity, pressure and radiation, which no Earth site can fix. Site fidelity is a weighted geometric mean of per-feature Gaussian similarities multiplied by a terrestrial-contamination factor; total fidelity is site fidelity times a task-specific ceiling derived from dimensionless groups. Uncertainty is propagated by Monte Carlo sampling of weights and tolerances. The method is falsifiable: seven well-known analogs serve as a held-out test, and the metric must rank each in the top 5\% for its documented role. We report analytical results that already hold (for example, under our declared mapping no Earth site can exceed a fidelity ceiling of 0.04 for lunar plume-surface interaction tests) and specify the empirical runs and four discovery hypotheses, among them the Kunene anorthosite complex as a lunar-highland lithology analog and Mount Howe, Antarctica, the southernmost exposed rock on Earth, where the Sun can circle the horizon at only a few degrees elevation. We also exploit a shared radar architecture: RADARSAT Constellation Mission compact polarimetry and LRO Mini-RF measure the same circular polarization ratio.
+\end{abstract}
+
+\section{Introduction}
+
+NASA's Artemis campaign aims at a sustained human presence on the Moon, a permanent lunar base and, later, human exploration of Mars \citep{spaceapps2026}. Every system needed for this, from landers and rovers to excavators, ISRU plants and spacesuits, is first tested on Earth. The places where those tests happen are called terrestrial analogs. The Atacama Desert, Antarctica, Iceland, Hawaii, the Mojave Desert, Death Valley and the Haughton impact structure are the best known \citep{spaceapps2026,navarro2003,preston2014}.
+
+The challenge brief identifies two weaknesses in current practice. Analog sites are ``not entirely well characterized'', and a place that \emph{looks} like the Moon or Mars may differ in geology, environment or the physical processes that matter for a given test \citep{spaceapps2026}. The brief also asks every proposal to state where an analogy works, how well it works and where it breaks down, and it reminds participants that Earth cannot reproduce lunar or Martian gravity, the lunar vacuum, the thin Martian atmosphere or the radiation environment of either body.
+
+A natural response is a similarity metric: describe each site by a vector of observables and compute a distance. Done naively, this fails in two ways. (i) If raw observables from different worlds are normalised together, the distance is dominated by regime offsets. Every Earth cell is far from every lunar cell in temperature, so the metric measures ``Earth versus Moon'' instead of ``this Earth site versus that one''. (ii) An additive (compensatory) distance lets an excellent match in one feature hide a disqualifying mismatch in another. In practice a rover traverse test fails if the slope distribution is wrong, however good the mineralogy match.
+
+This paper makes three contributions.
+\begin{enumerate}
+\item \textbf{A physically consistent comparison space.} Observables are sorted into three classes: identical observables (Class A), regime-dependent material properties that can be harmonised (Class B), and regime variables Earth cannot match (Class C). Only Classes A and B enter the similarity score.
+\item \textbf{A decomposition of mismatch.} Total fidelity is the product of a site term, which a better Earth site can raise, and an Earth-regime ceiling, which no Earth site can raise. The ceiling is derived for each operational task from the dimensionless groups that govern it. It turns ``where the analogy breaks down'' into a number, and sometimes into the finding that no Earth site is adequate and a vacuum chamber or reduced-gravity platform is required.
+\item \textbf{A falsifiable validation and discovery protocol.} Known analogs are used as a held-out test, not as training labels. Discovery is a two-stage search: a global screen at about 5 km, then deep characterisation at 30 to 70 m of the highest-scoring regions that are not already established analogs.
+\end{enumerate}
+
+\section{Conceptual framework}
+
+\subsection{An analog is a triple}
+We define an analog as the triple $(i, T, \tau)$, where $i$ is an Earth location (a grid cell or region), $T$ is an extraterrestrial target site and $\tau$ is an operational task. The same Earth location can be an excellent analog for one task and useless for another. A basaltic lava field may be a strong analog for rover navigation over a lunar mare and a poor one for testing a lander plume in vacuum. All scores in this paper are therefore conditional on $(T,\tau)$.
+
+\subsection{Three classes of observables}
+\begin{description}
+\item[Class A: same observable, same physics.] The quantity is measured the same way and governed by the same physics on every body, so values can be compared directly once units, datum, resolution and baseline are matched. Examples: slope at a stated baseline, RMS height and Hurst exponent of topography, crater morphometry, mineral absorption band depths, the radar circular polarization ratio (CPR) at comparable wavelength, and the statistics of solar elevation.
+\item[Class B: material property with a regime-dependent measurement.] The underlying property is intrinsic, but the remote measurement depends on the planetary environment. Thermal inertia is the key example. In particulate regolith, conduction through interstitial gas dominates heat transfer, so the same sand has a thermal inertia near $600~\mathrm{J\,m^{-2}\,K^{-1}\,s^{-1/2}}$ in Earth air and of order $30$ to $50$ in lunar vacuum \citep{presley1997,hayne2017}. Class B quantities are first converted to the intrinsic property (here, grain size) and then compared.
+\item[Class C: regime variables Earth cannot match.] Surface gravity, ambient pressure and composition, and ionizing radiation dose rate. These are excluded from the similarity score and enter only through the task ceiling $\Phi_\tau$ (Section~7). Some variables change class with the target. Surface temperature is Class C for the Moon, because no Earth surface reaches the $25$ to $40$~K of permanently shadowed regions \citep{paige2010}, but Class B for Mars, whose mean surface temperature near $214$~K is reached on the high Antarctic plateau in winter.
+\end{description}
+
+\subsection{Reducible and irreducible mismatch}
+Total fidelity factorises as
+\begin{equation*}
+F_\tau(i,T) \;=\; \underbrace{F^{\mathrm{site}}_\tau(i,T)}_{\text{reducible by site choice}} \;\times\; \underbrace{\Phi_\tau(T)}_{\text{irreducible on Earth}} \tag{1}
+\end{equation*}
+$F^{\mathrm{site}}_\tau$ depends on the Earth location. $\Phi_\tau$ depends only on the target body and the task. A low $F^{\mathrm{site}}$ means ``look elsewhere on Earth''; a low $\Phi_\tau$ means ``no Earth site will do; use a chamber, a drop tower, parabolic flight or the target body itself''. The two messages are operationally different, and conflating them is a common weakness of analog rankings.
+
+\section{Targets and operational tasks}
+
+\subsection{Target sites}
+To keep the work deep rather than broad, we analyse three targets that span the challenge's scope: a lunar polar base site, a lunar subsurface habitat site and a Mars human-landing site with accessible ice (Table~\ref{tab:targets}). Each target is a region of interest (ROI) whose internal variability defines part of the similarity tolerance (Section~6).
+
+\begin{table}[htbp]
+\centering
+\caption{Target sites. The ROI polygons are fixed before any Earth data are scored, so that the targets cannot be tuned to favour particular Earth sites.}
+\label{tab:targets}
+\small
+\begin{tabular}{p{2.6cm}p{3.4cm}p{4.6cm}p{4.2cm}}
+\toprule
+Target & Location & Why it matters & Main target datasets \\
+\midrule
+T1: Lunar south pole, Connecting Ridge and Shackleton rim & About 89.4--89.8$^\circ$S; ridge between Shackleton and de Gerlache craters & Candidate area for a permanent base: near-continuous illumination on ridges, cold traps with possible volatiles nearby \citep{mazarico2011,speyerer2013,glaser2014} & LOLA polar DEM and slopes; Diviner polar temperatures and rock abundance; Mini-RF S-band CPR; LOLA-derived illumination maps \\
+T2: Mare Tranquillitatis pit & About 8.3$^\circ$N, 33.2$^\circ$E; pit about 100~m across \citep{wagner2014} & Natural shelter from radiation, micrometeorites and thermal extremes; possible lava-tube access \citep{haruyama2009,wagner2014} & LROC NAC imagery; LOLA DEM; Diviner temperatures; Mini-RF CPR \\
+T3: Arcadia Planitia (Mars) & Northern mid-latitudes, about 38--50$^\circ$N & Excess ground ice close to the surface at latitudes favourable for landing and solar power \citep{bramson2015,morgan2021} & MOLA topography; TES and THEMIS thermal inertia; SWIM ice-consistency maps; TES dust cover index; Mars Climate Database \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Operational tasks}
+The challenge briefing names seven operational domains: landing, navigation, mobility, robotics, construction, resource utilisation (ISRU) and human operations. Two of them mix physically different tests, so we split them. Landing becomes \emph{hazard detection} (optical and LiDAR perception during descent) and \emph{plume and touchdown} (plume-surface interaction and footpad loads). Human operations becomes \emph{procedures} (traverse planning, field geology protocols, human-robot teaming) and \emph{suit and physiology} (suit mobility, pressure differential, dose). We add \emph{thermal and hardware endurance} because cold-soak and thermal-cycling tests are a common reason to visit polar analogs. This yields ten task modes.
+
+\subsection{Feature weights by task}
+Each task $\tau$ weights the features $k$ by $w_{\tau,k}\ge 0$ with $\sum_k w_{\tau,k}=1$ (Table~\ref{tab:weights}). The weights encode which surface properties govern the test. They are expert priors, published in advance, and their influence is quantified by the sensitivity analysis in Section~8. Features unavailable for a target (for example, imaging-radar CPR for Mars, or wind-driven dust for the Moon) are dropped and the remaining weights renormalised.
+
+\begin{table}[htbp]
+\centering
+\caption{Prior feature weights $w_{\tau,k}$. S: slope; R: roughness; B: radar blockiness (CPR); M: mineralogy/lithology; G: grain size; I: ice and volatiles; L: illumination; T: thermal regime; D: aeolian dust process. Each row sums to 1 before renormalisation.}
+\label{tab:weights}
+\small
+\begin{tabular}{lccccccccc}
+\toprule
+Task & S & R & B & M & G & I & L & T & D \\
+\midrule
+Landing: hazard detection & .30 & .25 & .20 & -- & -- & -- & .25 & -- & -- \\
+Landing: plume and touchdown & .15 & .10 & .10 & .05 & .40 & .05 & -- & -- & .15 \\
+Navigation & .15 & .20 & .10 & .10 & -- & -- & .45 & -- & -- \\
+Mobility & .25 & .20 & .15 & -- & .30 & .10 & -- & -- & -- \\
+Robotics & -- & .20 & -- & .20 & .20 & -- & .15 & .25 & -- \\
+Construction & .20 & .10 & -- & .20 & .35 & .15 & -- & -- & -- \\
+ISRU & -- & -- & -- & .40 & .20 & .40 & -- & -- & -- \\
+Thermal/hardware endurance & -- & -- & -- & -- & .20 & .20 & .20 & .40 & -- \\
+Human ops: procedures & .15 & .15 & .15 & .25 & -- & -- & .15 & .15 & -- \\
+Human ops: suit/physiology & .30 & .25 & -- & -- & .15 & -- & -- & .30 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Data}
+
+The method uses only open data. NASA Earth observations come from NASA Earthdata (via Earthdata Search and the \texttt{earthaccess} Python library) and NASA Worldview/GIBS; lunar and Martian data come from the NASA Planetary Data System, including LRO and Diviner products \citep{pds,diviner,worldview}. Partner-agency data (ESA, CSA) and other open sources fill specific gaps. Table~\ref{tab:earthdata} lists the Earth datasets and Table~\ref{tab:planetdata} the planetary ones. Resolutions marked ``about'' are nominal and are read from each product's metadata at run time.
+
+\begin{table}[htbp]
+\centering
+\caption{Earth datasets. Stage 1 is the global screen; Stage 2 is the deep dive on shortlisted regions.}
+\label{tab:earthdata}
+\small
+\begin{tabular}{p{3.6cm}p{2.0cm}p{1.4cm}p{6.6cm}}
+\toprule
+Product & Resolution & Stage & Use \\
+\midrule
+MODIS MOD11C3 v061 LST, monthly CMG \citep{mod11c3} & 0.05$^\circ$ & 1 & Day and night LST; diurnal range; Mars thermal regime; apparent thermal inertia \\
+MODIS MOD13C2 v061 NDVI, monthly CMG \citep{mod13c2} & 0.05$^\circ$ & 1 & Vegetation contamination \\
+MODIS MCD43C3 v061 albedo, CMG \citep{mcd43c3} & 0.05$^\circ$ & 1 & Albedo for apparent thermal inertia \\
+GPM IMERG Final V07, monthly \citep{imerg} & 0.1$^\circ$ & 1 & Mean annual precipitation (contamination) \\
+MERRA-2 M2T1NXFLX and M2TMNXAER \citep{merra2flx,merra2aer} & 0.5$^\circ\times$0.625$^\circ$ & 1 & Surface friction velocity $u_*$ for dust exceedance; dust optical depth \\
+NASADEM 1 arcsec \citep{nasadem}; Copernicus GLO-30 \citep{copdem} & about 30~m & 1, 2 & Slope, RMS height, Hurst exponent, TRI, horizon; GLO-30 beyond 60$^\circ$N where NASADEM has no coverage \\
+EMIT L2B mineral identification \citep{emitmin,green2020} & 60~m & 2 & Mineral group abundances; coverage limited to about $\pm52^\circ$ latitude and to arid dust-source regions \\
+ECOSTRESS LST and emissivity \citep{ecostress} & 70~m & 2 & Fine-scale thermal regime and diurnal sampling \\
+VIIRS Black Marble VNP46A4 \citep{blackmarble} & 15 arcsec & 1 & Anthropogenic contamination (night lights) \\
+SoilGrids 2.0 \citep{poggio2021} & 250~m & 1, 2 & Sand, silt and clay fractions (grain size, Class B route) \\
+ESA CCI Permafrost \citep{esacci} & 1~km & 1 & Permafrost probability (ice feature) \\
+Sentinel-1 (ESA) and RCM compact polarimetry (CSA) \citep{brisco2020} & 5--50~m & 2 & Radar blockiness; CPR from RCM hybrid-polarity data \\
+NASA Worldview / GIBS \citep{worldview} & varies & 2 & Visual verification, basemap and time series \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Lunar and Martian datasets (NASA Planetary Data System unless stated).}
+\label{tab:planetdata}
+\small
+\begin{tabular}{p{4.2cm}p{2.0cm}p{8.0cm}}
+\toprule
+Product & Target & Use \\
+\midrule
+LRO LOLA polar and global DEMs \citep{smith2010lola,rosenburg2011} & T1, T2 & Slope at matched baselines, RMS height, Hurst exponent; horizon for illumination \\
+LOLA-derived illumination maps \citep{mazarico2011,glaser2014} & T1 & Fraction of time sunlit; solar elevation statistics \\
+LRO Diviner: bolometric temperature, rock abundance, regolith H-parameter \citep{paige2010,hayne2017} & T1, T2 & Thermal regime; rock abundance; regolith grain size and density proxy \\
+LRO Mini-RF S-band CPR \citep{spudis2013,fa2013} & T1, T2 & Radar blockiness; ice-versus-roughness ambiguity \\
+Chandrayaan-1 M3 (NASA instrument, PDS) & T1, T2 & Mafic band depths; plagioclase-rich highland vs. mare basalt \\
+LROC NAC & T2 & Pit and skylight morphology \\
+MGS MOLA MEGDR & T3 & Slope and roughness \citep{kreslavsky2000} \\
+MGS TES and Odyssey THEMIS thermal inertia \citep{mellon2000,putzig2007} & T3 & Thermal inertia, converted to grain size (Class B) \\
+SWIM ice-consistency maps \citep{morgan2021,swimdata} & T3 & Probability-like ice consistency \\
+TES dust cover index \citep{ruff2002} & T3 & Surface dust mantling \\
+Mars Climate Database (ESA/CNES) \citep{forget1999} & T3 & Temperature, pressure, near-surface wind and friction velocity climatology \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Feature engineering and cross-body harmonisation}
+
+Every feature is computed on Earth and on the target with the same definition, at the same horizontal baseline, after reprojection to an equal-area grid. Topographic features are always reported with their baseline because slope and roughness are scale-dependent \citep{shepard2001}.
+
+\subsection{Slope (S, Class A)}
+For a DEM resampled to baseline $L$, slope is $\theta=\arctan\lvert\nabla z\rvert$. Each Earth cell and each target ROI is summarised by the median $\theta_{50}$ and the 90th percentile $\theta_{90}$ at $L\in\{30, 100, 500\}$~m. Landing constraints (for example, slopes below about $5^\circ$ over the lander footprint, with a buffer from steeper terrain) are evaluated at the matching baseline.
+
+\subsection{Roughness (R, Class A)}
+Roughness is the RMS height deviation $\nu(\Delta x)=\langle[z(x+\Delta x)-z(x)]^2\rangle^{1/2}$ over lags $\Delta x$ from one DEM pixel to 1~km. For self-affine terrain $\nu(\Delta x)\propto\Delta x^{H}$, where the Hurst exponent $H$ is dimensionless and body-independent \citep{shepard2001,rosenburg2011}. We compare $\ln \nu(100~\mathrm{m})$ and $H$. The terrain ruggedness index (TRI) \citep{riley1999} is kept as a display layer only, because it depends on pixel size.
+
+\subsection{Radar blockiness (B, Class A with a wavelength flag)}
+LRO Mini-RF and the RADARSAT Constellation Mission (RCM) both use a hybrid-polarity architecture: they transmit circular polarization and receive two orthogonal linear polarizations coherently \citep{raney2007,brisco2020}. Both measurements therefore yield the full Stokes vector $(S_1,S_2,S_3,S_4)$ of the backscatter and the same derived quantity,
+\begin{equation*}
+\mathrm{CPR}=\frac{S_1-S_4}{S_1+S_4}, \tag{2}
+\end{equation*}
+the ratio of same-sense to opposite-sense circular power (sign convention fixed by the transmitted handedness). On the Moon, elevated CPR is ambiguous: it has been read both as evidence of ice in polar craters \citep{spudis2013} and as the signature of wavelength-scale rocks and slopes \citep{fa2013,eke2014,thomson2012}. Mini-RF operates at S-band ($\lambda=12.6$~cm) and RCM at C-band ($\lambda\approx5.6$~cm), so the two sense roughness at different scales. We therefore compare CPR only between surfaces whose block-size distribution is scale-invariant over 5 to 15~cm, and we flag every B comparison with the wavelength ratio of about 2.25. On Earth, soil moisture (high permittivity) and vegetation (volume scattering) also raise CPR; these cells are removed by the contamination factor.
+
+\subsection{Mineralogy and lithology (M, Class A)}
+Each location is described by a probability vector $\mathbf{p}$ over a shared set of mineral groups: plagioclase-dominant (anorthositic), low- and high-Ca pyroxene, olivine, Fe-oxides, sulfates, phyllosilicates, carbonates, chlorides, hydrated silica and ice. Earth vectors come from EMIT L2B mineral identifications \citep{emitmin} aggregated per cell. Target vectors come from M3 band-depth classes (Moon) or CRISM/TES classes (Mars). Similarity is one minus the Jensen--Shannon divergence in base 2, which is bounded in $[0,1]$ \citep{lin1991}:
+\begin{equation*}
+s_M = 1-\mathrm{JSD}_2(\mathbf{p}_i\,\Vert\,\mathbf{p}_T). \tag{3}
+\end{equation*}
+Mineral \emph{group} matches are not compositional matches. Plagioclase in lunar ferroan anorthosite is nearly pure anorthite, whereas many terrestrial anorthosites carry intermediate plagioclase (for Kunene, An$_{57-76}$ \citep{ashwal1994}). Such differences are reported in the site card as a breakdown item.
+
+\subsection{Grain size (G, Class B)}
+Grain size governs bearing capacity, wheel sinkage, plume erosion, excavation forces and dust mobility. On Mars it is retrieved from thermal inertia $I=\sqrt{k\rho c}$ by inverting the pressure-dependent conductivity of particulates measured by Presley and Christensen \citep{presley1997}. On the Moon it comes from Diviner-derived regolith properties \citep{hayne2017} and Apollo sample statistics. On Earth we use SoilGrids sand, silt and clay fractions \citep{poggio2021}, cross-checked by apparent thermal inertia,
+\begin{equation*}
+\mathrm{ATI}=\frac{1-\alpha}{T_{\mathrm{day}}-T_{\mathrm{night}}}, \tag{4}
+\end{equation*}
+computed from MODIS albedo $\alpha$ and day and night LST \citep{price1977}. ATI is only used to rank Earth cells against each other, never compared numerically with planetary thermal inertia, because Earth's atmosphere changes the conduction regime (Class B). The comparison variable is $\ln d_{50}$, the log median grain diameter.
+
+\subsection{Ice and volatiles (I, Class B)}
+Earth: permafrost probability \citep{esacci} and, in the deep dive, ground-ice indicators from DEM periglacial morphology. Moon: Diviner-based ice stability (maximum temperature below about 110~K) \citep{paige2010}. Mars: SWIM ice consistency \citep{morgan2021}. The compared quantity is the probability that ice exists within the upper metre. Ice state is reported as a breakdown item: terrestrial permafrost undergoes seasonal freeze--thaw and contains liquid films, lunar cold-trap ice is stable at tens of kelvin in vacuum, and Martian excess ice is buried beneath a desiccated lag.
+
+\subsection{Illumination (L, Class A)}
+Illumination is geometry. For latitude $\varphi$, solar declination $\delta$ and hour angle $h_a$, the solar elevation $h$ satisfies
+\begin{equation*}
+\sin h=\sin\varphi\sin\delta+\cos\varphi\cos\delta\cos h_a. \tag{5}
+\end{equation*}
+In the deep dive we add the DEM horizon. Each location is summarised by the annual distribution of $h$ while the Sun is up, the fraction of time with $0<h<5^\circ$ and the maximum shadow-length ratio $\cot h$. At the lunar south pole the Sun never rises more than about $1.5^\circ$ above the mean horizon, because the lunar spin axis is tilted by only $1.54^\circ$ to the ecliptic, and it circles the horizon over each lunation \citep{mazarico2011}. Section~10 shows that only the southernmost exposed rock on Earth approaches this regime.
+
+\subsection{Thermal regime (T, target-dependent class)}
+For Mars (Class B), we compare the monthly minimum and mean surface temperatures and the diurnal range from MOD11C3 with MCD and TES values for T3. For the Moon (Class C), surface temperature is not scored; only the \emph{direction} of the test (cold soak, thermal cycling) is matched, and the remaining gap in absolute temperature is reported.
+
+\subsection{Aeolian dust process (D, Class A in dimensionless form, Mars only)}
+Wind lifts dust when the surface friction velocity $u_*$ exceeds the threshold $u_{*t}$. We use the Shao and Lu parameterisation \citep{shao2000,kok2012},
+\begin{equation*}
+u_{*t}(d)=\sqrt{A_N\left(\frac{\rho_p}{\rho_a}\,g\,d+\frac{\gamma}{\rho_a d}\right)}, \qquad A_N=0.0123,\;\gamma=3\times10^{-4}~\mathrm{kg\,s^{-2}}, \tag{6}
+\end{equation*}
+with particle density $\rho_p=2650~\mathrm{kg\,m^{-3}}$. Absolute thresholds differ greatly between the planets (Figure~\ref{fig:threshold}), so we do not compare wind speeds. We compare the dimensionless exceedance fraction
+\begin{equation*}
+f_{\mathrm{ex}}=\Pr\!\left[\frac{u_*}{u_{*t}(d_{50})}>1\right], \tag{7}
+\end{equation*}
+computed from hourly MERRA-2 $u_*$ on Earth and from Mars Climate Database $u_*$ statistics on Mars. Two sites with the same $f_{\mathrm{ex}}$ undergo saltation and dust emission equally often, which is the process-level analogy the challenge asks for.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_threshold.png}
+\caption{Threshold friction velocity from the Shao--Lu equation for Earth and Mars. Dots mark the easiest-to-lift grain size, $d^\star=\sqrt{\gamma/(\rho_p g)}$: 107~\textmu m on Earth and 175~\textmu m on Mars. The threshold at 100~\textmu m is 0.24~m\,s$^{-1}$ on Earth and 1.57~m\,s$^{-1}$ on Mars, a factor of 6.6. Wind speeds therefore cannot be compared directly, but the exceedance fraction (Eq.~7) can.}
+\label{fig:threshold}
+\end{figure}
+
+\section{Site fidelity}
+
+\subsection{Per-feature similarity}
+For each feature $k$, Earth value $q_{i,k}$ and target value $q_{T,k}$ (log-transformed for scale-like quantities such as roughness and grain size), similarity is a Gaussian kernel:
+\begin{equation*}
+s_k(i,T)=\exp\!\left[-\frac{(q_{i,k}-q_{T,k})^2}{2\sigma_k^2}\right], \qquad \sigma_k^2=\sigma^2_{\mathrm{meas},k}+\sigma^2_{\mathrm{ROI},k}+\sigma^2_{\mathrm{scale},k}. \tag{8}
+\end{equation*}
+The tolerance $\sigma_k$ is not a free parameter. It combines three measurable terms: the measurement uncertainty of the two instruments, the variability of the feature inside the target ROI (an Earth site within the natural spread of the target is indistinguishable from it), and the extra variance introduced by resampling to a common resolution. A mismatch of $1\sigma_k$ gives $s_k=0.61$; $2\sigma_k$ gives $0.14$. Mineralogy uses Eq.~(3) instead of Eq.~(8).
+
+\subsection{Non-compensatory aggregation}
+Site fidelity is a weighted geometric mean, multiplied by a contamination factor:
+\begin{equation*}
+F^{\mathrm{site}}_\tau(i,T)=\left(\prod_{k\in\mathcal{K}_{i,T}} s_k^{\,\tilde w_{\tau,k}}\right)\bigl(1-C_i\bigr), \qquad \tilde w_{\tau,k}=\frac{w_{\tau,k}}{\sum_{k'\in\mathcal{K}_{i,T}} w_{\tau,k'}}. \tag{9}
+\end{equation*}
+Here $\mathcal{K}_{i,T}$ is the set of features available for both the cell and the target. A geometric mean is non-compensatory: one near-zero similarity pulls the score towards zero, which matches how physical tests fail \citep{oecd2008}. Data coverage is reported alongside the score as $\kappa_i=\sum_{k\in\mathcal{K}_{i,T}} w_{\tau,k}$. Cells with $\kappa_i<0.7$ are shown hatched on the map and excluded from discovery.
+
+\subsection{Terrestrial contamination}
+Earth surfaces carry biology, liquid water and human infrastructure that the Moon and Mars do not. Contamination combines three ramps:
+\begin{equation*}
+C_i = 1-(1-c_{\mathrm{NDVI}})(1-c_{\mathrm{P}})(1-c_{\mathrm{H}}), \tag{10}
+\end{equation*}
+where each $c\in[0,1]$ rises linearly between declared anchors: NDVI from 0.08 (bare) to 0.40; mean annual precipitation from 25 to 600~mm\,yr$^{-1}$ on a logarithmic axis; and night-light radiance from the 50th to the 95th percentile of global land values. The anchors are conventions; Section~8 varies them. For subsurface targets (T2), precipitation is kept because water infiltration alters caves (as reported for Umm Jirsan, Section~10).
+
+\section{Earth-regime ceiling}
+
+\subsection{Dimensionless groups}
+By the Buckingham $\Pi$ theorem \citep{buckingham1914}, a test on Earth reproduces a process on the target if the governing dimensionless groups match. For each task we identify the groups that cannot be matched by test design and evaluate the Earth-to-target ratio $r_j$ of the dimensional quantity behind each group: gravity $g$, ambient pressure $P$, and ionizing dose rate $\dot D$. Groups that can be matched by test design are noted but not penalised. For example, a Froude number $Fr=v^2/(gL)$ is matched by driving $\sqrt{g_\oplus/g_T}$ times faster (2.46$\times$ for the Moon, 1.63$\times$ for Mars), and wheel load is matched by offloading mass to $g_T/g_\oplus$ of flight mass (0.165 and 0.378). Soil self-weight, however, scales with $g$ and cannot be adjusted outdoors; it controls bearing capacity and wheel--soil shear \citep{wong2008,wong2012}. Lunar plume-surface interaction depends on the plume expanding into vacuum, which ambient air prevents \citep{metzger2009}.
+
+\subsection{Ceiling function}
+We map each ratio to a factor in $(0,1]$ with a declared, monotone convention, and multiply over the groups flagged for the task ($v_{\tau,j}\in\{0,1\}$):
+\begin{equation*}
+\phi_j=\frac{1}{1+\lvert\log_{10} r_j\rvert}, \qquad \Phi_\tau(T)=\prod_j \phi_j^{\,v_{\tau,j}}. \tag{11}
+\end{equation*}
+A tenfold mismatch gives 0.5, a hundredfold mismatch 0.33. Inputs: $g_\oplus=9.81$, $g_{\mathrm{Moon}}=1.62$, $g_{\mathrm{Mars}}=3.71~\mathrm{m\,s^{-2}}$; $P_\oplus=1013.25$~mbar, $P_{\mathrm{Moon}}\approx3\times10^{-12}$~mbar, $P_{\mathrm{Mars}}=6.36$~mbar \citep{nssdc}; dose rate on the lunar surface $1369~\mu\mathrm{Sv\,d^{-1}}$ \citep{zhang2020}, on the Martian surface $0.64~\mathrm{mSv\,d^{-1}}$ \citep{hassler2014}, and the cosmic-ray component at Earth's surface $0.39~\mathrm{mSv\,yr^{-1}}\approx1.07~\mu\mathrm{Sv\,d^{-1}}$ \citep{unscear2008}. The resulting factors are $\phi_g=0.561$, $\phi_P=0.064$, $\phi_{\dot D}=0.243$ for the Moon and $\phi_g=0.703$, $\phi_P=0.312$, $\phi_{\dot D}=0.265$ for Mars.
+
+\begin{table}[htbp]
+\centering
+\caption{Regime flags $v_{\tau,j}$ and the resulting ceiling $\Phi_\tau$. These values hold for every Earth site.}
+\label{tab:ceiling}
+\small
+\begin{tabular}{p{4.2cm}ccc p{1.2cm}p{1.2cm} p{4.4cm}}
+\toprule
+Task & $g$ & $P$ & $\dot D$ & $\Phi$ Moon & $\Phi$ Mars & Governing reason \\
+\midrule
+Navigation & 0 & 0 & 0 & 1.00 & 1.00 & Perception depends on geometry and illumination \\
+Landing: hazard detection & 0 & 0 & 0 & 1.00 & 1.00 & Optical and LiDAR sensing of terrain \\
+Human ops: procedures & 0 & 0 & 0 & 1.00 & 1.00 & Planning, sampling protocols, teaming \\
+Mobility & 1 & 0 & 0 & 0.56 & 0.70 & Soil self-weight and inertia scale with $g$ \\
+Robotics & 1 & 0 & 0 & 0.56 & 0.70 & Arm and reaction loads scale with $g$ \\
+Thermal/hardware endurance & 0 & 1 & 0 & 0.06 & 0.31 & Convective cooling present on Earth \\
+Landing: plume and touchdown & 1 & 1 & 0 & 0.04 & 0.22 & Plume expansion and ejecta ballistics \\
+Construction & 1 & 1 & 0 & 0.04 & 0.22 & Granular flow, sintering heat transfer, outgassing \\
+ISRU & 1 & 1 & 0 & 0.04 & 0.22 & Phase behaviour of ice; separation by settling \\
+Human ops: suit/physiology & 1 & 1 & 1 & 0.01 & 0.06 & Suit pressure differential, partial-$g$ gait, dose \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_ceiling.png}
+\caption{Earth-regime ceiling $\Phi_\tau$ by task. No Earth site can score above these bars. Values below about 0.1 indicate that the test belongs in a vacuum chamber, a reduced-gravity platform or on the target body.}
+\label{fig:ceiling}
+\end{figure}
+
+\section{Uncertainty quantification}
+
+Scores are reported with intervals, not as point values. For each cell we draw $N=1000$ realisations:
+\begin{enumerate}
+\item weights $\mathbf{w}_\tau\sim\mathrm{Dirichlet}(\alpha\,\bar{\mathbf{w}}_\tau)$ with concentration $\alpha=50$, which perturbs each prior weight by roughly $\pm$30\% of its value while keeping the sum at 1 \citep{butler1997};
+\item tolerances $\sigma_k\to\sigma_k\cdot e^{\epsilon_k}$ with $\epsilon_k\sim\mathcal{U}(-\ln 2,\ln 2)$, i.e. halving to doubling;
+\item contamination anchors shifted by $\pm$25\%;
+\item for $\Phi_\tau$, the alternative convention $\phi_j=r_j^{-1/4}$ for finite ratios, to test sensitivity to the mapping in Eq.~(11).
+\end{enumerate}
+We report the median $\tilde F$, the 5th--95th percentile interval and, for each discovered region, the rank stability $P(\text{rank}\le 10)$ across realisations. A site whose rank depends on the weighting is labelled ``weight-sensitive'' on its card.
+
+\section{Validation design}
+
+\subsection{Known analogs as a held-out test}
+The seven analogs named in the challenge briefing are not used to fit anything. Each is paired with its documented role, and the metric must rank it highly for that role (Table~\ref{tab:validation}).
+
+\begin{table}[htbp]
+\centering
+\caption{Validation set. Pass criterion: the site's median $F^{\mathrm{site}}$ lies at or above the 95th percentile of all scored Earth land cells for the stated target and task.}
+\label{tab:validation}
+\small
+\begin{tabular}{p{3.4cm}p{3.0cm}p{3.6cm}p{4.6cm}}
+\toprule
+Known analog & Target & Task & Documented role \\
+\midrule
+Atacama Desert (Yungay) & T3 & ISRU; robotics & Hyperarid, oxidising, Mars-like soils \citep{navarro2003} \\
+McMurdo Dry Valleys & T3 & Thermal/hardware; ISRU & Cold, dry, ice-cemented ground \\
+Iceland highlands (basaltic tephra) & T2 & Mobility; human procedures & Basaltic surfaces and lava tubes \\
+Hawaii (Mauna Kea saddle) & T2 & Construction; ISRU & Basaltic tephra; simulant source \\
+Mojave Desert & T3 & Mobility; landing hazard detection & Rover and landing testbeds \\
+Death Valley & T3 & Mobility; navigation & Rough evaporite and alluvial surfaces \\
+Haughton structure, Devon Island & T1 & Human procedures; navigation & Impact geology in a polar desert \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Falsification rules}
+\begin{enumerate}
+\item If two or more of the seven fail, the feature set or tolerances are wrong. We fix them and report the change before any discovery claim is made.
+\item \textbf{Negative controls.} Cells in the central Amazon basin, the Congo basin and lowland Borneo must have $F^{\mathrm{site}}<0.05$ for every target.
+\item \textbf{Baseline comparison.} The same validation is run with a naive metric (min--max normalisation of raw observables across worlds and a weighted Euclidean distance). AnalogFit is claimed to be better only if it passes more validation cases than the naive metric.
+\item \textbf{Ablation.} Each feature is removed in turn; features whose removal changes no validation outcome and no top-20 region are reported as non-informative.
+\end{enumerate}
+
+\section{Discovery procedure and hypotheses}
+
+\subsection{Two-stage search}
+Stage 1 scores all land cells at 0.05$^\circ$ for each $(T,\tau)$. Cells within 100~km of established analog sites (the seven above and other widely used sites) are masked. The top 1\% of the remaining cells by median $F^{\mathrm{site}}$ with coverage $\kappa\ge0.7$ are clustered with DBSCAN \citep{ester1996} (neighbourhood about 25~km, at least five cells). Clusters are ranked by median score, area and rank stability. Stage 2 recomputes all features at 30 to 70~m for the top three clusters per target, using EMIT, ECOSTRESS, the 30~m DEMs and SAR, and produces a full three-part site card.
+
+\subsection{Hypothesis H1: Kunene Complex as a lunar-highland lithology analog}
+The Kunene Complex of southern Angola and northern Namibia is one of the largest massif-type anorthosite complexes on Earth. Area estimates range from about 15{,}000 to 18{,}000~km$^2$ \citep{ashwal1994,druppel2007}. It is dominated by anorthosite and leucotroctolite with plagioclase of An$_{57-76}$ and little metamorphic overprint \citep{ashwal1994}. Much of it lies in an arid region, unlike Canadian anorthosites, which are glaciated or forested. \emph{Prediction:} high $s_M$ against T1 highland mineralogy, low contamination, high $F^{\mathrm{site}}$ for human-procedure and ISRU-feedstock tests. \emph{Expected breakdown:} intermediate rather than near-anorthite plagioclase; no impact gardening or regolith; Earth weathering products. The pipeline will confirm or reject this; it is not assumed.
+
+\subsection{Hypothesis H2: Mount Howe as the closest terrestrial reproduction of lunar-polar illumination}
+At the lunar south pole the Sun stays within about $1.5^\circ$ of the horizon and circles it in azimuth. On Earth, a rock surface where the Sun neither sets nor rises far over a full day requires, from Eq.~(5), $\delta_s\ge 90^\circ-|\varphi|$ for the Sun to stay up at midnight and keeps noon elevation at $90^\circ-|\varphi|+\delta_s$, where $\delta_s$ is the declination measured towards the pole. At Longyearbyen (78.2$^\circ$N), the Sun first stays up all day at a noon elevation of 23.6$^\circ$. At Mount Howe (87.37$^\circ$S, commonly cited as the southernmost exposed rock), it first stays up all day with noon elevation only 5.3$^\circ$, so the Sun circles the horizon at 0.4--5.6$^\circ$ in the days after the September equinox (Figure~\ref{fig:illum}). \emph{Prediction:} Mount Howe is the only terrestrial rock surface where hazard-detection and navigation systems can be tested under a circling, grazing Sun, but only during a window of days per year. This is a \emph{time-windowed analog}: the analog is the pair (place, dates), not the place. \emph{Expected breakdown:} remote access, ice and snow cover, atmospheric scattering and an elevation still a few degrees above the lunar case.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_illumination.png}
+\caption{Solar elevation over one day at solar declination $-3^\circ$ (about 30 September), from Eq.~(5) without terrain horizon. At Mount Howe the Sun circles the sky between 0.4$^\circ$ and 5.6$^\circ$; at Svalbard it rises to 8.8$^\circ$ and sets. The shaded band is the full annual range of solar elevation at the lunar pole.}
+\label{fig:illum}
+\end{figure}
+
+\subsection{Hypothesis H3: radar-roughness calibration sites for lunar ice detection}
+Because RCM and Mini-RF share the hybrid-polarity architecture, CPR can be measured the same way on both bodies (Section~5.3). We search for dry, unvegetated Earth surfaces whose CPR at C-band matches the high CPR of lunar polar craters while containing no ice, such as fresh blocky lava. \emph{Use:} such sites would be calibration targets for separating roughness from ice in future lunar radar data, an open ambiguity \citep{spudis2013,fa2013,eke2014}. \emph{Expected breakdown:} wavelength scaling (C-band vs. S-band), Earth permittivity and incidence-angle differences.
+
+\subsection{Hypothesis H4: Harrat Khaybar as an arid lava-tube analog}
+Harrat Khaybar in Saudi Arabia is a basaltic volcanic field that contains Umm Jirsan, the longest reported lava tube in Arabia at 1481~m of passages \citep{harratkhaybar}. Compared with Hawaiian tubes, it lies in a hyperarid climate with low vegetation. \emph{Prediction:} high $F^{\mathrm{site}}$ for T2 under procedures and mobility. \emph{Expected breakdown:} tube dimensions are limited by Earth gravity (lunar tubes may be far wider); flash-flood water enters the tube; archaeological and faunal deposits; heritage access restrictions.
+
+\subsection{A process analog from Indonesia (optional)}
+Humid tropical sites will score low on site fidelity because of vegetation and rainfall, and we expect the map to show this. Indonesian volcanic hydrothermal systems can still be presented as \emph{process} analogs. Acid-sulfate alteration at sites such as Kawah Ijen is a candidate process analog for the jarosite-bearing deposits of Meridiani Planum \citep{klingelhofer2004}. Such a card would state high process fidelity and low terrain fidelity explicitly. Mineral occurrences at the specific site must be verified from the literature or EMIT before it is presented.
+
+\section{Implementation and interface}
+
+\subsection{Pipeline}
+The pipeline is a set of Python scripts using earthaccess, xarray, rioxarray, NumPy, SciPy and scikit-learn, driven by one configuration file holding target ROIs, weights, tolerances, contamination anchors and random seeds. Its stages are: (1) acquire and cache data with DOIs logged; (2) reproject to an equal-area grid; (3) compute features; (4) score each $(T,\tau)$ with Monte Carlo uncertainty; (5) validate; (6) cluster and deep-dive; (7) export map tiles and per-site JSON. All computation is offline; the published product is static.
+
+\subsection{Web map}
+A static site (HTML and Leaflet on GitHub Pages) displays precomputed layers over a NASA GIBS basemap. The user chooses a target and a task. The map shows median $F_\tau$ with hatching for low coverage. Clicking a cell or region opens a site card with three parts:
+\begin{enumerate}
+\item \textbf{Where it works:} per-feature similarities $s_k$ as bars, with Earth and target values in physical units.
+\item \textbf{How well:} $F^{\mathrm{site}}$ and $F_\tau$ with 5--95\% intervals, coverage $\kappa$ and rank stability.
+\item \textbf{Where it breaks down:} site-reducible items (the lowest $s_k$; the contamination components) and the irreducible ceiling $\Phi_\tau$ with its governing reason from Table~\ref{tab:ceiling}.
+\end{enumerate}
+A validation tab shows the results of Section~9 and a discoveries tab shows the Stage 2 cards.
+
+\subsection{Reproducibility and disclosure}
+Code, configuration and the list of dataset DOIs are released in the project repository. All DOIs and URLs in this draft were assembled during writing and must each be resolved once before submission. Generative AI (Claude, Anthropic) was used to draft text and code; all numbers in Sections~5--7 are computed by scripts in the repository. No NASA logos, insignia or mission identifiers appear in any generated material.
+
+\section{Results}
+
+\subsection{Analytical results (independent of site data)}
+\begin{enumerate}
+\item For lunar targets, plume-surface interaction, construction and ISRU tests have an Earth ceiling of 0.036; suit and physiology tests 0.009. Outdoor Earth sites can rehearse procedures for these tasks but not the physics (Table~\ref{tab:ceiling}, Figure~\ref{fig:ceiling}).
+\item For Mars, the same tasks have ceilings of 0.22 and 0.06. Mars is a more reachable analog target than the Moon for every regime-limited task, mainly because its pressure (6.36~mbar) is 159 times below Earth's rather than about $10^{14}$ times.
+\item Navigation, landing hazard detection and human procedures have no regime ceiling. These are the tasks where the choice of Earth site matters most and where AnalogFit's site term is most useful.
+\item The easiest-to-lift dust diameter is 107~\textmu m on Earth and 175~\textmu m on Mars, and the threshold friction velocity at 100~\textmu m is 6.6 times higher on Mars (Figure~\ref{fig:threshold}). Dust analogs must therefore be matched on exceedance frequency, not wind speed.
+\item A Sun that circles the horizon all day at under about 6$^\circ$ over exposed rock requires latitude above roughly 87$^\circ$, which on Earth means only the southernmost Transantarctic nunataks (Figure~\ref{fig:illum}).
+\end{enumerate}
+
+\subsection{Empirical results (to be completed after the run)}
+The following outputs will be filled in from the pipeline. No values are reported here until computed.
+\begin{enumerate}
+\item Validation table: percentile of each known analog for its role, pass or fail, and the same for the naive baseline.
+\item Negative-control scores.
+\item Global maps of median $F_\tau$ for each target and the three featured tasks (navigation, mobility, ISRU).
+\item Discovery table: top regions per target with median score, interval, coverage, area and rank stability.
+\item Site cards for the top three regions, including the verdicts on hypotheses H1--H4.
+\item Ablation and sensitivity summaries.
+\end{enumerate}
+
+\section{Limitations and threats to validity}
+\begin{enumerate}
+\item \textbf{Prior weights.} Table~\ref{tab:weights} reflects expert judgement. The Monte Carlo analysis bounds its influence but does not remove it.
+\item \textbf{Ceiling convention.} Eq.~(11) is a declared monotone mapping, not a physical law. The ordering of tasks is robust to the alternative mapping; the absolute values are not.
+\item \textbf{Resolution mismatch.} Stage 1 at 0.05$^\circ$ cannot see lander-scale hazards or individual caves. Stage 2 addresses this only for shortlisted regions, so analogs that are small and isolated within a low-scoring cell can be missed.
+\item \textbf{Coverage gaps.} EMIT covers only about $\pm52^\circ$ latitude and mainly arid regions; NASADEM ends at 60$^\circ$N; MODIS LST is missing in polar night and under persistent cloud. These gaps reduce $\kappa$ rather than the score, and are shown on the map.
+\item \textbf{Target ROI choice.} The target statistics depend on the ROI polygons, which are fixed in advance and published.
+\item \textbf{Radar wavelength.} CPR comparisons between C-band and S-band are approximate (Section~5.3).
+\item \textbf{Ice state and process history.} Permafrost, lunar cold-trap ice and Martian excess ice differ in physics and origin; the ice feature compares occurrence, not state.
+\item \textbf{Temporal sampling.} Earth features are climatologies over the MODIS and MERRA-2 records; seasonal analog windows (as in H2) require explicit dates.
+\item \textbf{Ground truth.} Remote sensing cannot replace field measurements of regolith geotechnics, which remain the final test of any proposed site.
+\end{enumerate}
+
+\section{Conclusion}
+AnalogFit reframes analog selection as a measurable question: how faithfully can a given Earth location reproduce the conditions of a given lunar or Martian site for a given test? Comparing only physically consistent observables, aggregating them non-compensatorily and separating site-reducible from Earth-irreducible mismatch answers the challenge's three questions: where the analogy works, how well and where it breaks down. The analytical results already show that for many lunar engineering tests no outdoor Earth site is adequate, which redirects effort to chambers and reduced-gravity platforms. For navigation, hazard detection and human procedures, where Earth sites can be fully adequate, the global screen is designed to find new, quantitatively characterised analogs and to test specific hypotheses about places that have received little attention.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\appendix
+\section{Mapping to the Space Apps submission}
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{p{4.5cm}p{10.5cm}}
+\toprule
+Submission field & Source in this paper \\
+\midrule
+High-level summary & Abstract, condensed to 50--200 words \\
+Demo (7 slides) & Problem (Section 1); data (Section 4); metric (Sections 6--7); breakdown (Table~\ref{tab:ceiling}); validation (Section 9); discoveries (Section 10); impact (Section 13) \\
+Project details & Sections 2, 5--8 and 11 \\
+Where it works, how well, where it breaks down & Site card (Section 11.2); ceiling (Section 7) \\
+NASA data & Tables~\ref{tab:earthdata} and \ref{tab:planetdata} (MODIS, IMERG, MERRA-2, NASADEM, EMIT, ECOSTRESS, Black Marble, Worldview/GIBS, PDS: LOLA, Diviner, Mini-RF, M3, MOLA, TES, THEMIS, SWIM) \\
+Partner data & ESA Copernicus DEM, Sentinel-1, Permafrost CCI; CSA RCM \\
+Use of AI & Section 11.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

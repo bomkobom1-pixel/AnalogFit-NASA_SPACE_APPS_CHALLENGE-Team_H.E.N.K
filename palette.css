@@ -1,0 +1,56 @@
+/* User-supplied pitch-deck colors. Imagery and scientific ramps stay unchanged. */
+:root{--bg:#080d18;--stage:#080d18;--panel:#111b2d;--panel-2:#1c2b45;--accent:#3b82f6;--cyan:#8ec5ff;--amber:#d99a52;--ink:#f4f7fb;--ink-2:#bdcce1;--line:#2b4060;--oxide:var(--accent);--oxide-soft:#3b82f61a}
+html,body,.app-footer{background:var(--bg);color:var(--ink)}
+.topbar,.panel,dialog,.mission-field,.mission-field select,.mission-field option{background:var(--panel);color:var(--ink)}
+.mission-bar{background:linear-gradient(110deg,var(--panel),var(--bg) 75%)}
+.block,.btn,.setting-row select,.resource-card,.dossier-stat{background:var(--panel-2);border-color:var(--line)}
+.status-strip{background:var(--panel);border-color:var(--line)}
+.status-strip p,.status-count,.eyebrow,.field-number,.mission-heading .eyebrow,.map-heading .eyebrow,.section-label{color:var(--cyan)}
+.brand-type>span,.boot-wordmark span{color:var(--accent)}
+a,.resource-card a,.source-card>b,.source-card a{color:var(--cyan)}a:hover{color:var(--ink)}
+.btn:hover,.drawer-close:hover,.settings-icon-button:hover{background:#263d60;border-color:var(--cyan)}
+.btn[aria-pressed=true],.map-view-actions .btn[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.seg,.view-switch{background:var(--bg);border-color:var(--line)}.seg .btn[aria-pressed=true]{background:var(--accent);color:var(--bg)}
+.nav-link.active,.panel-tabs button[aria-selected=true]{border-bottom-color:var(--accent)}
+.nav-link.active,.panel-tabs button[aria-selected=true],.dossier-title h1,.mission-score strong,.dossier-stat strong{color:var(--ink)}
+.section-label,.dossier-status,.chip.measured{background:#3b82f617;border-color:#3b82f677;color:var(--cyan)}
+.chip.illustrative,body:has([data-mode=all][aria-pressed=true]) .dossier-status{color:var(--amber);border-color:#d99a5277;background:#d99a5212}
+.answer-card,.source-card{background:var(--panel-2);border-color:var(--line)}.answer-card{border-left-color:var(--accent)}
+.answer-card p+p,.source-card p,.dossier-stat>span,.dossier-stat p,.dossier-interpretation,.hint{color:var(--ink-2)}
+.meter{background:var(--bg)}.meter>i{background:var(--accent)}
+.map-heading,.layers,.legend{background:#111b2df2;border-color:var(--line)}
+.map-heading strong,.legend-heading b,.map-view-actions .btn{color:var(--ink)}
+.map-crosshair,.selection-target{color:var(--cyan)}
+.map-view-actions .btn,.reopen-inspector,.selection-prompt{background:#111b2df5;border-color:var(--line)}
+.map-view-actions .btn[aria-pressed=true]{background:var(--accent);color:var(--bg)}
+.selection-prompt p,.map-view-notice{color:var(--ink-2)}
+.map-question label,.map-question select{background:var(--panel);border-color:var(--line);color:var(--ink)}.map-question span{color:var(--cyan)}
+.map-view-notice{background:var(--panel-2);border-color:var(--amber)}
+.location-drawer{background:#111b2dfa;border-color:var(--line)}.drawer-chrome,.drawer-jumps{background:var(--panel);border-color:var(--line)}
+.drawer-chrome .eyebrow,.dossier-title .eyebrow,.dossier-coordinates{color:var(--cyan)}
+.drawer-close,.settings-icon-button{background:var(--panel-2);border-color:var(--line);color:var(--ink)}
+.drawer-jumps button{color:var(--ink-2)}.drawer-jumps button:hover{background:var(--panel-2);color:var(--ink)}
+.dossier-hero{background:linear-gradient(135deg,var(--panel-2),var(--panel));border-color:#3b82f666}
+.mission-score .eyebrow,.mission-score small{color:var(--cyan)}
+.evidence-donut>div{background:var(--panel)}.evidence-donut span{color:var(--cyan)}
+.dossier-evidence-key{color:var(--ink-2)}.dossier-evidence-key .observed i{background:var(--accent)}.dossier-evidence-key .modeled i{background:var(--amber)}.dossier-evidence-key .missing i{background:var(--panel-2)}
+.dossier-stat strong small{color:var(--cyan)}.dossier-interpretation{border-left-color:var(--cyan)}
+.science-readiness,.target-thermal-context{background:var(--panel);border-color:var(--line)}
+.evidence-stack .observed{background:var(--accent)}.evidence-stack .modeled{background:var(--amber)}.evidence-stack .missing{background:var(--panel-2)}
+[data-coverage-gate=false] .readiness-verdict{color:var(--amber)}
+.target-thermal-context .thermal-value,.science-inline-button{color:var(--cyan)}
+.tour-case{background:linear-gradient(135deg,var(--panel-2),var(--panel));border-color:var(--line)}.tour-case h2{color:var(--ink)}
+.tour-case .eyebrow,.settings-section h2{color:var(--cyan)}.tour-case p,.setting-row small{color:var(--ink-2)}
+.tour-summary{background:var(--panel-2);border-left-color:var(--accent)}
+.setting-row,.settings-section{border-color:var(--line)}.setting-row input[type=checkbox]{background:var(--panel-2);border-color:var(--line)}
+.setting-row input:checked{background:var(--accent);border-color:var(--cyan)}.setting-row input:checked:before{background:var(--ink)}
+.workspace.is-map-focus,.workspace:fullscreen{background:var(--bg)}.workspace.is-map-focus .controls-panel{background:#111b2dfa;border-color:var(--line)}
+.boot-screen{background:radial-gradient(ellipse at 50% 45%,var(--panel),var(--bg) 75%)}
+.boot-grid{background-image:linear-gradient(#8ec5ff06 1px,transparent 1px),linear-gradient(90deg,#8ec5ff06 1px,transparent 1px)}
+.intro-nebula{background:radial-gradient(ellipse at 25% 65%,#3b82f633,transparent 45%),radial-gradient(ellipse at 80% 30%,#1c2b4580,transparent 40%)}
+.intro-orbit,.boot-orbit{border-color:#8ec5ff33}.boot-orbit:before{background:var(--accent);box-shadow:0 0 15px var(--accent)}
+.intro-horizon{background:var(--panel);box-shadow:0 -2px 7px #8ec5ff80,0 -20px 90px #3b82f64d}
+.intro-mars{background:radial-gradient(ellipse at 30% 40%,#080d1855,transparent 22%),linear-gradient(120deg,var(--amber),#d99a5288 60%,var(--bg))}
+.intro-world-label,.boot-content>.eyebrow,.boot-caption,.boot-worlds,.boot-tagline{color:var(--cyan)}
+.boot-caption>span:last-child{color:var(--accent)}.boot-progress{background:var(--panel-2)}.boot-progress i{background:var(--accent);box-shadow:0 0 12px #3b82f670}
+.intro-skip{background:var(--panel);border-color:var(--line);color:var(--ink)}.boot-footer{color:var(--ink-2)}

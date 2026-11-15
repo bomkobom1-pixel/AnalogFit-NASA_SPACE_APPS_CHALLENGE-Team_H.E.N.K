@@ -1,0 +1,31 @@
+/* The entrance uses a real 3D camera. Existing planet artwork is the fallback. */
+body[data-boot=loading]{overflow:hidden}
+#intro3d{position:absolute;inset:0;width:100%;height:100%;display:none;pointer-events:none}
+#bootScreen[data-renderer=webgl] #intro3d{display:block}
+#bootScreen[data-renderer=webgl] .intro-cosmos,#bootScreen[data-renderer=webgl] .boot-grid{display:none}
+#bootScreen .intro-flight-caption{position:absolute;left:28px;top:28px;z-index:2;font:10px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.16em;color:var(--cyan,#8ec5ff);text-transform:uppercase}
+#bootScreen[data-renderer=webgl] .boot-content{animation:none;opacity:0;background:none;transform-origin:center;filter:drop-shadow(0 8px 26px #080d18)}
+#bootScreen[data-renderer=webgl].flight-running .boot-content{animation:flight-identity 5s both}
+#bootScreen[data-renderer=webgl] .boot-content:before{content:'';position:absolute;inset:-60px -110px;z-index:-1;background:radial-gradient(ellipse,#080d18eb 10%,#080d1870 55%,transparent 73%);pointer-events:none}
+#bootScreen[data-renderer=webgl] .boot-emblem img,#bootScreen[data-renderer=webgl] .boot-wordmark,#bootScreen[data-renderer=webgl] .boot-tagline,#bootScreen[data-renderer=webgl] .boot-progress,#bootScreen[data-renderer=webgl] .boot-caption,#bootScreen[data-renderer=webgl] .boot-worlds{animation:none}
+#bootScreen[data-renderer=webgl] .boot-emblem{transform:perspective(700px) rotateY(-12deg);animation:flight-mark 5s both}
+#bootScreen[data-renderer=webgl] .boot-wordmark{font-size:clamp(44px,4.5vw,64px);letter-spacing:-2px}
+#bootScreen .intro-skip{z-index:4;min-height:40px;backdrop-filter:blur(8px)}
+#bootScreen.flight-leaving #intro3d{animation:flight-through .6s cubic-bezier(.5,0,.2,1) both}
+#bootScreen[data-renderer=webgl].flight-leaving .boot-content{animation:flight-logo-exit .5s both}
+body[data-boot=ready][data-entry-transition="3d"] .app-shell{animation:workspace-arrival .8s cubic-bezier(.16,.75,.2,1) backwards;transform-origin:50% 45%}
+body[data-entry-transition="3d"] .topbar,body[data-entry-transition="3d"] .mission-bar,body[data-entry-transition="3d"] .status-strip,body[data-entry-transition="3d"] .controls-panel,body[data-entry-transition="3d"] #stage,body[data-entry-transition="3d"] .selection-prompt,body[data-entry-transition="3d"] .app-footer{animation:none}
+#bootScreen[data-renderer=fallback] .intro-cosmos{perspective:950px;transform-style:preserve-3d;animation:fallback-flight 5s ease-in-out both}
+#bootScreen[data-renderer=fallback] .intro-earth{transform:translateZ(100px) rotateY(-18deg)}
+#bootScreen[data-renderer=fallback] .intro-moon{transform:translateZ(-120px) rotateY(12deg)}
+#bootScreen[data-renderer=fallback] .intro-mars{transform:translateZ(45px) rotateY(-12deg)}
+body[data-motion=off] #bootScreen .boot-content{opacity:1!important;transform:none!important}
+body[data-motion=off] #bootScreen .intro-cosmos{transform:none!important}
+@keyframes flight-identity{0%,57%{opacity:0;transform:perspective(1000px) translate3d(0,18px,-190px) rotateY(-12deg)}72%{opacity:.8}88%,100%{opacity:1;transform:perspective(1000px) translate3d(0,0,0) rotateY(0)}}
+@keyframes flight-mark{0%,60%{transform:perspective(700px) rotateY(-28deg) rotateX(10deg)}100%{transform:perspective(700px) rotateY(0) rotateX(0)}}
+@keyframes flight-through{to{transform:perspective(1000px) translateZ(260px) scale(1.35);filter:blur(7px);opacity:0}}
+@keyframes flight-logo-exit{from{opacity:1;transform:perspective(1000px) translateZ(0) scale(1)}to{opacity:0;transform:perspective(1000px) translateZ(320px) scale(1.25)}}
+@keyframes workspace-arrival{from{opacity:0;transform:perspective(1100px) translate3d(0,35px,-160px) rotateX(8deg) scale(.94)}to{opacity:1;transform:none}}
+@keyframes fallback-flight{0%{transform:perspective(1000px) translateZ(-200px) rotateY(13deg)}45%{transform:perspective(1000px) translateZ(100px) rotateY(-10deg)}100%{transform:perspective(1000px) translateZ(0) rotateY(0)}}
+@media(max-width:600px){#bootScreen .intro-flight-caption{left:16px;top:20px;font-size:8px;letter-spacing:.1em}#bootScreen[data-renderer=webgl] .boot-content:before{inset:-45px -45px}#bootScreen[data-renderer=webgl] .boot-wordmark{font-size:48px}}
+@media(prefers-reduced-motion:reduce){#bootScreen .boot-content{opacity:1!important;transform:none!important}#bootScreen .boot-emblem,#bootScreen #intro3d,.app-shell{animation:none!important}}

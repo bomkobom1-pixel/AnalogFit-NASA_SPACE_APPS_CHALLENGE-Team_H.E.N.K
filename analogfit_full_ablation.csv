@@ -1,0 +1,145 @@
+target,task,removed,supported_feature,max_score_change,score_became_unavailable,top20_retained,top20_before,top20_after,testable_roles,passed_roles
+T1,Landing: hazard detection,S,True,0.41926703255666775,0,13,20,20,0,0
+T1,Landing: hazard detection,R,False,9.172350379227368e-17,0,20,20,20,0,0
+T1,Landing: hazard detection,B,False,9.172350379227368e-17,0,20,20,20,0,0
+T1,Landing: hazard detection,L,True,0.9865016357481011,0,4,20,20,0,0
+T1,Landing: plume and touchdown,S,True,,599,0,20,0,0,0
+T1,Landing: plume and touchdown,R,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Landing: plume and touchdown,B,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Landing: plume and touchdown,M,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Landing: plume and touchdown,G,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Landing: plume and touchdown,I,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Landing: plume and touchdown,D,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Navigation,S,True,0.3041772695968229,0,16,20,20,1,0
+T1,Navigation,R,False,8.069174668723367e-17,0,20,20,20,1,0
+T1,Navigation,B,False,8.069174668723367e-17,0,20,20,20,1,0
+T1,Navigation,M,False,8.069174668723367e-17,0,20,20,20,1,0
+T1,Navigation,L,True,0.9865805598444322,0,2,20,20,0,0
+T1,Mobility,S,True,,599,0,20,0,0,0
+T1,Mobility,R,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Mobility,B,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Mobility,G,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Mobility,I,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Robotics,R,False,7.899768079272507e-17,0,20,20,20,0,0
+T1,Robotics,M,False,7.899768079272507e-17,0,20,20,20,0,0
+T1,Robotics,G,False,7.899768079272507e-17,0,20,20,20,0,0
+T1,Robotics,L,True,,599,0,20,0,0,0
+T1,Robotics,T,False,7.899768079272507e-17,0,20,20,20,0,0
+T1,Construction,S,True,,599,0,20,0,0,0
+T1,Construction,R,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Construction,M,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Construction,G,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Construction,I,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,ISRU,M,False,,0,0,0,0,0,0
+T1,ISRU,G,False,,0,0,0,0,0,0
+T1,ISRU,I,False,,0,0,0,0,0,0
+T1,Thermal/hardware endurance,G,False,7.899768079272507e-17,0,20,20,20,0,0
+T1,Thermal/hardware endurance,I,False,7.899768079272507e-17,0,20,20,20,0,0
+T1,Thermal/hardware endurance,L,True,,599,0,20,0,0,0
+T1,Thermal/hardware endurance,T,False,7.899768079272507e-17,0,20,20,20,0,0
+T1,Human ops: procedures,S,True,0.40948584112974995,0,13,20,20,0,0
+T1,Human ops: procedures,R,False,9.611452259083997e-17,0,20,20,20,0,0
+T1,Human ops: procedures,B,False,9.611452259083997e-17,0,20,20,20,0,0
+T1,Human ops: procedures,M,False,9.611452259083997e-17,0,20,20,20,0,0
+T1,Human ops: procedures,L,True,0.9865499314329008,0,4,20,20,0,0
+T1,Human ops: procedures,T,False,9.611452259083997e-17,0,20,20,20,0,0
+T1,Human ops: suit/physiology,S,True,,599,0,20,0,0,0
+T1,Human ops: suit/physiology,R,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Human ops: suit/physiology,G,False,9.974659986866641e-17,0,20,20,20,0,0
+T1,Human ops: suit/physiology,T,False,9.974659986866641e-17,0,20,20,20,0,0
+T2,Landing: hazard detection,S,True,0.9981146911033077,0,13,20,20,0,0
+T2,Landing: hazard detection,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Landing: hazard detection,B,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Landing: hazard detection,L,True,0.8999924410149345,0,16,20,20,0,0
+T2,Landing: plume and touchdown,S,True,,599,0,20,0,0,0
+T2,Landing: plume and touchdown,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Landing: plume and touchdown,B,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Landing: plume and touchdown,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Landing: plume and touchdown,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Landing: plume and touchdown,I,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Landing: plume and touchdown,D,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Navigation,S,True,0.9911595908367141,0,13,20,20,0,0
+T2,Navigation,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Navigation,B,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Navigation,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Navigation,L,True,0.9775016363346931,0,16,20,20,0,0
+T2,Mobility,S,True,,599,0,20,0,0,0
+T2,Mobility,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Mobility,B,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Mobility,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Mobility,I,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Robotics,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Robotics,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Robotics,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Robotics,L,True,,599,0,20,0,0,0
+T2,Robotics,T,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Construction,S,True,,599,0,20,0,0,0
+T2,Construction,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Construction,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Construction,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Construction,I,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,ISRU,M,False,,0,0,0,0,0,0
+T2,ISRU,G,False,,0,0,0,0,0,0
+T2,ISRU,I,False,,0,0,0,0,0,0
+T2,Thermal/hardware endurance,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Thermal/hardware endurance,I,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Thermal/hardware endurance,L,True,,599,0,20,0,0,0
+T2,Thermal/hardware endurance,T,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Human ops: procedures,S,True,0.9980857186368137,0,13,20,20,0,0
+T2,Human ops: procedures,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Human ops: procedures,B,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Human ops: procedures,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Human ops: procedures,L,True,0.9205380309745437,0,16,20,20,0,0
+T2,Human ops: procedures,T,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Human ops: suit/physiology,S,True,,599,0,20,0,0,0
+T2,Human ops: suit/physiology,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Human ops: suit/physiology,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T2,Human ops: suit/physiology,T,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Landing: hazard detection,S,True,0.9846825391595276,0,13,20,20,0,0
+T3,Landing: hazard detection,R,False,1.1102230246251565e-16,0,20,20,20,1,0
+T3,Landing: hazard detection,B,False,1.1102230246251565e-16,0,20,20,20,1,0
+T3,Landing: hazard detection,L,True,0.8816166692971981,0,16,20,20,0,0
+T3,Landing: plume and touchdown,S,True,,599,0,20,0,0,0
+T3,Landing: plume and touchdown,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Landing: plume and touchdown,B,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Landing: plume and touchdown,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Landing: plume and touchdown,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Landing: plume and touchdown,I,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Landing: plume and touchdown,D,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Navigation,S,True,0.9824413893348147,0,13,20,20,1,0
+T3,Navigation,R,False,1.1102230246251565e-16,0,20,20,20,1,0
+T3,Navigation,B,False,1.1102230246251565e-16,0,20,20,20,1,0
+T3,Navigation,M,False,1.1102230246251565e-16,0,20,20,20,1,0
+T3,Navigation,L,True,0.9698562813970458,0,16,20,20,0,0
+T3,Mobility,S,True,,599,0,20,0,0,0
+T3,Mobility,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Mobility,B,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Mobility,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Mobility,I,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Robotics,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Robotics,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Robotics,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Robotics,L,True,,599,0,20,0,0,0
+T3,Robotics,T,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Construction,S,True,,599,0,20,0,0,0
+T3,Construction,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Construction,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Construction,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Construction,I,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,ISRU,M,False,,0,0,0,0,0,0
+T3,ISRU,G,False,,0,0,0,0,0,0
+T3,ISRU,I,False,,0,0,0,0,0,0
+T3,Thermal/hardware endurance,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Thermal/hardware endurance,I,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Thermal/hardware endurance,L,True,,599,0,20,0,0,0
+T3,Thermal/hardware endurance,T,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Human ops: procedures,S,True,0.9846791204263826,0,13,20,20,0,0
+T3,Human ops: procedures,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Human ops: procedures,B,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Human ops: procedures,M,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Human ops: procedures,L,True,0.9042510523976258,0,16,20,20,0,0
+T3,Human ops: procedures,T,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Human ops: suit/physiology,S,True,,599,0,20,0,0,0
+T3,Human ops: suit/physiology,R,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Human ops: suit/physiology,G,False,1.1102230246251565e-16,0,20,20,20,0,0
+T3,Human ops: suit/physiology,T,False,1.1102230246251565e-16,0,20,20,20,0,0

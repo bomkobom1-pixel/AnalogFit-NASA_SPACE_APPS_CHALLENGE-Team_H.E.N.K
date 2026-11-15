@@ -1,0 +1,94 @@
+/* Evidence-led interactions, imagery and an optional original soundscape. */
+.primary-nav { min-width: 0; }
+.audio-settings { position: relative; font-size: 10px; }
+.audio-settings summary { list-style: none; padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; cursor: pointer; min-height: 34px; }
+.audio-settings summary::-webkit-details-marker { display: none; }
+.audio-settings summary:before { content: '♪'; margin-right: 6px; color: var(--accent); font-size: 13px; }
+.audio-settings .audio-active { border-color: var(--accent); color: #b8dcff; }
+.audio-popover { position: absolute; top: calc(100% + 12px); right: 0; width: 260px; padding: 17px; border: 1px solid #354b69; border-radius: 9px; background: #121c2bf5; backdrop-filter: blur(15px); z-index: 4000; box-shadow: 0 12px 45px #0006; }
+.audio-popover .eyebrow { color: var(--accent); margin-bottom: 12px; }
+.audio-toggle { display: block; width: 100%; text-align: left; margin: 7px 0; font-size: 11px; }
+.audio-volume { display: grid; grid-template-columns: auto 1fr 30px; gap: 10px; align-items: center; margin: 17px 0 13px; font-size: 10px; }
+.audio-volume output { text-align: right; font-size: 9px; color: var(--ink-2); }
+.audio-popover .hint { font-size: 10px; margin: 0; }
+.terrain-imagery-card { margin: 17px 0; padding-bottom: 15px; border-bottom: 1px solid var(--line); }
+.terrain-imagery-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 9px; }
+.terrain-imagery-heading h2 { margin: 0; font-size: 10px; }
+.terrain-photo-tabs { display: flex; gap: 3px; padding: 3px; margin: 10px 0; border: 1px solid var(--line); border-radius: 6px; background: #0d1521; }
+.terrain-photo-tabs button { flex: 1; border: 0; background: transparent; border-radius: 4px; padding: 6px 8px; font-size: 10px; color: var(--ink-2); }
+.terrain-photo-tabs button[aria-pressed=true] { background: #4da3ff24; color: #b9dbff; }
+.terrain-photo-tabs button:disabled { opacity: .35; cursor: not-allowed; }
+.terrain-image-frame { position: relative; aspect-ratio: 720/475; width: 100%; overflow: hidden; border-radius: 7px; border: 1px solid #354b69; background: #0b1522; isolation: isolate; }
+.nasa-terrain-image { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: contain; opacity: 0; transition: opacity .45s var(--ease); }
+.nasa-terrain-image.image-ready { opacity: 1; }
+.terrain-swipe-layer { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.terrain-swipe-line { position: absolute; top: 0; bottom: 0; width: 1px; z-index: 3; background: #ffffffbd; box-shadow: 0 0 5px #0008; pointer-events: none; }
+.terrain-compare-slider { position: absolute; z-index: 5; bottom: 10px; left: 8%; width: 84% !important; height: 18px !important; accent-color: #d7ebff !important; cursor: ew-resize !important; }
+.terrain-corner-label { position: absolute; top: 9px; z-index: 4; padding: 3px 5px; font-size: 7px; letter-spacing: .08em; color: #fff; background: #07111dd9; pointer-events: none; }
+.terrain-corner-label.left { left: 8px; }
+.terrain-corner-label.right { right: 8px; top: 39px; }
+.image-site-reticle { position: absolute; z-index: 4; transform: translate(-50%,-50%); font: 25px/1 monospace; color: #fff; text-shadow: 0 0 4px #000; pointer-events: none; }
+.image-expand { position: absolute; right: 8px; top: 8px; z-index: 5; border: 1px solid #ffffff60; border-radius: 4px; background: #0a1421df; padding: 5px 7px; font-size: 8px; color: #eaf5ff; }
+.image-failure { padding: 20px; color: var(--ink-2); font-size: 11px; text-align: center; }
+.terrain-photo-caption { margin-top: 9px; }
+.terrain-photo-caption .hint { font-size: 9px; line-height: 1.65; margin-bottom: 6px; }
+.image-date { font-size: 8px; color: #b3c6df; margin-bottom: 6px; line-height: 1.6; }
+.image-source-link { font-size: 9px; }
+#dlgTerrainPhoto { width: 1000px; max-width: min(1000px,94vw); }
+#terrainPhotoBody .terrain-photo-tabs { max-width: 420px; }
+.terrain-image-frame.large { max-height: 60dvh; aspect-ratio: 720/475; }
+#terrainPhotoBody .terrain-photo-caption .hint { font-size: 11px; }
+#terrainPhotoBody .image-date, #terrainPhotoBody .image-source-link { font-size: 10px; }
+.terrain-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: 9px 0; }
+.terrain-controls select { max-width: 142px; background: var(--panel-2); border: 1px solid #354b69; border-radius: 4px; padding: 6px; font-size: 9px; min-height: 30px; }
+.terrain-controls .btn { padding: 5px 7px; font-size: 9px; min-height: 30px; }
+.terrain-ve { display: flex; align-items: center; gap: 7px; font-size: 8px; color: var(--ink-2); margin-left: auto; }
+.terrain-ve input { width: 62px; }
+.terrain-ve output { min-width: 20px; text-align: right; }
+.terrain-depth-legend { margin: 10px 0; }
+.terrain-ramp { height: 6px; border: 1px solid #ffffff18; border-radius: 4px; }
+.terrain-depth-ticks { display: flex; justify-content: space-between; font: 9px/1.8 ui-monospace,Consolas,monospace; color: #b9cbe0; margin-top: 3px; }
+.terrain-depth-legend .hint { font-size: 9px; margin: 5px 0 0; }
+.science-readiness { border: 1px solid #315178; border-radius: 7px; background: #0f1d30; padding: 11px; margin: 8px 0 14px; }
+.science-readiness-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.science-readiness-top .eyebrow { font-size: 7px; letter-spacing: .1em; }
+.science-readiness-top b { font-size: 11px; color: #a0cfff; }
+.evidence-stack { display: flex; height: 5px; border-radius: 4px; overflow: hidden; margin: 10px 0 6px; background: #233047; }
+.evidence-stack i { display: block; height: 100%; }
+.evidence-stack .observed { background: #4da3ff; }
+.evidence-stack .modeled { background: #d5b174; }
+.evidence-stack .missing { background: #2b3a50; }
+.science-readiness > .hint { font-size: 8px; margin: 0 0 6px; }
+.readiness-verdict { font-size: 9px; line-height: 1.6; color: #b9c9dc; margin-bottom: 6px; }
+.science-inline-button { border: 0; padding: 0; background: none; font-size: 9px; color: #8ec2ff; }
+.science-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; margin: 20px 0; }
+.science-stats > div { padding: 13px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 7px; }
+.science-stats b { display: block; color: #a3d0ff; font-size: 23px; font-weight: 550; }
+.science-stats span { font-size: 10px; color: var(--ink-2); }
+.science-table .supported-row td { color: #c1ddff; }
+.paper-gaps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.paper-gaps section { background: #182337; border: 1px solid var(--line); padding: 13px; border-radius: 6px; }
+.paper-gaps b { font-size: 11px; }
+.paper-gaps .hint { font-size: 10px; margin: 6px 0 0; }
+.science-export { margin: 8px 0 11px; }
+.btn:active { transform: translateY(1px); }
+.rank button:hover { transform: translateX(2px); }
+.site-marker { transition: filter .2s, transform .2s; transform-origin: center; }
+.site-marker:hover { filter: drop-shadow(0 0 4px #4da3ff80); transform: scale(1.08); }
+@media (max-width:1200px) { .header-actions { gap: 10px; } .primary-nav { gap: 15px; } }
+@media (max-width:600px) {
+    .header-actions { gap: 8px; }
+    .audio-settings summary { font-size: 9px; padding: 6px 8px; }
+    .audio-popover { width: 250px; right: -70px; top: calc(100% + 8px); }
+    .primary-nav { gap: 18px; } .nav-link { font-size: 9px; }
+    .terrain-photo-tabs button { font-size: 11px; padding: 7px; }
+    .terrain-photo-caption .hint { font-size: 10px; }
+    .image-date, .image-source-link { font-size: 10px; }
+    .image-expand { font-size: 9px; } .terrain-ve { margin-left: 0; }
+    .terrain-depth-ticks { font-size: 10px; } .terrain-depth-legend .hint { font-size: 10px; }
+    .science-readiness-top .eyebrow { font-size: 8px; }
+    .science-readiness > .hint { font-size: 9px; } .readiness-verdict, .science-inline-button { font-size: 10px; }
+    .science-stats { grid-template-columns: 1fr 1fr; }
+    .paper-gaps { grid-template-columns: 1fr; }
+}
+

@@ -1,0 +1,91 @@
+site,target,task,F_site,F_site_real,result
+Central Amazon Basin,T1,Landing: hazard detection,0.0,0.0,OK
+Central Amazon Basin,T1,Landing: plume and touchdown,0.0,0.0,OK
+Central Amazon Basin,T1,Navigation,0.0,0.0,OK
+Central Amazon Basin,T1,Mobility,0.0,0.0,OK
+Central Amazon Basin,T1,Robotics,0.0,0.0,OK
+Central Amazon Basin,T1,Construction,0.0,0.0,OK
+Central Amazon Basin,T1,ISRU,0.0,,NOT TESTABLE
+Central Amazon Basin,T1,Thermal/hardware endurance,0.0,0.0,OK
+Central Amazon Basin,T1,Human ops: procedures,0.0,0.0,OK
+Central Amazon Basin,T1,Human ops: suit/physiology,0.0,0.0,OK
+Central Amazon Basin,T2,Landing: hazard detection,0.0,0.0,OK
+Central Amazon Basin,T2,Landing: plume and touchdown,0.0,0.0,OK
+Central Amazon Basin,T2,Navigation,0.0,0.0,OK
+Central Amazon Basin,T2,Mobility,0.0,0.0,OK
+Central Amazon Basin,T2,Robotics,0.0,0.0,OK
+Central Amazon Basin,T2,Construction,0.0,0.0,OK
+Central Amazon Basin,T2,ISRU,0.0,,NOT TESTABLE
+Central Amazon Basin,T2,Thermal/hardware endurance,0.0,0.0,OK
+Central Amazon Basin,T2,Human ops: procedures,0.0,0.0,OK
+Central Amazon Basin,T2,Human ops: suit/physiology,0.0,0.0,OK
+Central Amazon Basin,T3,Landing: hazard detection,0.0,0.0,OK
+Central Amazon Basin,T3,Landing: plume and touchdown,0.0,0.0,OK
+Central Amazon Basin,T3,Navigation,0.0,0.0,OK
+Central Amazon Basin,T3,Mobility,0.0,0.0,OK
+Central Amazon Basin,T3,Robotics,0.0,0.0,OK
+Central Amazon Basin,T3,Construction,0.0,0.0,OK
+Central Amazon Basin,T3,ISRU,0.0,,NOT TESTABLE
+Central Amazon Basin,T3,Thermal/hardware endurance,0.0,0.0,OK
+Central Amazon Basin,T3,Human ops: procedures,0.0,0.0,OK
+Central Amazon Basin,T3,Human ops: suit/physiology,0.0,0.0,OK
+Congo Basin,T1,Landing: hazard detection,0.0,0.0,OK
+Congo Basin,T1,Landing: plume and touchdown,0.0,0.0,OK
+Congo Basin,T1,Navigation,0.0,0.0,OK
+Congo Basin,T1,Mobility,0.0,0.0,OK
+Congo Basin,T1,Robotics,0.0,0.0,OK
+Congo Basin,T1,Construction,0.0,0.0,OK
+Congo Basin,T1,ISRU,0.0,,NOT TESTABLE
+Congo Basin,T1,Thermal/hardware endurance,0.0,0.0,OK
+Congo Basin,T1,Human ops: procedures,0.0,0.0,OK
+Congo Basin,T1,Human ops: suit/physiology,0.0,0.0,OK
+Congo Basin,T2,Landing: hazard detection,0.0,0.0,OK
+Congo Basin,T2,Landing: plume and touchdown,0.0,0.0,OK
+Congo Basin,T2,Navigation,0.0,0.0,OK
+Congo Basin,T2,Mobility,0.0,0.0,OK
+Congo Basin,T2,Robotics,0.0,0.0,OK
+Congo Basin,T2,Construction,0.0,0.0,OK
+Congo Basin,T2,ISRU,0.0,,NOT TESTABLE
+Congo Basin,T2,Thermal/hardware endurance,0.0,0.0,OK
+Congo Basin,T2,Human ops: procedures,0.0,0.0,OK
+Congo Basin,T2,Human ops: suit/physiology,0.0,0.0,OK
+Congo Basin,T3,Landing: hazard detection,0.0,0.0,OK
+Congo Basin,T3,Landing: plume and touchdown,0.0,0.0,OK
+Congo Basin,T3,Navigation,0.0,0.0,OK
+Congo Basin,T3,Mobility,0.0,0.0,OK
+Congo Basin,T3,Robotics,0.0,0.0,OK
+Congo Basin,T3,Construction,0.0,0.0,OK
+Congo Basin,T3,ISRU,0.0,,NOT TESTABLE
+Congo Basin,T3,Thermal/hardware endurance,0.0,0.0,OK
+Congo Basin,T3,Human ops: procedures,0.0,0.0,OK
+Congo Basin,T3,Human ops: suit/physiology,0.0,0.0,OK
+Lowland Borneo,T1,Landing: hazard detection,0.0,0.0,OK
+Lowland Borneo,T1,Landing: plume and touchdown,0.0,0.0,OK
+Lowland Borneo,T1,Navigation,0.0,0.0,OK
+Lowland Borneo,T1,Mobility,0.0,0.0,OK
+Lowland Borneo,T1,Robotics,0.0,0.0,OK
+Lowland Borneo,T1,Construction,0.0,0.0,OK
+Lowland Borneo,T1,ISRU,0.0,,NOT TESTABLE
+Lowland Borneo,T1,Thermal/hardware endurance,0.0,0.0,OK
+Lowland Borneo,T1,Human ops: procedures,0.0,0.0,OK
+Lowland Borneo,T1,Human ops: suit/physiology,0.0,0.0,OK
+Lowland Borneo,T2,Landing: hazard detection,0.0,0.0,OK
+Lowland Borneo,T2,Landing: plume and touchdown,0.0,0.0,OK
+Lowland Borneo,T2,Navigation,0.0,0.0,OK
+Lowland Borneo,T2,Mobility,0.0,0.0,OK
+Lowland Borneo,T2,Robotics,0.0,0.0,OK
+Lowland Borneo,T2,Construction,0.0,0.0,OK
+Lowland Borneo,T2,ISRU,0.0,,NOT TESTABLE
+Lowland Borneo,T2,Thermal/hardware endurance,0.0,0.0,OK
+Lowland Borneo,T2,Human ops: procedures,0.0,0.0,OK
+Lowland Borneo,T2,Human ops: suit/physiology,0.0,0.0,OK
+Lowland Borneo,T3,Landing: hazard detection,0.0,0.0,OK
+Lowland Borneo,T3,Landing: plume and touchdown,0.0,0.0,OK
+Lowland Borneo,T3,Navigation,0.0,0.0,OK
+Lowland Borneo,T3,Mobility,0.0,0.0,OK
+Lowland Borneo,T3,Robotics,0.0,0.0,OK
+Lowland Borneo,T3,Construction,0.0,0.0,OK
+Lowland Borneo,T3,ISRU,0.0,,NOT TESTABLE
+Lowland Borneo,T3,Thermal/hardware endurance,0.0,0.0,OK
+Lowland Borneo,T3,Human ops: procedures,0.0,0.0,OK
+Lowland Borneo,T3,Human ops: suit/physiology,0.0,0.0,OK

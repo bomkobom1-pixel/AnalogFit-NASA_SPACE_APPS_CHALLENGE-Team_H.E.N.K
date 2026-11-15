@@ -1,0 +1,111 @@
+/* Selection flow and preference behavior, on the same file:// app users open. */
+const {chromium}=require('../.test-tools/node_modules/playwright');
+const {pathToFileURL}=require('url');
+const path=require('path'),fs=require('fs');
+const root=path.resolve(__dirname,'..'),out=path.join(root,'test-artifacts');
+const check=(v,m)=>{if(!v)throw Error(m);};
+(async()=>{
+ const browser=await chromium.launch({channel:'chrome',headless:true,args:['--enable-unsafe-swiftshader','--use-angle=swiftshader']});
+ try{
+  const context=await browser.newContext({offline:true,viewport:{width:1440,height:1000}});
+  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(pathToFileURL(path.join(root,'index.html')).href);
+  check(await page.locator('#bootScreen').isVisible(),'Opening missing');
+  await page.waitForTimeout(1900);
+  check(await page.evaluate(()=>document.body.dataset.boot==='loading'),'Opening ended before five seconds');
+  await page.screenshot({path:path.join(out,'mission-intro.png')});
+  await page.waitForFunction(()=>document.body.dataset.boot==='ready');
+  await page.locator('#bootScreen').waitFor({state:'hidden'});
+  const elapsed=await page.evaluate(()=>Number(document.body.dataset.introElapsed));
+  check(elapsed>=4900,'Opening did not last five seconds: '+elapsed);
+  check(await page.evaluate(()=>analogfit.state.sel===null&&!AnalogFitWorkspace.isOpen&&document.getElementById('locationDrawer').inert),'Initial drawer not closed');
+  check(await page.locator('#selectionPrompt').isVisible(),'Initial selection guidance missing');
+  await page.locator('#openSiteRankings').click();
+  await page.locator('#rankSites button').first().click();
+  await page.waitForFunction(()=>AnalogFitWorkspace.isOpen);
+  await page.waitForTimeout(500);
+  check(await page.locator('#locationDashboard h1').isVisible(),'Dossier did not open');
+  const statistics=await page.evaluate(()=>{
+   const p=analogfit.places.find(p=>p.id===analogfit.state.sel),s=analogfit.score(p);
+   return {score:document.querySelector('.mission-score strong').textContent,expected:s.F==null?'—':s.F>0&&s.F<.001?'<0.1':s.F<.01?(s.F*100).toFixed(1):String(Math.round(s.F*100)),
+    coverage:document.querySelector('.evidence-donut b').textContent,expectedCoverage:Math.round(s.covReal*100)+'%',
+    elevation:document.querySelectorAll('.dossier-stat strong')[0].textContent,
+    rawElevation:p.v.elev_m,demOriginal:JSON.stringify(p.raw.dem)};
+  });
+  check(statistics.score===statistics.expected,'Dashboard score disagrees with engine');
+  check(statistics.coverage===statistics.expectedCoverage,'Dashboard evidence disagrees with engine');
+  await page.screenshot({path:path.join(out,'mission-dossier.png'),animations:'disabled'});
+  await page.locator('#closeInspector').click();
+  check(await page.evaluate(()=>!AnalogFitWorkspace.isOpen&&document.getElementById('locationDrawer').inert),'Close failed');
+  await page.selectOption('#taskSel','Mobility');
+  check(await page.evaluate(()=>!AnalogFitWorkspace.isOpen),'Task change reopened drawer');
+  await page.locator('#reopenInspector').click();
+  await page.keyboard.press('Escape');
+  check(await page.evaluate(()=>!AnalogFitWorkspace.isOpen),'Escape did not close drawer');
+  await page.evaluate(()=>analogfit.select('VAL_01'));
+  await page.selectOption('#taskSel','Navigation');
+  const baseline=await page.evaluate(()=>analogfit.score(analogfit.places.find(p=>p.id==='VAL_01')).F);
+  await page.locator('#btnSettings').click();
+  check(await page.locator('#dlgSettings').isVisible(),'Gear failed');
+  check(await page.locator('#audioSummary').count()===0,'Standalone audio menu remains');
+  await page.locator('[data-pref=imagery]').uncheck();
+  check(await page.locator('#terrainImageryCard').count()===0,'Imagery preference ignored');
+  await page.locator('[data-pref=terrain]').uncheck();
+  check(await page.locator('#terrain').count()===0,'Terrain preference ignored');
+  check(await page.locator('[data-jump=terrain]').isDisabled()&&await page.locator('[data-jump=imagery]').isDisabled(),'Unavailable shortcuts remain enabled');
+  await page.locator('[data-pref=motion]').uncheck();
+  await page.locator('[data-pref=intro]').uncheck();
+  await page.locator('[data-pref=expandedScience]').uncheck();
+  await page.locator('[data-pref=compactStats]').check();
+  await page.locator('#settingsLanguage').selectOption('id');
+  check(await page.evaluate(()=>analogfit.state.lang==='id'),'Indonesian preference failed');
+  await page.locator('#settingsLanguage').selectOption('en');
+  await page.locator('[data-pref=globeRotation]').check();
+  await page.locator('[data-pref=defaultView]').selectOption('3d');
+  await page.waitForFunction(()=>!!document.querySelector('#globe canvas'));
+  check(await page.evaluate(()=>analogfit.state.view==='3d'),'Default-view preference ignored');
+  await page.locator('[data-pref=defaultView]').selectOption('2d');
+  check(await page.evaluate(()=>analogfit.state.lang==='en'),'Language preference failed');
+  check(await page.evaluate(()=>analogfit.score(analogfit.places.find(p=>p.id==='VAL_01')).F)===baseline,'Settings changed scientific score');
+  check(await page.evaluate(()=>document.body.dataset.motion==='off'&&document.body.dataset.compactStats==='true'),'Visual preferences failed');
+  await page.screenshot({path:path.join(out,'mission-settings.png'),animations:'disabled'});
+  await page.locator('#closeSettings').click();
+  check(await page.locator('#scienceReadiness').isVisible(),'Settings hid critical evidence');
+  await page.reload();await page.waitForFunction(()=>document.body.dataset.boot==='ready');
+  await page.locator('#bootScreen').waitFor({state:'hidden'});
+  check(await page.evaluate(()=>Number(document.body.dataset.introElapsed)<4500),'Disabled opening still waits five seconds');
+  check(await page.evaluate(()=>!AnalogFitPrefs.get('imagery')&&!AnalogFitPrefs.get('terrain')&&analogfit.state.lang==='en'),'Preferences did not persist');
+  check(await page.evaluate(()=>!AnalogFitWorkspace.isOpen),'Deep-link reload opened panel automatically');
+  await page.locator('#btnSettings').click();await page.locator('#toggleSfx').click();await page.locator('#resetPreferences').click();
+  check(await page.evaluate(()=>AnalogFitPrefs.get('imagery')&&AnalogFitPrefs.get('terrain')&&analogfit.state.lang==='en'),'Restore defaults failed');
+  check(await page.evaluate(()=>AnalogFitAudio.state.sfxEnabled&&AnalogFitAudio.state.musicEnabled),'Restore defaults did not re-enable audio');
+  await page.locator('#replayIntro').click();
+  check(await page.locator('#bootScreen').isVisible(),'Replay failed');
+  await page.locator('#skipIntro').click();await page.locator('#bootScreen').waitFor({state:'hidden'});
+  check(await page.evaluate(()=>Number(document.body.dataset.introElapsed)<4900),'Skip failed');
+  await page.setViewportSize({width:390,height:844});
+  await page.evaluate(()=>analogfit.select('VAL_01'));
+  await page.waitForTimeout(550);
+  const bounds=await page.locator('#locationDrawer').boundingBox();
+  check(bounds.x>=-1&&bounds.x+bounds.width<=391&&bounds.y>=0&&bounds.y+bounds.height<=845,'Mobile drawer exceeds viewport');
+  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile horizontal overflow');
+  await page.screenshot({path:path.join(out,'mission-mobile.png'),animations:'disabled'});
+  const mobile=await browser.newContext({offline:true,reducedMotion:'reduce',viewport:{width:390,height:844}});
+  await mobile.addInitScript(()=>localStorage.setItem('analogfit.preferences.v2',JSON.stringify({intro:false})));
+  const initial=await mobile.newPage();initial.on('pageerror',e=>errors.push(e.message));
+  await initial.goto(pathToFileURL(path.join(root,'index.html')).href);
+  await initial.waitForFunction(()=>document.body.dataset.boot==='ready');
+  await initial.locator('#bootScreen').waitFor({state:'hidden'});
+  const prompt=await initial.locator('#selectionPrompt').boundingBox(),legend=await initial.locator('.legend').boundingBox();
+  check(prompt.y+prompt.height<=legend.y||legend.y+legend.height<=prompt.y,'Mobile guidance overlaps score legend');
+  await initial.screenshot({path:path.join(out,'mission-mobile-initial.png'),fullPage:true,animations:'disabled'});
+  await initial.locator('#openSiteRankings').click();
+  check(await initial.locator('#rankingPane').isVisible(),'Mobile browse action failed');
+  await mobile.close();
+  check(errors.length===0,'Browser errors: '+errors.join('\n'));
+  const report={introElapsedMs:elapsed,defaultClosed:true,selectionOpens:true,closeEscapeAndReopen:true,
+   taskChangesKeepClosed:true,statistics,settingsPersist:true,interfaceSettingsPreserveScore:true,
+   scienceEvidenceRemainsVisible:true,resetReplayAndSkip:true,mobileDrawerFits:true,pageErrors:errors};
+  fs.writeFileSync(path.join(out,'mission-report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

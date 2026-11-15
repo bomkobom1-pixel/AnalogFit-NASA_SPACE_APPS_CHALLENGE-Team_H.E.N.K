@@ -1,0 +1,15 @@
+cell_id,site,real_features,placeholder_features,real_contamination_inputs
+VAL_01,Atacama Desert (Yungay),L S T,R B M G I D,precip_mm_yr
+VAL_02,McMurdo Dry Valleys,L S T,R B M G I D,precip_mm_yr
+VAL_03,Iceland Highlands (Basaltic Tephra),L S T,R B M G I D,precip_mm_yr
+VAL_04,Hawaii (Mauna Kea Saddle),L S T,R B M G I D,precip_mm_yr
+VAL_05,Mojave Desert,L S T,R B M G I D,precip_mm_yr
+VAL_06,Death Valley,L S T,R B M G I D,precip_mm_yr
+VAL_07,Haughton Structure (Devon Island),L S T,R B M G I D,precip_mm_yr
+HYP_H1,Kunene Anorthosite Complex (Angola/Namibia),L S T,R B M G I D,precip_mm_yr
+HYP_H2,Mount Howe (Antarctica),L S T,R B M G I D,precip_mm_yr
+HYP_H3,Blocky Lava Calibration Field (Atacama/Iceland),L S T,R B M G I D,precip_mm_yr
+HYP_H4,Harrat Khaybar / Umm Jirsan (Saudi Arabia),L S T,R B M G I D,precip_mm_yr
+NEG_01,Central Amazon Basin,L S T,R B M G I D,precip_mm_yr
+NEG_02,Congo Basin,L S T,R B M G I D,precip_mm_yr
+NEG_03,Lowland Borneo,L S T,R B M G I D,precip_mm_yr

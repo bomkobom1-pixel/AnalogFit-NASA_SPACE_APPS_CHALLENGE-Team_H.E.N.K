@@ -1,0 +1,669 @@
+{
+  "project": "AnalogFit - 2026 NASA Space Apps Challenge (Team H.E.N.K.)",
+  "_how_to_read": {
+    "targets.observables_target": "Illustrative values except L (idealized computed solar geometry). At run time, science.py loads verified NASA LOLA/MOLA 500 m slope from preserved PDS byte slices. Only supported Earth AND target features enter evidence mode.",
+    "targets.tolerances_sigma": "How far an Earth value may be from the target before the match fades (Gaussian width, same unit as the feature).",
+    "task_weights": "How much each feature matters for each kind of test. Each row sums to 1.",
+    "regime_flags_v_tau": "Heuristic flags for displaying physical differences. The legacy numerical multiplier is not a calibrated physical ceiling.",
+    "contamination_anchors": "Where vegetation, rain and night lights start (bare) and finish (saturated) disqualifying a site.",
+    "features": {
+      "S": "Slope: median ground slope over a 100 m baseline (degrees)",
+      "R": "Roughness: ln of RMS height change over 100 m, plus the Hurst exponent",
+      "B": "Radar blockiness: circular polarization ratio (CPR)",
+      "M": "Mineralogy: proportions of 11 mineral groups, compared with Jensen-Shannon divergence",
+      "G": "Grain size: ln of the median grain diameter in micrometres",
+      "I": "Ice: probability of ground ice",
+      "L": "Sun-grazing time: share of the best 10-day window with the Sun 0-5 degrees above the horizon",
+      "T": "Surface temperature: annual mean (kelvin)",
+      "D": "Dust lifting: fraction of time wind exceeds the threshold that lifts grains"
+    }
+  },
+  "grid_stages": {
+    "stage_1_resolution_deg": 0.05,
+    "stage_2_resolution_m": [
+      30,
+      70
+    ],
+    "topographic_baselines_m": [
+      30,
+      100,
+      500
+    ],
+    "coverage_threshold_kappa": 0.7,
+    "dbscan_neighborhood_km": 25,
+    "dbscan_min_samples": 5,
+    "mask_known_analogs_radius_km": 100,
+    "coverage_threshold_measured": 0.5
+  },
+  "targets": {
+    "T1": {
+      "name": "Lunar south pole, Connecting Ridge and Shackleton rim",
+      "location": {
+        "lat_range": [
+          -89.8,
+          -89.4
+        ],
+        "lon_range": "Shackleton-de Gerlache ridge"
+      },
+      "observables_target": {
+        "slope_deg_median_100m": 3.8,
+        "slope_deg_p90_100m": 11.5,
+        "ln_roughness_100m": 0.65,
+        "hurst_exponent_H": 0.78,
+        "radar_cpr": 0.42,
+        "ln_grain_size_d50_um": 4.25,
+        "ice_probability": 0.65,
+        "mineralogy_vector": [
+          0.75,
+          0.12,
+          0.05,
+          0.03,
+          0.02,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.03
+        ],
+        "sun_grazing_frac_10d": 1.0
+      },
+      "tolerances_sigma": {
+        "slope": 2.5,
+        "roughness": 0.45,
+        "cpr": 0.15,
+        "grain_size": 0.8,
+        "ice": 0.25,
+        "illumination": 0.15
+      },
+      "body": "Moon",
+      "lat": -89.6,
+      "short_name": "Lunar south pole",
+      "target_status": {
+        "S": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs LOLA 100 m slope statistics for the ridge."
+        },
+        "R": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs LOLA roughness and Hurst exponent."
+        },
+        "B": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs Mini-RF S-band CPR."
+        },
+        "M": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs M3 / Diviner mineralogy."
+        },
+        "G": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs regolith grain-size data."
+        },
+        "I": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs Diviner ice-stability or LEND/LAMP volatile maps."
+        },
+        "L": {
+          "status": "literature",
+          "source": "Ridge crests near Shackleton are sunlit roughly 80-90% of the year with the Sun always within about 2 deg of the horizon (Mazarico et al. 2011; Speyerer & Robinson 2013). Approximate."
+        }
+      },
+      "illumination_latitude_deg": -89.6
+    },
+    "T2": {
+      "name": "Mare Tranquillitatis pit",
+      "location": {
+        "lat": 8.3,
+        "lon": 33.2,
+        "pit_diameter_m": 100
+      },
+      "observables_target": {
+        "slope_deg_median_100m": 2.1,
+        "slope_deg_p90_100m": 6.4,
+        "ln_roughness_100m": 0.35,
+        "hurst_exponent_H": 0.72,
+        "radar_cpr": 0.28,
+        "ln_grain_size_d50_um": 4.4,
+        "ice_probability": 0.0,
+        "mineralogy_vector": [
+          0.25,
+          0.35,
+          0.25,
+          0.1,
+          0.05,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sun_grazing_frac_10d": 0.041527777777777775
+      },
+      "tolerances_sigma": {
+        "slope": 2.0,
+        "roughness": 0.4,
+        "cpr": 0.12,
+        "grain_size": 0.75,
+        "ice": 0.1,
+        "illumination": 0.1
+      },
+      "body": "Moon",
+      "lat": 8.3355,
+      "short_name": "Lunar lava-tube pit",
+      "target_status": {
+        "S": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs LOLA / LROC NAC DTM slope around the pit."
+        },
+        "R": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs LOLA roughness."
+        },
+        "B": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs Mini-RF S-band CPR."
+        },
+        "M": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs M3 mare basalt mineralogy."
+        },
+        "G": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs mare regolith grain-size data."
+        },
+        "I": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs volatile maps."
+        },
+        "L": {
+          "status": "computed",
+          "source": "Solar geometry at the site latitude with the body's obliquity (same formula as for Earth)."
+        }
+      },
+      "illumination_latitude_deg": 8.3355
+    },
+    "T3": {
+      "name": "Arcadia Planitia (Mars)",
+      "location": {
+        "lat_range": [
+          38.0,
+          50.0
+        ],
+        "lon_range": "Northern mid-latitudes"
+      },
+      "observables_target": {
+        "slope_deg_median_100m": 1.4,
+        "slope_deg_p90_100m": 4.2,
+        "ln_roughness_100m": 0.2,
+        "hurst_exponent_H": 0.68,
+        "ln_grain_size_d50_um": 4.8,
+        "ice_probability": 0.78,
+        "thermal_mean_K": 210.0,
+        "dust_exceedance_f_ex": 0.045,
+        "mineralogy_vector": [
+          0.2,
+          0.28,
+          0.18,
+          0.14,
+          0.08,
+          0.06,
+          0.02,
+          0.01,
+          0.02,
+          0.01,
+          0.0
+        ],
+        "sun_grazing_frac_10d": 0.05298611111111111
+      },
+      "tolerances_sigma": {
+        "slope": 1.8,
+        "roughness": 0.35,
+        "grain_size": 0.85,
+        "ice": 0.2,
+        "illumination": 0.1,
+        "thermal": 15.0,
+        "dust": 0.02
+      },
+      "body": "Mars",
+      "lat": 45.0,
+      "short_name": "Mars, Arcadia Planitia",
+      "target_status": {
+        "S": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs MOLA / HRSC 100 m slope statistics."
+        },
+        "R": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs MOLA roughness."
+        },
+        "M": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs TES / CRISM mineralogy."
+        },
+        "G": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs thermal-inertia-derived grain size."
+        },
+        "I": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs SWIM ice-consistency value."
+        },
+        "L": {
+          "status": "computed",
+          "source": "Solar geometry at the site latitude with the body's obliquity (same formula as for Earth)."
+        },
+        "T": {
+          "status": "literature",
+          "source": "Mars average surface temperature, about 210 K (NASA NSSDC Mars Fact Sheet). Global mean, not site-specific; replace with a TES or Mars Climate Database value for Arcadia."
+        },
+        "D": {
+          "status": "placeholder",
+          "source": "Illustrative value. Needs dust-lifting statistics from a Mars climate model."
+        }
+      },
+      "illumination_latitude_deg": 45.0
+    }
+  },
+  "mineral_groups": [
+    "plagioclase_anorthositic",
+    "low_ca_pyroxene",
+    "high_ca_pyroxene",
+    "olivine",
+    "fe_oxides",
+    "sulfates",
+    "phyllosilicates",
+    "carbonates",
+    "chlorides",
+    "hydrated_silica",
+    "ice"
+  ],
+  "contamination_anchors": {
+    "ndvi": {
+      "bare": 0.08,
+      "saturated": 0.4
+    },
+    "precipitation_mm_yr": {
+      "bare": 25.0,
+      "saturated": 600.0
+    },
+    "nightlights_percentile": {
+      "bare": 50.0,
+      "saturated": 95.0
+    }
+  },
+  "regime_constants": {
+    "Earth": {
+      "g": 9.81,
+      "P_mbar": 1013.25,
+      "dose_uSv_day": 1.07,
+      "rho_a": 1.225
+    },
+    "Moon": {
+      "g": 1.62,
+      "P_mbar": 3e-12,
+      "dose_uSv_day": 1369.0,
+      "rho_a": 0.0
+    },
+    "Mars": {
+      "g": 3.71,
+      "P_mbar": 6.36,
+      "dose_uSv_day": 640.0,
+      "rho_a": 0.02
+    }
+  },
+  "shao_lu_dust_constants": {
+    "A_N": 0.0123,
+    "gamma_kg_s2": 0.0003,
+    "rho_p_kg_m3": 2650.0
+  },
+  "task_weights": {
+    "Landing: hazard detection": {
+      "S": 0.3,
+      "R": 0.25,
+      "B": 0.2,
+      "M": 0.0,
+      "G": 0.0,
+      "I": 0.0,
+      "L": 0.25,
+      "T": 0.0,
+      "D": 0.0
+    },
+    "Landing: plume and touchdown": {
+      "S": 0.15,
+      "R": 0.1,
+      "B": 0.1,
+      "M": 0.05,
+      "G": 0.4,
+      "I": 0.05,
+      "L": 0.0,
+      "T": 0.0,
+      "D": 0.15
+    },
+    "Navigation": {
+      "S": 0.15,
+      "R": 0.2,
+      "B": 0.1,
+      "M": 0.1,
+      "G": 0.0,
+      "I": 0.0,
+      "L": 0.45,
+      "T": 0.0,
+      "D": 0.0
+    },
+    "Mobility": {
+      "S": 0.25,
+      "R": 0.2,
+      "B": 0.15,
+      "M": 0.0,
+      "G": 0.3,
+      "I": 0.1,
+      "L": 0.0,
+      "T": 0.0,
+      "D": 0.0
+    },
+    "Robotics": {
+      "S": 0.0,
+      "R": 0.2,
+      "B": 0.0,
+      "M": 0.2,
+      "G": 0.2,
+      "I": 0.0,
+      "L": 0.15,
+      "T": 0.25,
+      "D": 0.0
+    },
+    "Construction": {
+      "S": 0.2,
+      "R": 0.1,
+      "B": 0.0,
+      "M": 0.2,
+      "G": 0.35,
+      "I": 0.15,
+      "L": 0.0,
+      "T": 0.0,
+      "D": 0.0
+    },
+    "ISRU": {
+      "S": 0.0,
+      "R": 0.0,
+      "B": 0.0,
+      "M": 0.4,
+      "G": 0.2,
+      "I": 0.4,
+      "L": 0.0,
+      "T": 0.0,
+      "D": 0.0
+    },
+    "Thermal/hardware endurance": {
+      "S": 0.0,
+      "R": 0.0,
+      "B": 0.0,
+      "M": 0.0,
+      "G": 0.2,
+      "I": 0.2,
+      "L": 0.2,
+      "T": 0.4,
+      "D": 0.0
+    },
+    "Human ops: procedures": {
+      "S": 0.15,
+      "R": 0.15,
+      "B": 0.15,
+      "M": 0.25,
+      "G": 0.0,
+      "I": 0.0,
+      "L": 0.15,
+      "T": 0.15,
+      "D": 0.0
+    },
+    "Human ops: suit/physiology": {
+      "S": 0.3,
+      "R": 0.25,
+      "B": 0.0,
+      "M": 0.0,
+      "G": 0.15,
+      "I": 0.0,
+      "L": 0.0,
+      "T": 0.3,
+      "D": 0.0
+    }
+  },
+  "regime_flags_v_tau": {
+    "Navigation": {
+      "g": 0,
+      "P": 0,
+      "D": 0
+    },
+    "Landing: hazard detection": {
+      "g": 0,
+      "P": 0,
+      "D": 0
+    },
+    "Human ops: procedures": {
+      "g": 0,
+      "P": 0,
+      "D": 0
+    },
+    "Mobility": {
+      "g": 1,
+      "P": 0,
+      "D": 0
+    },
+    "Robotics": {
+      "g": 1,
+      "P": 0,
+      "D": 0
+    },
+    "Thermal/hardware endurance": {
+      "g": 0,
+      "P": 1,
+      "D": 0
+    },
+    "Landing: plume and touchdown": {
+      "g": 1,
+      "P": 1,
+      "D": 0
+    },
+    "Construction": {
+      "g": 1,
+      "P": 1,
+      "D": 0
+    },
+    "ISRU": {
+      "g": 1,
+      "P": 1,
+      "D": 0
+    },
+    "Human ops: suit/physiology": {
+      "g": 1,
+      "P": 1,
+      "D": 1
+    }
+  },
+  "solar_geometry": {
+    "_note": "Used for the low-sun lighting feature (L): share of time the Sun sits 0-5 deg above the horizon in the best 10-day window. Same formula on every body; no terrain, no refraction.",
+    "Earth": {
+      "obliquity_deg": 23.44,
+      "solar_days_per_year": 365
+    },
+    "Moon": {
+      "obliquity_deg": 1.54,
+      "solar_days_per_year": 12
+    },
+    "Mars": {
+      "obliquity_deg": 25.19,
+      "solar_days_per_year": 669
+    },
+    "window_days": 10,
+    "elevation_band_deg": [
+      0.0,
+      5.0
+    ]
+  },
+  "features": {
+    "S": {
+      "en": "Ground slope",
+      "id": "Kemiringan tanah",
+      "unit": "deg",
+      "display": "plain",
+      "decimals": 1,
+      "plain_en": "How steep the ground is, measured over 100 m. Decides whether a lander or rover can operate.",
+      "plain_id": "Seberapa curam permukaan tanah, diukur per 100 m. Menentukan apakah pendarat atau rover bisa beroperasi.",
+      "earth_source": "SRTM GL1 / ASTER GDEM v3 (NASA)"
+    },
+    "R": {
+      "en": "Surface roughness",
+      "id": "Kekasaran permukaan",
+      "unit": "m",
+      "display": "exp",
+      "decimals": 2,
+      "plain_en": "Typical height difference between two points 100 m apart: bumpy or smooth terrain.",
+      "plain_id": "Beda tinggi khas antara dua titik berjarak 100 m: medan bergelombang atau rata.",
+      "earth_source": "planned: NASADEM / Copernicus GLO-30"
+    },
+    "B": {
+      "en": "Rockiness seen by radar",
+      "id": "Kepadatan batu (radar)",
+      "unit": "",
+      "display": "plain",
+      "decimals": 2,
+      "plain_en": "Radar circular polarization ratio. High values mean many fist-sized rocks, or ice.",
+      "plain_id": "Rasio polarisasi sirkular radar. Nilai tinggi berarti banyak batu seukuran kepalan, atau es.",
+      "earth_source": "planned: RCM / Sentinel-1"
+    },
+    "M": {
+      "en": "Rock and mineral type",
+      "id": "Jenis batuan dan mineral",
+      "unit": "",
+      "display": "mineral",
+      "decimals": 2,
+      "plain_en": "How closely the mix of minerals resembles the target's.",
+      "plain_id": "Seberapa mirip campuran mineralnya dengan lokasi target.",
+      "earth_source": "planned: EMIT L2B (NASA)"
+    },
+    "G": {
+      "en": "Soil grain size",
+      "id": "Ukuran butir tanah",
+      "unit": "um",
+      "display": "exp",
+      "decimals": 0,
+      "plain_en": "Typical size of soil grains. Controls how wheels sink and how dust behaves.",
+      "plain_id": "Ukuran khas butir tanah. Mengatur seberapa dalam roda terbenam dan perilaku debu.",
+      "earth_source": "planned: SoilGrids 2.0"
+    },
+    "I": {
+      "en": "Ground ice",
+      "id": "Es dalam tanah",
+      "unit": "",
+      "display": "percent",
+      "decimals": 0,
+      "plain_en": "Chance that the ground holds ice near the surface.",
+      "plain_id": "Peluang adanya es di dekat permukaan tanah.",
+      "earth_source": "planned: ESA CCI Permafrost"
+    },
+    "L": {
+      "en": "Low-sun lighting",
+      "id": "Cahaya matahari rendah",
+      "unit": "",
+      "display": "percent",
+      "decimals": 0,
+      "plain_en": "Share of time the Sun sits just above the horizon (0-5 deg) during the best 10 days of the year. Long shadows are the main hazard for cameras at the lunar pole.",
+      "plain_id": "Porsi waktu matahari berada tepat di atas cakrawala (0-5 derajat) pada 10 hari terbaik dalam setahun. Bayangan panjang adalah tantangan utama kamera di kutub Bulan.",
+      "earth_source": "computed from latitude (solar geometry)"
+    },
+    "T": {
+      "en": "Surface temperature",
+      "id": "Suhu permukaan",
+      "unit": "K",
+      "display": "plain",
+      "decimals": 0,
+      "plain_en": "Yearly average temperature of the ground.",
+      "plain_id": "Suhu rata-rata tahunan permukaan tanah.",
+      "earth_source": "MERRA-2 via NASA POWER, 2001-2025"
+    },
+    "D": {
+      "en": "Wind-blown dust",
+      "id": "Debu terbawa angin",
+      "unit": "",
+      "display": "percent",
+      "decimals": 0,
+      "plain_en": "Share of time the wind is strong enough to lift soil grains.",
+      "plain_id": "Porsi waktu angin cukup kuat untuk mengangkat butir tanah.",
+      "earth_source": "MERRA-2 wind (NASA POWER) with placeholder grain size"
+    }
+  },
+  "tasks": {
+    "Landing: hazard detection": {
+      "id": "Pendaratan: deteksi bahaya",
+      "plain_en": "Testing cameras and lidar that spot rocks and slopes during descent.",
+      "plain_id": "Menguji kamera dan lidar yang mengenali batu dan lereng saat turun.",
+      "limit_en": "Depends on terrain shape and lighting, which Earth can match. No physics limit.",
+      "limit_id": "Bergantung pada bentuk medan dan cahaya, yang bisa ditiru Bumi. Tanpa batas fisika."
+    },
+    "Landing: plume and touchdown": {
+      "id": "Pendaratan: semburan mesin",
+      "plain_en": "Testing how engine exhaust blasts soil at touchdown.",
+      "plain_id": "Menguji bagaimana semburan mesin menghamburkan tanah saat mendarat.",
+      "limit_en": "Exhaust spreads and dust flies very differently without air and under low gravity.",
+      "limit_id": "Semburan dan debu bergerak sangat berbeda tanpa udara dan pada gravitasi rendah."
+    },
+    "Navigation": {
+      "id": "Navigasi",
+      "plain_en": "Testing how a rover or astronaut finds the way using cameras.",
+      "plain_id": "Menguji cara rover atau astronaut mencari jalan dengan kamera.",
+      "limit_en": "Depends on terrain shape and lighting, which Earth can match. No physics limit.",
+      "limit_id": "Bergantung pada bentuk medan dan cahaya, yang bisa ditiru Bumi. Tanpa batas fisika."
+    },
+    "Mobility": {
+      "id": "Mobilitas",
+      "plain_en": "Testing how wheels grip, sink and climb.",
+      "plain_id": "Menguji cengkeraman, amblas, dan daya tanjak roda.",
+      "limit_en": "Soil carries weight differently: Earth's gravity is 6 times the Moon's and 2.6 times Mars's.",
+      "limit_id": "Tanah menahan beban secara berbeda: gravitasi Bumi 6 kali Bulan dan 2,6 kali Mars."
+    },
+    "Robotics": {
+      "id": "Robotika",
+      "plain_en": "Testing robot arms that dig, grab and place.",
+      "plain_id": "Menguji lengan robot untuk menggali, mengambil, dan meletakkan.",
+      "limit_en": "Arm loads and reaction forces scale with gravity.",
+      "limit_id": "Beban lengan dan gaya reaksi mengikuti gravitasi."
+    },
+    "Construction": {
+      "id": "Konstruksi",
+      "plain_en": "Testing how to build pads, berms and shelters from local soil.",
+      "plain_id": "Menguji pembangunan landasan, tanggul, dan pelindung dari tanah setempat.",
+      "limit_en": "Soil flow, heat transfer in sintering and outgassing all change with gravity and air pressure.",
+      "limit_id": "Aliran tanah, perpindahan panas saat sintering, dan pelepasan gas berubah karena gravitasi dan tekanan udara."
+    },
+    "ISRU": {
+      "id": "Pemanfaatan sumber daya (ISRU)",
+      "plain_en": "Testing how to extract water and oxygen from the ground.",
+      "plain_id": "Menguji ekstraksi air dan oksigen dari tanah.",
+      "limit_en": "Ice sublimates instead of melting in vacuum, and separation by settling depends on gravity.",
+      "limit_id": "Es menyublim, bukan mencair, di ruang hampa, dan pemisahan dengan pengendapan bergantung pada gravitasi."
+    },
+    "Thermal/hardware endurance": {
+      "id": "Ketahanan termal perangkat",
+      "plain_en": "Testing whether hardware survives the temperature swings.",
+      "plain_id": "Menguji apakah perangkat bertahan terhadap perubahan suhu.",
+      "limit_en": "Earth's air cools hardware by convection, which barely exists on the Moon or Mars.",
+      "limit_id": "Udara Bumi mendinginkan perangkat lewat konveksi, yang nyaris tidak ada di Bulan atau Mars."
+    },
+    "Human ops: procedures": {
+      "id": "Operasi manusia: prosedur",
+      "plain_en": "Rehearsing planning, sampling and teamwork with crews.",
+      "plain_id": "Melatih perencanaan, pengambilan sampel, dan kerja tim bersama kru.",
+      "limit_en": "Procedures do not depend on gravity or air. No physics limit.",
+      "limit_id": "Prosedur tidak bergantung pada gravitasi atau udara. Tanpa batas fisika."
+    },
+    "Human ops: suit/physiology": {
+      "id": "Operasi manusia: baju dan fisiologi",
+      "plain_en": "Testing spacesuits and the human body at work.",
+      "plain_id": "Menguji baju antariksa dan tubuh manusia saat bekerja.",
+      "limit_en": "Suit pressure, walking in low gravity and radiation dose cannot be reproduced outdoors on Earth.",
+      "limit_id": "Tekanan baju, berjalan di gravitasi rendah, dan dosis radiasi tidak bisa ditiru di alam terbuka Bumi."
+    }
+  }
+}

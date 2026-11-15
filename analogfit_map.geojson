@@ -1,0 +1,3254 @@
+{
+ "type": "FeatureCollection",
+ "data_note": "F_site_real requires supported Earth AND target data; Sun geometry is modeled. Scores are heuristic screening indices, not validated mission readiness. F_site also uses illustrative placeholders and must not be reported as a measurement. ceiling is a legacy illustrative multiplier, not a calibrated physical limit.",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -69.92,
+     -24.08
+    ]
+   },
+   "properties": {
+    "cell_id": "VAL_01",
+    "name": "Atacama Desert (Yungay)",
+    "site_type": "known",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0015,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.3718,
+      "F_site_real": 0.0299,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.2415,
+      "F_site_real": 0.0299,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.013,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.2659,
+      "F_site_real": 0.0299,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.2208,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0003,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.01,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.1954,
+      "F_site_real": 0.0299,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.9215,
+      "F_site_real": 0.9125,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.9302,
+      "F_site_real": 0.8471,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.9454,
+      "F_site_real": 0.9577,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.9261,
+      "F_site_real": 0.8471,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.9503,
+      "F_site_real": 0.9977,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.9285,
+      "F_site_real": 0.8471,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.9437,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.9866,
+      "F_site_real": 0.9977,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.911,
+      "F_site_real": 0.9193,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.9154,
+      "F_site_real": 0.8471,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.9219,
+      "F_site_real": 0.8945,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0057,
+      "F_site_real": 0.8266,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.9545,
+      "F_site_real": 0.9417,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.3519,
+      "F_site_real": 0.8266,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0222,
+      "F_site_real": 0.9835,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.2793,
+      "F_site_real": 0.8266,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0449,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0005,
+      "F_site_real": 0.9835,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0678,
+      "F_site_real": 0.9016,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0101,
+      "F_site_real": 0.8266,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     162.52,
+     -77.47
+    ]
+   },
+   "properties": {
+    "cell_id": "VAL_02",
+    "name": "McMurdo Dry Valleys",
+    "site_type": "known",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0197,
+      "F_site_real": 0.0012,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.4795,
+      "F_site_real": 0.1683,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0021,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.4261,
+      "F_site_real": 0.1683,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0522,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.4328,
+      "F_site_real": 0.1683,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.4746,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0092,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.054,
+      "F_site_real": 0.0007,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.3551,
+      "F_site_real": 0.1683,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0017,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0055,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0157,
+      "F_site_real": 0.0014,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0005,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.4031,
+      "F_site_real": 0.0638,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.0003,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0638,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.018,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0003,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0002,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0059,
+      "F_site_real": 0.0006,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.215,
+      "F_site_real": 0.0813,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0077,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.5797,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.1245,
+      "F_site_real": 0.0813,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0056,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0004,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -16.75,
+     64.85
+    ]
+   },
+   "properties": {
+    "cell_id": "VAL_03",
+    "name": "Iceland Highlands (Basaltic Tephra)",
+    "site_type": "known",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -155.47,
+     19.75
+    ]
+   },
+   "properties": {
+    "cell_id": "VAL_04",
+    "name": "Hawaii (Mauna Kea Saddle)",
+    "site_type": "known",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -115.47,
+     35.01
+    ]
+   },
+   "properties": {
+    "cell_id": "VAL_05",
+    "name": "Mojave Desert",
+    "site_type": "known",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0017,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.2744,
+      "F_site_real": 0.3154,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.222,
+      "F_site_real": 0.3154,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0059,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.2191,
+      "F_site_real": 0.3154,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.098,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0002,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0077,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.3247,
+      "F_site_real": 0.3154,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0116,
+      "F_site_real": 0.0007,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0509,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0696,
+      "F_site_real": 0.0222,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0212,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.4122,
+      "F_site_real": 0.4291,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.039,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.4113,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.4281,
+      "F_site_real": 0.4291,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0491,
+      "F_site_real": 0.0011,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0026,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0019,
+      "F_site_real": 0.0002,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0002,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.038,
+      "F_site_real": 0.0113,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0023,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0102,
+      "F_site_real": 0.4256,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0071,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0197,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0002,
+      "F_site_real": 0.4256,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0024,
+      "F_site_real": 0.0003,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -116.93,
+     36.53
+    ]
+   },
+   "properties": {
+    "cell_id": "VAL_06",
+    "name": "Death Valley",
+    "site_type": "known",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0006,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.1534,
+      "F_site_real": 0.0034,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0918,
+      "F_site_real": 0.0034,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0071,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0995,
+      "F_site_real": 0.0034,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.1097,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0002,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0045,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.054,
+      "F_site_real": 0.0034,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.4945,
+      "F_site_real": 0.4951,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.4863,
+      "F_site_real": 0.4946,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.4867,
+      "F_site_real": 0.4954,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.4922,
+      "F_site_real": 0.4946,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.4712,
+      "F_site_real": 0.4956,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.476,
+      "F_site_real": 0.4946,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.4618,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.4928,
+      "F_site_real": 0.4956,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.4709,
+      "F_site_real": 0.4951,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.4927,
+      "F_site_real": 0.4946,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.4803,
+      "F_site_real": 0.493,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0029,
+      "F_site_real": 0.4935,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.4813,
+      "F_site_real": 0.4926,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.1846,
+      "F_site_real": 0.4935,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0103,
+      "F_site_real": 0.4924,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.1448,
+      "F_site_real": 0.4935,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0223,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0002,
+      "F_site_real": 0.4924,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0327,
+      "F_site_real": 0.4929,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0049,
+      "F_site_real": 0.4935,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -89.68,
+     75.37
+    ]
+   },
+   "properties": {
+    "cell_id": "VAL_07",
+    "name": "Haughton Structure (Devon Island)",
+    "site_type": "known",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0061,
+      "F_site_real": 0.0003,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.1636,
+      "F_site_real": 0.0723,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0006,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.15,
+      "F_site_real": 0.0723,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0154,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.1524,
+      "F_site_real": 0.0723,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.1667,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0025,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0173,
+      "F_site_real": 0.0002,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.1302,
+      "F_site_real": 0.0723,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.06,
+      "F_site_real": 0.0258,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.025,
+      "F_site_real": 0.0242,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0566,
+      "F_site_real": 0.027,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0069,
+      "F_site_real": 0.0242,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.1247,
+      "F_site_real": 0.028,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.002,
+      "F_site_real": 0.0242,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.028,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0868,
+      "F_site_real": 0.026,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0779,
+      "F_site_real": 0.0242,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0394,
+      "F_site_real": 0.0224,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0011,
+      "F_site_real": 0.0154,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0496,
+      "F_site_real": 0.0285,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0756,
+      "F_site_real": 0.0154,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.036,
+      "F_site_real": 0.035,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.099,
+      "F_site_real": 0.0154,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.1731,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0165,
+      "F_site_real": 0.035,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0342,
+      "F_site_real": 0.0232,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0171,
+      "F_site_real": 0.0154,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.8,
+     -17.2
+    ]
+   },
+   "properties": {
+    "cell_id": "HYP_H1",
+    "name": "Kunene Anorthosite Complex (Angola/Namibia)",
+    "site_type": "hypothesis",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.019,
+      "F_site_real": 0.0015,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0129,
+      "F_site_real": 0.0015,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0007,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0131,
+      "F_site_real": 0.0015,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.0111,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0006,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.01,
+      "F_site_real": 0.0015,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0385,
+      "F_site_real": 0.0391,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0401,
+      "F_site_real": 0.0358,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0398,
+      "F_site_real": 0.0414,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0394,
+      "F_site_real": 0.0358,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.0403,
+      "F_site_real": 0.0435,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.0398,
+      "F_site_real": 0.0358,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0401,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0435,
+      "F_site_real": 0.0435,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0375,
+      "F_site_real": 0.0394,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0388,
+      "F_site_real": 0.0358,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0355,
+      "F_site_real": 0.0381,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0003,
+      "F_site_real": 0.0347,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0372,
+      "F_site_real": 0.0406,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0149,
+      "F_site_real": 0.0347,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0005,
+      "F_site_real": 0.0427,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0119,
+      "F_site_real": 0.0347,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0019,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0427,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0016,
+      "F_site_real": 0.0385,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0002,
+      "F_site_real": 0.0347,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -149.5,
+     -87.37
+    ]
+   },
+   "properties": {
+    "cell_id": "HYP_H2",
+    "name": "Mount Howe (Antarctica)",
+    "site_type": "hypothesis",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0199,
+      "F_site_real": 0.0015,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.0903,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0567,
+      "F_site_real": 0.0137,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0447,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.3398,
+      "F_site_real": 0.0909,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0675,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.3538,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.218,
+      "F_site_real": 0.0909,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0692,
+      "F_site_real": 0.0021,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.0092,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0007,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.0042,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.011,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0016,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.3814,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0033,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -67.7,
+     -23.5
+    ]
+   },
+   "properties": {
+    "cell_id": "HYP_H3",
+    "name": "Blocky Lava Calibration Field (Atacama/Iceland)",
+    "site_type": "hypothesis",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0005,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.1056,
+      "F_site_real": 0.0046,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0698,
+      "F_site_real": 0.0046,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0042,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0701,
+      "F_site_real": 0.0046,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.0684,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0034,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.0472,
+      "F_site_real": 0.0046,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.2251,
+      "F_site_real": 0.28,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.2436,
+      "F_site_real": 0.2751,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.2475,
+      "F_site_real": 0.2833,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.234,
+      "F_site_real": 0.2751,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.2587,
+      "F_site_real": 0.2861,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.2688,
+      "F_site_real": 0.2751,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.2796,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.2811,
+      "F_site_real": 0.2861,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.2331,
+      "F_site_real": 0.2805,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.2506,
+      "F_site_real": 0.2751,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.2204,
+      "F_site_real": 0.2777,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0017,
+      "F_site_real": 0.2743,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.2356,
+      "F_site_real": 0.2799,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.096,
+      "F_site_real": 0.2743,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0202,
+      "F_site_real": 0.2818,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0824,
+      "F_site_real": 0.2743,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0132,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0012,
+      "F_site_real": 0.2818,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.042,
+      "F_site_real": 0.278,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0119,
+      "F_site_real": 0.2743,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.92,
+     25.68
+    ]
+   },
+   "properties": {
+    "cell_id": "HYP_H4",
+    "name": "Harrat Khaybar / Umm Jirsan (Saudi Arabia)",
+    "site_type": "hypothesis",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0038,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.6221,
+      "F_site_real": 0.383,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0001,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.5055,
+      "F_site_real": 0.383,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.014,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.4534,
+      "F_site_real": 0.383,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.2304,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0003,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0186,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.6151,
+      "F_site_real": 0.383,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.4903,
+      "F_site_real": 0.2771,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.6504,
+      "F_site_real": 0.0958,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.6962,
+      "F_site_real": 0.5525,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.5492,
+      "F_site_real": 0.0958,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.984,
+      "F_site_real": 0.9908,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.6167,
+      "F_site_real": 0.0958,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.9847,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.9868,
+      "F_site_real": 0.9908,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.6526,
+      "F_site_real": 0.3081,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.3628,
+      "F_site_real": 0.0958,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.3288,
+      "F_site_real": 0.2103,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0039,
+      "F_site_real": 0.0585,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.5942,
+      "F_site_real": 0.4832,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.1686,
+      "F_site_real": 0.0585,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0118,
+      "F_site_real": 0.9769,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.173,
+      "F_site_real": 0.0585,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0459,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0002,
+      "F_site_real": 0.9769,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0261,
+      "F_site_real": 0.239,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0021,
+      "F_site_real": 0.0585,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -62.21,
+     -3.46
+    ]
+   },
+   "properties": {
+    "cell_id": "NEG_01",
+    "name": "Central Amazon Basin",
+    "site_type": "negative",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     21.5,
+     0.5
+    ]
+   },
+   "properties": {
+    "cell_id": "NEG_02",
+    "name": "Congo Basin",
+    "site_type": "negative",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.0,
+     -0.5
+    ]
+   },
+   "properties": {
+    "cell_id": "NEG_03",
+    "name": "Lowland Borneo",
+    "site_type": "negative",
+    "real_features": [
+     "L",
+     "S",
+     "T"
+    ],
+    "scores": {
+     "T1__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T1__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.5611,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.0361,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.0644,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T2__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0088,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: hazard detection": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.55,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Landing: plume and touchdown": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Navigation": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.6,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Mobility": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.25,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Robotics": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.15,
+      "ceiling": 0.7031,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Construction": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__ISRU": {
+      "F_site": 0.0,
+      "F_site_real": null,
+      "coverage_real": 0.0,
+      "ceiling": 0.2196,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Thermal/hardware endurance": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.2,
+      "ceiling": 0.3123,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: procedures": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 1.0,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     },
+     "T3__Human ops: suit/physiology": {
+      "F_site": 0.0,
+      "F_site_real": 0.0,
+      "coverage_real": 0.3,
+      "ceiling": 0.0581,
+      "ceiling_status": "ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT"
+     }
+    }
+   }
+  }
+ ]
+}

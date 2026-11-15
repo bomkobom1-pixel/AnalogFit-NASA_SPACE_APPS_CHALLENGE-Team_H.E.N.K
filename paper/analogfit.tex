@@ -1,0 +1,173 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.1cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\raggedbottom
+\title{AnalogFit: An Audited Prototype for Task-Conditioned Terrestrial Analog Screening}
+\author{Team H.E.N.K.\\2026 NASA Space Apps Challenge}
+\date{Empirical revision, 15 November 2026}
+\begin{document}\maketitle
+\begin{abstract}
+AnalogFit compares an Earth location, a lunar or Martian reference patch, and an operational task. This empirical revision reports the implemented prototype rather than treating the full research protocol as completed. The current run includes 14 curated sites and 585 global land samples, three explicit target patches and ten task profiles. Comparable 500 m slope is derived from NASA SRTM/ASTER and ESA Copernicus GLO-30 on Earth and NASA LOLA/MOLA on the targets. Low-Sun illumination is an idealized geometry model. Other cross-body inputs remain unsupported. Of 14 curated reference roles, 3 are testable and 0 pass the declared prototype diagnostic. This does not establish discovery, operational suitability, or superiority to naive baselines. We report data provenance, coarse-search candidates, baseline diagnostics and full-set feature ablations, and retain failed and untestable outcomes.
+\end{abstract}
+\section{Question and implemented scope}
+An analog is a triple $(i,T,\tau)$: an Earth sample, a target and a test.
+The prototype supports exploratory comparison, not landing certification or
+selection of an operational mission site. It evaluates 585 coarse background
+points, not every land cell at 0.05 degrees. Target patches are explicit points
+with approximately 1 km footprints, not preregistered representative ROI polygons.
+No DBSCAN discovery clusters, cluster areas, 30--70 m deep dives or field-confirmed
+discoveries are reported. The original Draft v1 research protocol is retained
+separately as \texttt{protocol\_draft\_v1.tex}; future-tense plans in that document
+must not be read as completed experiments.
+
+\section{Implemented data and observables}
+\begin{longtable}{p{3.2cm}p{11.3cm}}
+\toprule Source & Actual use and limitations\\\midrule
+NASA SRTM / ASTER & 589 Earth patches via OpenTopoData, a third-party distribution API.\\
+ESA Copernicus GLO-30 & Native COG fallback for ten missing Earth patches. DSM includes snow, ice and vegetation; it does not identify exposed bedrock. EGM2008 heights, bilinear interpolation and native spacing are retained.\\
+NASA LRO LOLA & Slopes on two lunar reference patches.\\
+NASA MGS MOLA & Slope on one Arcadia Planitia reference patch.\\
+NASA POWER & 599 original climatology responses (2001--2025); annual ANN values are retained. Regional precipitation supplies a declared screening penalty; Earth temperature remains context.\\
+NASA LRO Diviner PRP & Thermal-model context for T1. The annual mean is at 2 cm depth; the annual maximum is at the surface. Neither is silently substituted for POWER annual surface temperature; no T or I score coverage is added.\\
+NASA GIBS / Worldview & 39 cached contextual images and an offline Blue Marble texture; no numerical image-based score.\\
+\bottomrule\end{longtable}
+The current manifest verifies 680 unique source files, 27 planetary elevations and 90 Copernicus samples. Hashes establish integrity, not physical accuracy.
+\subsection{Targets and matching scale}
+Earth and target slopes use the median magnitude of four gradients on a 3 by 3
+sample grid with a 500 m baseline. This does not erase differences in native
+resolution, interpolation, datum, acquisition time or instrument uncertainty.
+The T2 patch is terrain near the pit, not a cave interior or the pit itself.
+\begin{center}\begin{tabular}{lrrr}\toprule Target & Latitude & East longitude & Median slope (deg)\\\midrule
+T1 & -89.6000 & 0.0000 & 8.070670 \\
+T2 & 8.3355 & 33.2229 & 0.294920 \\
+T3 & 45.0000 & 200.0000 & 0.336129 \\
+\bottomrule\end{tabular}\end{center}
+\section{Scoring, evidence coverage and assumptions}
+For available comparable features $A$, the supported index is
+\[
+ F=(1-C)\exp\left[\frac{\sum_{k\in A}w_k\log\max(s_k,10^{-12})}
+ {\sum_{k\in A}w_k}\right],\qquad
+ \kappa=\frac{\sum_{k\in A}w_k}{\sum_k w_k}.
+\]
+If no active comparable feature is available, the score is unavailable, not zero.
+The denominator of coverage retains missing task inputs. Gaussian widths, task
+weights and contamination anchors are declared assumptions, not calibrated
+measurement uncertainty. Score is not a probability of success. Standard
+navigation has 15 percent observed-derived slope and 45 percent modeled lighting,
+giving 60 percent supported coverage, below the protocol's 70 percent necessary
+discovery gate. Passing coverage alone would not validate a discovery.
+
+The solar observable is the fraction of the best ten-day window with idealized
+low solar elevation. It excludes refraction and DEM horizons and is distinct
+from annual illumination or shadow persistence. Monte Carlo ranges perturb
+assumptions; they are not observation-based confidence intervals or joint
+ranking-stability estimates. Gravity, atmospheric pressure and radiation remain
+qualitative physical differences in the interface. The legacy numerical ceiling
+is a convention, not a calibrated physical law, and is excluded from the supported
+site index and operational conclusions.
+
+\section{Empirical results}
+\subsection{Reference-role diagnostics}
+The prototype requires at least 50 percent task coverage, 30 comparable
+background points, nondegenerate scores, a 95th-percentile rank and a score of
+at least 50/100. These thresholds are model assumptions, not NASA acceptance
+criteria. Only equal feature and contamination masks are compared. Role mappings
+are inherited curated hypotheses; their publication-level independence has not
+been re-established here. No weights were fitted to obtain a passing outcome.
+The current result is 0/3 testable roles passing; 11 roles are not testable.
+Scores below are rounded to two decimals; 0.00 can represent a small positive index. N/A denotes an unavailable score or untestable role.
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{3.8cm}rrl}\toprule Site & Target / task & Coverage & Score & Result\\\midrule\endfirsthead\toprule Site & Target / task & Coverage & Score & Result\\\midrule\endhead
+Atacama Desert (Yungay) & T3 / ISRU & 0\% & N/A & N/A \\
+Atacama Desert (Yungay) & T3 / Robotics & 15\% & 98.35 & N/A \\
+McMurdo Dry Valleys & T3 / Thermal/hardware endurance & 20\% & 8.13 & N/A \\
+McMurdo Dry Valleys & T3 / ISRU & 0\% & N/A & N/A \\
+Iceland Highlands (Basaltic Tephra) & T2 / Mobility & 25\% & 0.00 & N/A \\
+Iceland Highlands (Basaltic Tephra) & T2 / Human ops: procedures & 30\% & 0.00 & N/A \\
+Hawaii (Mauna Kea Saddle) & T2 / Construction & 20\% & 0.00 & N/A \\
+Hawaii (Mauna Kea Saddle) & T2 / ISRU & 0\% & N/A & N/A \\
+Mojave Desert & T3 / Mobility & 25\% & 0.00 & N/A \\
+Mojave Desert & T3 / Landing: hazard detection & 55\% & 0.02 & FAIL \\
+Death Valley & T3 / Mobility & 25\% & 49.35 & N/A \\
+Death Valley & T3 / Navigation & 60\% & 49.26 & FAIL \\
+Haughton Structure (Devon Island) & T1 / Human ops: procedures & 30\% & 0.02 & N/A \\
+Haughton Structure (Devon Island) & T1 / Navigation & 60\% & 0.00 & FAIL \\
+\bottomrule\end{longtable}
+\subsection{Negative controls and naive baselines}
+The 90 negative-control comparisons contain 81 OK, 9 not testable and 0 failed results. Rainfall strongly drives rejection; this is a sanity check, not independent geological validation.
+Two naive baselines use weighted Euclidean distance after min--max scaling
+of raw supported observables across the target and background. The score is
+one minus clipped distance. Curated sites never fit the normalization. One
+variant omits contamination (the protocol's naive comparison); a second applies
+the same contamination penalty to isolate part of the metric difference.
+Coverage, mask compatibility and prototype testability gates are retained.
+The different score mappings are not calibrated operating characteristics.
+naive\_raw\_minmax: 0/3 testable roles pass.
+
+naive\_same\_penalty: 0/3 testable roles pass.
+
+These results do not establish predictive superiority. Spatially independent
+field validation, independently verified role labels and measurement-error
+propagation remain required.
+\subsection{Full-set ablation and coarse candidates}
+The run exports 144 target/task/active-feature ablation summaries, including unsupported-feature removals, score changes, top-20 retention, unavailable scores and changed validation outcomes. Removed-feature coverage is renormalized over remaining task weights; it must not be presented as additional evidence. Comparisons are local model diagnostics, not causal effects.
+\begin{center}\begin{tabular}{llrrr}\toprule Target / navigation & Sample & Latitude & Longitude & Score / coverage\\\midrule
+T1 & BG\_0584 & -88.19 & -18.02 & 16.11 / 60\% \\
+T2 & BG\_0291 & 24.49 & 17.96 & 99.83 / 60\% \\
+T3 & BG\_0291 & 24.49 & 17.96 & 98.75 / 60\% \\
+\bottomrule\end{tabular}\end{center}
+These are coarse sample candidates. A high score can reflect flatness,
+solar latitude and low regional rainfall; it does not establish lithology,
+subsurface geometry, grain size, ice, novelty or operational suitability.
+Mount Howe now has an actual Copernicus 500 m slope of 18.8179 degrees. Its T1 navigation index is 1.372/100 at 60\% coverage. Seasonal low Sun does not compensate for its different terrain or prove a lunar-polar analogue.
+The containing Diviner PRP triangle at T1 has a modeled annual 2 cm mean of 85.378 K and modeled annual surface maximum of 227.004 K. This is explicitly contextual and adds no temperature/ice score weight.
+\section{Interface and reproducibility}
+The static file-based application provides a 2D map, 3D globe, expanded/fullscreen
+map workspace, selection-driven dossier, evidence export and English/Indonesian
+controls. Terrain meshes label actual sample spacing and vertical exaggeration.
+Global cells use the verified coarse 3 by 3 grid; some curated displays retain
+legacy 100 m sample grids. Visual detail is not hazard-scale terrain accuracy.
+The evidence tour demonstrates a polar-lighting hypothesis and the limits of
+surface evidence for a lava-tube claim. Intro, sound and rotation are optional.
+
+Reproduction: run \path{fetch_verified.py}, then
+\path{fetch_evaluation_data.py}, \path{analogfit_pipeline.py},
+\path{analogfit.py}, \path{evaluation_report.py}, \path{audit_data.py}
+and \path{build_empirical_paper.py}. Checksums for the actual inputs and outputs
+are in \path{data/evaluation_results.json} and
+\path{data/source_manifest.json}. CSVs retain all untestable outcomes.
+
+\section{Remaining work and conclusion}
+The strongest next steps are frozen representative ROI polygons, multiscale
+terrain distributions where native resolution permits, defensible uncertainty,
+QA-screened cross-body thermal/mineral/ice evidence, annual horizon-aware
+illumination and spatially independent validation. TES/THEMIS thermal inertia is
+not temperature; Mars Climate Database output is model output. Neither should
+silently fill a measured annual local-temperature field. Permafrost indicators
+are not interchangeable with measured lunar/Martian ice occurrence.
+
+AnalogFit currently makes a limited comparison auditable. It has not demonstrated
+an operationally validated new analogue, an exhaustive Earth search or calibrated
+mission suitability. Failed validation is a research result to investigate, not
+a value to optimize away for a competition claim.
+
+\section*{Sources and attribution}
+NASA archives: \url{https://pds-geosciences.wustl.edu/missions/lro/},
+\url{https://pds-geosciences.wustl.edu/missions/lro/diviner.htm},
+\url{https://pds-geosciences.wustl.edu/missions/mgs/mola.html},
+\url{https://power.larc.nasa.gov/}, \url{https://worldview.earthdata.nasa.gov/}.
+Copernicus DEM: \url{https://doi.org/10.5270/ESA-c5d3d65}.
+Full product identifiers, PDS labels, extraction byte ranges and checksums are
+in the source manifest. Resource-list matching uses the challenge text supplied
+by the user; competition eligibility and placements have not been independently
+verified. No endorsement by NASA or partner agencies is implied.
+
+produced using Copernicus WorldDEM-30 \copyright{} DLR e.V. 2010-2014 and
+\copyright{} Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS
+by the European Union and ESA; all rights reserved.
+The organisations in charge of the Copernicus programme by law or by delegation
+do not incur any liability for any use of the Copernicus WorldDEM-30.
+\end{document}

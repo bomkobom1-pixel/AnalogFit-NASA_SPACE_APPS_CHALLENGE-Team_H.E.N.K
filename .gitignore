@@ -1,0 +1,8 @@
+# Local tooling and generated output
+.test-tools/
+test-artifacts/
+__pycache__/
+*.pyc
+analogfit_site.zip
+# Old snapshots: git history replaces them
+_backup_*/

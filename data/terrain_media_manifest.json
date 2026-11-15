@@ -1,0 +1,630 @@
+{
+  "sites": {
+    "VAL_03": {
+      "bbox": [
+        64.70161203291514,
+        -17.279025406788563,
+        64.99838796708485,
+        -16.220974593211437
+      ],
+      "requested_width_km": 50,
+      "lat": 64.85,
+      "lon": -16.75,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_03_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=64.7016120%2C-17.2790254%2C64.9983880%2C-16.2209746&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:50:51.408865+00:00",
+        "sha256": "3a96a5fd998a4de92336e7a406dd7d593929b514a7342ceb42652ce1340006e8",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/VAL_03_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=64.7016120%2C-17.2790254%2C64.9983880%2C-16.2209746&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:50:53.653946+00:00",
+        "sha256": "2065b26e409ce7175d7a4bb35232d820bdbad83a805e8ee313cc36b001cf5329",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_03_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=64.7016120%2C-17.2790254%2C64.9983880%2C-16.2209746&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:13.637555+00:00",
+        "sha256": "50a222cbc99efb3871e2177535e2e6c8d4f90449b6ca79bce33902f9ecd7bed9",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "VAL_01": {
+      "bbox": [
+        -24.22838796708485,
+        -70.16626068117029,
+        -23.931612032915147,
+        -69.67373931882972
+      ],
+      "requested_width_km": 50,
+      "lat": -24.08,
+      "lon": -69.92,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_01_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=-24.2283880%2C-70.1662607%2C-23.9316120%2C-69.6737393&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:50:51.409934+00:00",
+        "sha256": "9c882db35f4a8c7128979c23cd7eb792b642a614c0e4acde507033b872126fe8",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/VAL_01_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=-24.2283880%2C-70.1662607%2C-23.9316120%2C-69.6737393&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:50:53.886049+00:00",
+        "sha256": "da53dc707fb5af946c1701e5b6f2bd756d6f27bf7aa595c206c7054034eb31d0",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_01_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=-24.2283880%2C-70.1662607%2C-23.9316120%2C-69.6737393&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:14.418004+00:00",
+        "sha256": "4d6d57b16c06bdf97b48860102d3d5ab24b23dad9c79fbaf9e30e3f06b1a0012",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "VAL_02": {
+      "bbox": [
+        -77.61838796708486,
+        161.4836807859235,
+        -77.32161203291514,
+        163.55631921407652
+      ],
+      "requested_width_km": 50,
+      "lat": -77.47,
+      "lon": 162.52,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_02_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=-77.6183880%2C161.4836808%2C-77.3216120%2C163.5563192&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-01-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-01-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:50:52.387049+00:00",
+        "sha256": "76a3fa97b3f44b5835c2bfd0690b307f3e3b305d836d7f4416bfa846882c3df8",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/VAL_02_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=-77.6183880%2C161.4836808%2C-77.3216120%2C163.5563192&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:50:55.644105+00:00",
+        "sha256": "6264d9405c2b890e2b9ffe9fe854548fd34378e6280264b5d5a3086ec966f86d",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": false,
+        "reason": "NASA returned an all-black/no-data image"
+      }
+    },
+    "VAL_05": {
+      "bbox": [
+        34.86161203291515,
+        -115.74450061054105,
+        35.15838796708485,
+        -115.19549938945894
+      ],
+      "requested_width_km": 50,
+      "lat": 35.01,
+      "lon": -115.47,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_05_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=34.8616120%2C-115.7445006%2C35.1583880%2C-115.1954994&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:50:55.726817+00:00",
+        "sha256": "3d63b966d032e1e21cd43cbcd30e91aac5976857fb2c6daf4c89d14c8f9a9360",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/VAL_05_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=34.8616120%2C-115.7445006%2C35.1583880%2C-115.1954994&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:50:58.498610+00:00",
+        "sha256": "15c21ec07b043355457291adb03ae8342c46e7f4fce49840a90b9c18ad9d9748",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_05_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=34.8616120%2C-115.7445006%2C35.1583880%2C-115.1954994&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:15.813531+00:00",
+        "sha256": "01d4c6d15038b7d64761b7bd0dcc457c98e85122f4857a580db5e00060605478",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "VAL_04": {
+      "bbox": [
+        19.60161203291515,
+        -155.70888225955017,
+        19.89838796708485,
+        -155.23111774044983
+      ],
+      "requested_width_km": 50,
+      "lat": 19.75,
+      "lon": -155.47,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_04_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=19.6016120%2C-155.7088823%2C19.8983880%2C-155.2311177&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:50:58.420542+00:00",
+        "sha256": "99ae9cb24649b2eeed9eaf143683bc8bf1c85cf05ed540844d0e27a1eaa2abdb",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/VAL_04_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=19.6016120%2C-155.7088823%2C19.8983880%2C-155.2311177&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:05.571126+00:00",
+        "sha256": "340b7f11a751fe97e5722ce4865e30fa6c7cf15dd9cd4c16628ed50e07a4f6d7",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_04_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=19.6016120%2C-155.7088823%2C19.8983880%2C-155.2311177&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:18.813696+00:00",
+        "sha256": "e6c1331ee387da6a75bf0290fd7564b782d38f60886b2cb2f96aabc0edda66f1",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "VAL_06": {
+      "bbox": [
+        36.38161203291515,
+        -117.2097978565877,
+        36.67838796708485,
+        -116.65020214341232
+      ],
+      "requested_width_km": 50,
+      "lat": 36.53,
+      "lon": -116.93,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_06_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=36.3816120%2C-117.2097979%2C36.6783880%2C-116.6502021&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:50:58.430002+00:00",
+        "sha256": "1d1bb4105c219d85cfff3e91439f34df83cf0a9db61f18b3927be713679a473e",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/VAL_06_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=36.3816120%2C-117.2097979%2C36.6783880%2C-116.6502021&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:11.891512+00:00",
+        "sha256": "3ac16277da23f18ce49198818150ba0914ef9a6ca844c75d247c98225afa1512",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_06_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=36.3816120%2C-117.2097979%2C36.6783880%2C-116.6502021&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:17.236760+00:00",
+        "sha256": "7d60e86f777fe9621f927721325feeeb753d7d6f44f19cc634682d4aa2bd2af8",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "VAL_07": {
+      "bbox": [
+        75.22161203291515,
+        -90.57014886530547,
+        75.51838796708486,
+        -88.78985113469454
+      ],
+      "requested_width_km": 50,
+      "lat": 75.37,
+      "lon": -89.68,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_07_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=75.2216120%2C-90.5701489%2C75.5183880%2C-88.7898511&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:51:06.195394+00:00",
+        "sha256": "74b20997b843f1e665d5bf1a4f637daf3e80aa62288872bc7ceb757acbd42acb",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/VAL_07_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=75.2216120%2C-90.5701489%2C75.5183880%2C-88.7898511&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:12.160075+00:00",
+        "sha256": "b3f142887de7f51997ae4a640f0698eee9168415ddfae8112215f998be6f84a4",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/VAL_07_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=75.2216120%2C-90.5701489%2C75.5183880%2C-88.7898511&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:18.818416+00:00",
+        "sha256": "698a7109566da5f6280bec45dab7e0cb785fd9c80aa93ab6e288959fd88587cc",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "HYP_H1": {
+      "bbox": [
+        -17.34838796708485,
+        13.564644252321012,
+        -17.05161203291515,
+        14.03535574767899
+      ],
+      "requested_width_km": 50,
+      "lat": -17.2,
+      "lon": 13.8,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/HYP_H1_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=-17.3483880%2C13.5646443%2C-17.0516120%2C14.0353557&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:51:10.546093+00:00",
+        "sha256": "16fa35d705a4d1054fd8e798def2a9e491f08ae3876ebbb7f40f3814a2053201",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/HYP_H1_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=-17.3483880%2C13.5646443%2C-17.0516120%2C14.0353557&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:14.284790+00:00",
+        "sha256": "d572894d5659b11b95a3e64b05698669cf4d046aeb1e891bfa041eaee7cd7ac6",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/HYP_H1_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=-17.3483880%2C13.5646443%2C-17.0516120%2C14.0353557&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:19.856663+00:00",
+        "sha256": "ff98ef5b30596fcb2af4c42acb93bcf559d0bf0083ac625d44718672b175bb8b",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "HYP_H2": {
+      "bbox": [
+        -87.51838796708486,
+        -154.399752627449,
+        -87.22161203291515,
+        -144.600247372551
+      ],
+      "requested_width_km": 50,
+      "lat": -87.37,
+      "lon": -149.5,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/HYP_H2_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=-87.5183880%2C-154.3997526%2C-87.2216120%2C-144.6002474&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-01-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-01-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:51:18.020286+00:00",
+        "sha256": "3893a08e828b7e819f43a4f9220ffcf1b269fb6ed04ad905ea4451e49eeb5e7c",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": false,
+        "reason": "Outside ASTER latitude coverage"
+      },
+      "detailed_satellite": {
+        "available": false,
+        "reason": "NASA returned an all-black/no-data image"
+      }
+    },
+    "HYP_H3": {
+      "bbox": [
+        -23.64838796708485,
+        -67.94516414948019,
+        -23.35161203291515,
+        -67.45483585051981
+      ],
+      "requested_width_km": 50,
+      "lat": -23.5,
+      "lon": -67.7,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/HYP_H3_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=-23.6483880%2C-67.9451641%2C-23.3516120%2C-67.4548359&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:51:15.445107+00:00",
+        "sha256": "301152bcf4629f7130203411e2ca4b5ab3d8c534c93ef951aa425a0912a58061",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/HYP_H3_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=-23.6483880%2C-67.9451641%2C-23.3516120%2C-67.4548359&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:21.223657+00:00",
+        "sha256": "b88bd492fefc04c8e0263b7de829cba36042092c34cfcdaa240fae50fbb9acc9",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/HYP_H3_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=-23.6483880%2C-67.9451641%2C-23.3516120%2C-67.4548359&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:21.000113+00:00",
+        "sha256": "20a6e4ef09f0818ac2bf512d9cdee1070721796d218eedc6589e007e26083011",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "HYP_H4": {
+      "bbox": [
+        25.53161203291515,
+        39.67052909159507,
+        25.82838796708485,
+        40.16947090840493
+      ],
+      "requested_width_km": 50,
+      "lat": 25.68,
+      "lon": 39.92,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/HYP_H4_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=25.5316120%2C39.6705291%2C25.8283880%2C40.1694709&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:51:20.426784+00:00",
+        "sha256": "98694721db2db66b62f61d60bc4f1b57cd243d69cebdd7e49f8f0555f2dc6dc1",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/HYP_H4_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=25.5316120%2C39.6705291%2C25.8283880%2C40.1694709&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:22.823953+00:00",
+        "sha256": "40a516467851a4f2982ac2a778cb6b4ba7a72963c0109827b8fe056570088a37",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/HYP_H4_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=25.5316120%2C39.6705291%2C25.8283880%2C40.1694709&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:22.248365+00:00",
+        "sha256": "35dee880406b4ddd0221950c725e2a864923d0140a1542fec22d9dea3bba36eb",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "NEG_01": {
+      "bbox": [
+        -3.608387967084851,
+        -62.43524082774824,
+        -3.311612032915149,
+        -61.98475917225176
+      ],
+      "requested_width_km": 50,
+      "lat": -3.46,
+      "lon": -62.21,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/NEG_01_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=-3.6083880%2C-62.4352408%2C-3.3116120%2C-61.9847592&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:51:22.510475+00:00",
+        "sha256": "d6c7f96d41f4ffb1baf4cd4b0c6bc15a145a48125d72bdc5f01c773136a27a18",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/NEG_01_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=-3.6083880%2C-62.4352408%2C-3.3116120%2C-61.9847592&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:24.701089+00:00",
+        "sha256": "6b3aee3782800f0b267ea8851c333c62a45a928ba76b3d5fe81cbed435f19a95",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/NEG_01_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=-3.6083880%2C-62.4352408%2C-3.3116120%2C-61.9847592&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:22.375447+00:00",
+        "sha256": "796b79e20887fb23d3ce57b69f9423d6097bb7788a6d462cc64d1d96509e50d7",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "NEG_02": {
+      "bbox": [
+        0.3516120329151491,
+        21.27516118566803,
+        0.6483879670848509,
+        21.72483881433197
+      ],
+      "requested_width_km": 50,
+      "lat": 0.5,
+      "lon": 21.5,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/NEG_02_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=0.3516120%2C21.2751612%2C0.6483880%2C21.7248388&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:51:22.844453+00:00",
+        "sha256": "08e1695ef23f996b99fda5406d9a44105fba699f6a86d934836fbe87e9162967",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/NEG_02_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=0.3516120%2C21.2751612%2C0.6483880%2C21.7248388&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:27.066149+00:00",
+        "sha256": "93f7bb5fcd0b9d1cfee365f2020ba28b0ad2ca2d172f1546994aae5dd316f587",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/NEG_02_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=0.3516120%2C21.2751612%2C0.6483880%2C21.7248388&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:23.363830+00:00",
+        "sha256": "af74177d9eb7cb677fff421becf8f666233ab70cd922dcbd78368fa2f4b23e56",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    },
+    "NEG_03": {
+      "bbox": [
+        -0.6483879670848509,
+        113.77516118566803,
+        -0.3516120329151491,
+        114.22483881433197
+      ],
+      "requested_width_km": 50,
+      "lat": -0.5,
+      "lon": 114.0,
+      "satellite": {
+        "available": true,
+        "file": "assets/terrain/NEG_03_satellite.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG%3A4326&BBOX=-0.6483880%2C113.7751612%2C-0.3516120%2C114.2248388&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2026-07-15",
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "requested_date": "2026-07-15",
+        "date_note": "Requested imagery date; not a pixel-level acquisition-time guarantee",
+        "retrieved_utc": "2026-11-15T01:51:25.746419+00:00",
+        "sha256": "35f5650ee81a9a9e78a3ed6d2af5afdb8c69808635a6fd9215e1e870c27b0e6a",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "relief": {
+        "available": true,
+        "file": "assets/terrain/NEG_03_relief.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ASTER_GDEM_Color_Shaded_Relief&STYLES=&CRS=EPSG%3A4326&BBOX=-0.6483880%2C113.7751612%2C-0.3516120%2C114.2248388&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg",
+        "layer": "ASTER_GDEM_Color_Shaded_Relief",
+        "requested_date": null,
+        "date_note": "Static multi-date DEM visualization",
+        "retrieved_utc": "2026-11-15T01:51:28.031139+00:00",
+        "sha256": "996cbadfe44d3c30400af608194b4feb125430fa60b31c1f7e432f1862bcdb79",
+        "role": "visual context only; excluded from quantitative scoring"
+      },
+      "detailed_satellite": {
+        "available": true,
+        "file": "assets/terrain/NEG_03_landsat.jpg",
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&STYLES=&CRS=EPSG%3A4326&BBOX=-0.6483880%2C113.7751612%2C-0.3516120%2C114.2248388&WIDTH=720&HEIGHT=475&FORMAT=image%2Fjpeg&TIME=2000-12-01",
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "requested_date": "2000-12-01",
+        "historical": true,
+        "product_label": "NASA Landsat WELD",
+        "date_note": "Historical annual composite; service time is not a single acquisition date",
+        "retrieved_utc": "2026-11-15T02:10:24.729829+00:00",
+        "sha256": "ee890c135bbdda270a4f34e26904a09cb71b60ad5aa2841357b95debef5d507c",
+        "role": "historical visual context only; not current conditions or a scoring input"
+      }
+    }
+  },
+  "paper": {
+    "title": "AnalogFit: Task-Conditioned, Physics-Consistent Fidelity Mapping",
+    "version": "Draft v1, 14 November 2026",
+    "file": "AnalogFit_paper.docx",
+    "discovery_coverage_threshold": 0.7,
+    "sha256": "b8e142dedd7d9e7fbd4fe1c60f9e6c254d946071432660ed1a896d355a9c87a0"
+  }
+}

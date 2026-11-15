@@ -1,0 +1,29 @@
+site,target,task,F_site_real,coverage_real,percentile_vs_global_land,n_global_cells,result,method
+Atacama Desert (Yungay),T3,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Atacama Desert (Yungay),T3,Robotics,0.9777871621621621,0.15,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+McMurdo Dry Valleys,T3,Thermal/hardware endurance,0.7508445945945946,0.2,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+McMurdo Dry Valleys,T3,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Iceland Highlands (Basaltic Tephra),T2,Mobility,0.9915923616776816,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Iceland Highlands (Basaltic Tephra),T2,Human ops: procedures,0.8667472948431098,0.3,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Hawaii (Mauna Kea Saddle),T2,Construction,0.5980876542167071,0.2,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Hawaii (Mauna Kea Saddle),T2,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Mojave Desert,T3,Mobility,0.723907454416054,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Mojave Desert,T3,Landing: hazard detection,0.7958202072398981,0.55,15.7,585,FAIL,naive_raw_minmax
+Death Valley,T3,Mobility,0.9952306279859198,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Death Valley,T3,Navigation,0.9876261278820758,0.6,91.5,585,FAIL,naive_raw_minmax
+Haughton Structure (Devon Island),T1,Human ops: procedures,0.44202095946311337,0.3,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_raw_minmax
+Haughton Structure (Devon Island),T1,Navigation,0.3205354273991269,0.6,95.4,585,FAIL,naive_raw_minmax
+Atacama Desert (Yungay),T3,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Atacama Desert (Yungay),T3,Robotics,0.9777871621621621,0.15,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+McMurdo Dry Valleys,T3,Thermal/hardware endurance,0.4975112937770855,0.2,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+McMurdo Dry Valleys,T3,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Iceland Highlands (Basaltic Tephra),T2,Mobility,0.0,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Iceland Highlands (Basaltic Tephra),T2,Human ops: procedures,0.0,0.3,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Hawaii (Mauna Kea Saddle),T2,Construction,0.0,0.2,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Hawaii (Mauna Kea Saddle),T2,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Mojave Desert,T3,Mobility,0.3106617796037746,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Mojave Desert,T3,Landing: hazard detection,0.34152282908209913,0.55,81.4,585,FAIL,naive_same_penalty
+Death Valley,T3,Mobility,0.4932719326543327,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Death Valley,T3,Navigation,0.4895028701299163,0.6,86.8,585,FAIL,naive_same_penalty
+Haughton Structure (Devon Island),T1,Human ops: procedures,0.09163873021045343,0.3,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)",naive_same_penalty
+Haughton Structure (Devon Island),T1,Navigation,0.06645263968930004,0.6,82.2,585,FAIL,naive_same_penalty

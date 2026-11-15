@@ -1,0 +1,15 @@
+site,target,task,F_site_real,coverage_real,percentile_vs_global_land,n_global_cells,result
+Atacama Desert (Yungay),T3,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Atacama Desert (Yungay),T3,Robotics,0.9834598339777347,0.15,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+McMurdo Dry Valleys,T3,Thermal/hardware endurance,0.08126952459476258,0.2,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+McMurdo Dry Valleys,T3,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Iceland Highlands (Basaltic Tephra),T2,Mobility,0.0,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Iceland Highlands (Basaltic Tephra),T2,Human ops: procedures,0.0,0.3,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Hawaii (Mauna Kea Saddle),T2,Construction,0.0,0.2,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Hawaii (Mauna Kea Saddle),T2,ISRU,,0.0,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Mojave Desert,T3,Mobility,2.1455068462406412e-07,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Mojave Desert,T3,Landing: hazard detection,0.00015632402828109662,0.55,56.2,585,FAIL
+Death Valley,T3,Mobility,0.493494559864067,0.25,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Death Valley,T3,Navigation,0.492638500315597,0.6,91.5,585,FAIL
+Haughton Structure (Devon Island),T1,Human ops: procedures,0.00020528415501805516,0.3,,0,"NOT TESTABLE (coverage below 50%, incompatible evidence, or insufficient background)"
+Haughton Structure (Devon Island),T1,Navigation,1.0939393810764645e-05,0.6,94.9,585,FAIL

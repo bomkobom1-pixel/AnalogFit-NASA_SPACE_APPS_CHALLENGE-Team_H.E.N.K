@@ -1,99 +1,100 @@
 # AnalogFit
 
-Peta untuk mencari kandidat analog Bumi bagi uji tertentu di Bulan atau Mars.
-Buka **`index.html` dengan klik ganda**. Tidak perlu server atau akun.
-Bahasa Inggris menjadi bawaan untuk peninjauan internasional; tombol ID menyediakan
-bahasa Indonesia. Pilihan bahasa yang sudah disimpan tetap dihormati.
+A map for finding places on Earth that are good analogs for a specific test on the Moon or Mars.
+Open **`index.html` with a double click**. No server or account is needed.
+English is the default for international review; the ID button switches to
+Indonesian. A language choice that has already been saved is respected.
 
-Antarmuka memakai palet pitch deck: Deep Space #080D18, Midnight Navy #111B2D,
+The interface uses the pitch-deck palette: Deep Space #080D18, Midnight Navy #111B2D,
 Slate Blue #1C2B45, Signal Blue #3B82F6, Data Cyan #8EC5FF, Mars Amber #D99A52,
-dan teks #F4F7FB. Pembuka **3D WebGL lima detik** membawa kamera dari Bumi,
-melewati Bulan dan Mars, menampilkan logo AnalogFit, lalu memasukkan ruang kerja
-dengan transisi perspektif. Bumi memakai tekstur NASA Blue Marble lokal;
-Bulan/Mars adalah ilustrasi prosedural. Skala dan lintasan pembuka adalah
-dekorasi sinematik, bukan simulasi orbit atau data misi.
-Tombol Lewati tersedia; pembuka dapat dimatikan atau diputar
-ulang melalui ikon roda gigi **Pengaturan / Settings**. Indikator persentase
-menunjukkan kesiapan komponen lokal, bukan waktu unduh simulasi.
-Matikan animasi melalui Settings untuk tampilan statis. Jika WebGL tidak
-tersedia, pembuka memakai cadangan CSS. Renderer berhenti setelah masuk;
-tidak memengaruhi data, skor, atau peta.
+and text #F4F7FB. A **five-second 3D WebGL opening** moves the camera from Earth,
+past the Moon and Mars, shows the AnalogFit logo, then enters the workspace
+with a perspective transition. Earth uses a local NASA Blue Marble texture;
+the Moon and Mars are procedural illustrations. The scale and paths in the opening are
+cinematic decoration, not an orbit simulation or mission data.
+A Skip button is available; the opening can be switched off or replayed
+from the **Settings** gear icon. The percentage indicator
+shows readiness of local components, not a simulated download time.
+Switch off animations in Settings for a still interface. If WebGL is not
+available, the opening falls back to CSS. The renderer stops after entry;
+it does not affect data, scores or the map.
 
-## Cara memakai
+## How to use
 
-1. Pilih jenis uji dan target pada pertanyaan di bagian atas.
-2. Gunakan **Perbandingan berbukti** untuk hasil penyaringan. Periksa persentase cakupan sebelum membandingkan angka.
-3. Pilih lokasi di peta atau peringkat untuk membuka dossier dengan animasi geser.
-   Panel kanan tertutup secara bawaan; tutup dengan tombol × atau Escape dan
-   buka lagi melalui tombol lokasi terpilih. Ringkasan menampilkan indeks kemiripan,
-   cakupan observasi/model, elevasi DEM, suhu, presipitasi dan relief nyata.
-   Gulir untuk melihat nilai Bumi, target NASA, sumber dan batas analoginya.
-4. Pilih Peta atau Globe 3D. Garis daratan, skor, dan tekstur globe NASA tersedia offline; lapisan citra tambahan memerlukan internet.
-5. Pratinjau ilustratif menyertakan asumsi manual dan tidak boleh dilaporkan sebagai hasil pengamatan.
-6. Tab **Pengaturan** dan **Peringkat lokasi** memisahkan parameter dari daftar kandidat.
-7. Menu **Resources** memuat 11 tautan pada daftar tantangan: 5 NASA dan 6 sumber
-   mitra CSA/ESA/JAXA. Gunakan filter atau pencarian. Status membedakan data
-   terpakai, konteks visual, dan rujukan yang belum diintegrasikan.
-8. Menu **Sains / Science** menghubungkan implementasi dengan makalah tim:
-   cakupan observasi vs model, ambang 70%, ablasi lokal, dan kartu bukti JSON.
-9. Citra medan menyediakan Landsat historis, MODIS bertanggal, relief ASTER, serta
-   perbandingan geser. Sumber dan waktu layanan selalu ditampilkan. Landsat
-   historis bukan bukti kondisi lokasi saat ini; citra tidak masuk ke skor.
-10. Pada medan 3D, pilih **Warna elevasi** atau **Kedalaman relatif**. Legenda
-    memakai meter. Kedalaman dihitung dari titik sampel tertinggi, bukan bawah
-    tanah. Gunakan slider VE, tombol panah, seret, atau Putar untuk inspeksi.
-    Sampel global dan Mount Howe kini memakai grid 3×3 dengan jarak 500 m;
-    lokasi kurasi lain mempertahankan grid tampilan lama 100 m jika tersedia.
-    Jarak sampel, sumber dan VE selalu ditampilkan.
-11. Buka ikon roda gigi **Pengaturan / Settings** untuk SFX, musik dan volume.
-    Keduanya dimulai dalam keadaan mati; musik dijeda saat tab di latar.
-12. Settings juga mengatur animasi, citra, medan 3D, statistik ringkas, catatan
-    sains terperinci, rotasi globe, tampilan awal dan bahasa. Preferensi antarmuka
-    disimpan di perangkat bila penyimpanan browser tersedia. Skor dan data tidak
-    berubah. Cakupan bukti dan batas penting tetap terlihat.
-13. Pilih **Expand map / Perbesar peta** untuk peta sebesar viewport, atau ikon
-    **Fullscreen** untuk layar penuh browser. Jika tidak didukung, peta besar
-    tetap tersedia. Target, jenis uji dan panel parameter/lokasi dapat diakses
-    langsung dari peta besar. Keluar lewat tombol yang sama atau Escape.
-14. **Evidence tour / Tur bukti** membuka dua studi perbandingan dengan skor
-    langsung, sumber dan batasnya. Ini pengujian hipotesis, bukan klaim penemuan.
+1. Choose the test type and the target in the questions at the top.
+2. Use **Supported comparisons** for screening results. Check the coverage percentage before comparing numbers.
+3. Select a location on the map or in the rankings to open its dossier, which slides in.
+   The right-hand panel is closed by default; close it with the × button or Escape and
+   reopen it with the selected-location button. The summary shows the similarity index,
+   observed/modeled coverage, DEM elevation, temperature, precipitation and real relief.
+   Scroll to see the Earth values, NASA target, sources and the limits of the analog.
+4. Choose Map or 3D Globe. Land outlines, scores and the NASA globe texture work offline; extra imagery layers need internet.
+5. Illustrative preview includes manual assumptions and must not be reported as observed results.
+6. The **Configuration** and **Site rankings** tabs separate the parameters from the candidate list.
+7. The **Resources** menu holds the 11 links from the challenge list: 5 NASA and 6
+   CSA/ESA/JAXA partner sources. Use the filters or search. The status labels separate data
+   in use, visual context, and references not yet integrated.
+8. The **Science** menu links the implementation to the team's paper:
+   observed vs modeled coverage, the 70% threshold, local ablation, and JSON evidence cards.
+9. Terrain imagery offers historical Landsat, dated MODIS, ASTER relief, and a
+   swipe comparison. Source and service time are always shown. Historical
+   Landsat is not evidence of current site conditions; imagery does not enter the score.
+10. In 3D terrain, choose **Elevation colour** or **Relative depth**. The legend
+    uses metres. Depth is measured from the highest sample point, not below
+    ground. Use the VE slider, arrow keys, drag, or Rotate to inspect.
+    Global samples and Mount Howe now use a 3×3 grid with 500 m spacing;
+    other curated sites keep the older 100 m display grid where available.
+    Sample spacing, source and VE are always shown.
+11. Open the **Settings** gear icon for SFX, music and volume.
+    Both are on by default and start with the first click or key press, as browsers
+    require; music pauses while the tab is in the background.
+12. Settings also controls animations, imagery, 3D terrain, compact statistics, detailed
+    science notes, globe rotation, default view and language. Interface preferences
+    are saved on the device when browser storage is available. Scores and data do not
+    change. Evidence coverage and key limits stay visible.
+13. Choose **Expand map** for a viewport-sized map, or the **Fullscreen** icon
+    for browser fullscreen. Where fullscreen is not supported, the large map is still
+    available. Target, test type and the parameter/site panel can be reached
+    directly from the large map. Exit with the same button or Escape.
+14. **Evidence tour** opens two comparison studies with live scores,
+    sources and limits. This is hypothesis testing, not a discovery claim.
 
-Hasil perbaikan evaluasi: [EVALUATION_RESPONSE.md](EVALUATION_RESPONSE.md).
-Makalah empiris yang sudah disinkronkan: [paper/analogfit.pdf](paper/analogfit.pdf),
-dengan sumber [paper/analogfit.tex](paper/analogfit.tex). Protokol lama diarsipkan
-terpisah; versi empiris tidak mengklaim semua rencana penelitian telah selesai.
+Changes made in response to evaluation: [EVALUATION_RESPONSE.md](EVALUATION_RESPONSE.md).
+The synchronised empirical paper: [paper/analogfit.pdf](paper/analogfit.pdf),
+with source [paper/analogfit.tex](paper/analogfit.tex). The earlier protocol is archived
+separately; the empirical version does not claim that every planned study is complete.
 
-Evaluasi kegunaan setiap kelompok fitur untuk pekerjaan analis terdapat di
-[FEATURE_USEFULNESS_REVIEW.md](FEATURE_USEFULNESS_REVIEW.md). Ini evaluasi
-berdasarkan tugas dan makalah, bukan pengujian pengguna bersama staf NASA.
+An assessment of how useful each feature group is for analyst work is in
+[FEATURE_USEFULNESS_REVIEW.md](FEATURE_USEFULNESS_REVIEW.md). It is based on
+the tasks and the paper, not on user testing with NASA staff.
 
-Untuk meningkatkan metode penelitian, lihat [SCIENCE_ROADMAP.md](SCIENCE_ROADMAP.md),
-yang memetakan kesenjangan nyata terhadap bagian 5–10 makalah asli.
+To improve the research method, see [SCIENCE_ROADMAP.md](SCIENCE_ROADMAP.md),
+which maps the real gaps against sections 5–10 of the original paper.
 
-## Data yang benar-benar digunakan
+## Data actually used
 
-| Data | Pemakaian dan batas |
+| Data | Use and limits |
 | --- | --- |
-| NASA PDS LRO LOLA | Dua petak referensi Bulan; lereng diturunkan dari DEM asli, bukan nilai target isian tangan. |
-| NASA PDS MGS MOLA | Satu petak Arcadia Planitia; lereng diturunkan dari DEM asli. |
-| NASA/METI ASTER GDEM v3 dan NASA SRTM GL1 v3 via OpenTopoData | Medan Bumi. Penyedia API pihak ketiga disebutkan secara eksplisit. |
-| Copernicus GLO-30 Public (EU/ESA, DLR/Airbus) | Sepuluh petak kosong diisi dari 14 COG asli; total medan Bumi 599/599 lokasi sampel. Baseline 500 m. DSM dapat mewakili salju/es. Lihat DATA_LICENSES.md. |
-| NASA PDS LRO Diviner PRP | Konteks termal T1 dari segitiga yang memuat target. Rerata 85,378 K pada kedalaman 2 cm dan maksimum permukaan 227,004 K adalah hasil model termal. Tidak menambah bukti suhu/es pada skor. |
-| NASA POWER, MERRA-2 / CERES | 599 respons asli klimatologi 2001-2025. Memakai nilai ANN dari layanan, bukan rerata sederhana 12 bulan yang dibulatkan. Hujan menjadi penalti penyaringan; suhu Bumi ditampilkan sebagai konteks. |
-| NASA GIBS / Worldview | Citra konteks dan tekstur Blue Marble offline. Citra tidak masuk ke skor numerik. |
-| Geometri Matahari | Model ideal dengan cakrawala datar. Bukan pengukuran iluminasi atau bayangan permanen. |
+| NASA PDS LRO LOLA | Two lunar reference patches; slope derived from the original DEM, not hand-entered target values. |
+| NASA PDS MGS MOLA | One Arcadia Planitia patch; slope derived from the original DEM. |
+| NASA/METI ASTER GDEM v3 and NASA SRTM GL1 v3 via OpenTopoData | Earth terrain. The third-party API provider is named explicitly. |
+| Copernicus GLO-30 Public (EU/ESA, DLR/Airbus) | Ten empty patches filled from 14 original COGs; Earth terrain covers 599/599 sample sites. 500 m baseline. The DSM can represent snow/ice. See DATA_LICENSES.md. |
+| NASA PDS LRO Diviner PRP | T1 thermal context from the triangle containing the target. The 85.378 K mean at 2 cm depth and the 227.004 K surface maximum are thermal-model outputs. They add no temperature/ice evidence to the score. |
+| NASA POWER, MERRA-2 / CERES | 599 original 2001–2025 climatology responses. Uses the service's ANN value, not a rounded simple mean of 12 months. Rainfall becomes a screening penalty; Earth temperature is shown as context. |
+| NASA GIBS / Worldview | Context imagery and the offline Blue Marble texture. Imagery does not enter the numeric score. |
+| Solar geometry | Idealised model with a flat horizon. Not a measurement of illumination or permanent shadow. |
 
-LOLA/MOLA dan NASA PDS termasuk jalur sumber pada Resources tantangan yang diberikan pengguna. POWER adalah sumber NASA tambahan. Lihat [DATA_SOURCES.md](DATA_SOURCES.md) untuk hubungan sumber dengan Resources lomba dan [AUDIT_KEAKURATAN.md](AUDIT_KEAKURATAN.md) untuk hasil audit.
+LOLA/MOLA and NASA PDS are among the source paths in the challenge Resources supplied by the user. POWER is an additional NASA source. See [DATA_SOURCES.md](DATA_SOURCES.md) for how the sources relate to the challenge Resources, and [AUDIT_KEAKURATAN.md](AUDIT_KEAKURATAN.md) (accuracy audit, in Indonesian) for the audit results.
 
-## Arti skor dan cakupan
+## What the score and coverage mean
 
-Skor adalah indeks penyaringan 0-100: rata-rata geometrik berbobot dari kemiripan ciri yang tersedia, dikalikan penalti lingkungan. Bobot, toleransi Gaussian, dan ambang penalti adalah asumsi model.
+The score is a 0–100 screening index: a weighted geometric mean of the similarity of the available features, multiplied by environmental penalties. Weights, Gaussian tolerances and penalty thresholds are model assumptions.
 
-Ciri hanya masuk mode berbukti bila masukan **Bumi dan target** sama-sama didukung serta skalanya setara. Lereng memakai baseline **500 m** pada petak 1 km di kedua dunia. Cakupan memakai **seluruh bobot uji**, termasuk ciri yang belum tersedia. Skor tinggi dengan cakupan kecil tidak membuktikan kecocokan seluruh uji atau kesiapan misi.
+A feature enters supported mode only when the **Earth and target** inputs are both supported and at comparable scale. Slope uses a **500 m** baseline on a 1 km patch on both worlds. Coverage uses **all of the test's weights**, including features not yet available. A high score with low coverage does not prove a match for the whole test, or mission readiness.
 
-Saat ini, hanya lereng yang didukung observasi medan pada kedua dunia. Iluminasi berasal dari model. Mineral, ukuran butir, CPR, es tanah, debu, serta suhu target setempat belum terverifikasi dan dikeluarkan dari mode berbukti. Suhu rata-rata global Mars 210 K tidak diperlakukan sebagai pengamatan Arcadia. Data kosong tidak dianggap nol.
+Currently only slope is backed by terrain observations on both worlds. Illumination comes from a model. Minerals, grain size, CPR, ground ice, dust, and local target temperature are not yet verified and are excluded from supported mode. The 210 K global mean temperature of Mars is not treated as an Arcadia observation. Missing data is not treated as zero.
 
-## Menjalankan ulang
+## Re-running
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -108,9 +109,9 @@ python build_empirical_paper.py
 python -m unittest discover -s tests -v
 ```
 
-Pengunduh bawaan memakai `fetch_verified.py`, mempertahankan respons asli di `data/raw/`, menyimpan URL, timestamp UTC, label PDS, rentang byte, dan SHA-256 di `verified_observations.json`, serta melanjutkan data yang belum ada. Data cache yang sudah lengkap tidak diunduh ulang. `--legacy` mengakses pengunduh lama untuk kebutuhan kompatibilitas; keluaran lama tidak otomatis menjadi bukti terverifikasi.
+The default downloader uses `fetch_verified.py`. It keeps the original responses in `data/raw/`, records the URL, UTC timestamp, PDS label, byte range and SHA-256 in `verified_observations.json`, and resumes missing data. Cached data that is already complete is not downloaded again. `--legacy` runs the old downloader for compatibility; its output does not automatically count as verified evidence.
 
-Untuk uji browser pengembang, Playwright lokal telah dipasang di `.test-tools/`. Jika folder itu tidak tersedia:
+For developer browser tests, install Playwright locally into `.test-tools/` (excluded from the repository):
 
 ```powershell
 npm install --prefix .test-tools --no-audit --no-fund playwright
@@ -122,45 +123,43 @@ node tests/evaluation.cjs
 node tests/intro-3d.cjs
 ```
 
-Uji memakai Chrome yang sudah terpasang, membuka `file://`, membandingkan skor Python dan browser, serta memeriksa mode offline dan layar 390 px. Bukti tersimpan di `test-artifacts/`.
+The tests use the installed Chrome, open the app over `file://`, compare Python and browser scores, and check offline mode and a 390 px screen. Evidence is saved to `test-artifacts/`.
 
-## Batas yang tetap berlaku
+## Limits that still apply
 
-- 585 titik global merupakan sampel kasar, bukan pemindaian setiap piksel daratan. Kandidat di luar penyangga 100 km dari analog terkenal belum membuktikan penemuan analog baru.
-- Petak Bulan/Mars adalah titik referensi eksplisit. Petak 1 km tidak menyatakan kondisi seluruh wilayah, interior gua, bongkah, atau keselamatan pendaratan.
-- Cakupan dan resolusi asli instrumen berbeda. Kesamaan baseline tidak menghilangkan interpolasi atau ketidakpastian DEM.
-- POWER adalah reanalisis/regional: meteorologi sekitar 0,5 derajat lintang dan 0,625 derajat bujur; albedo lebih kasar.
-- Curah hujan tidak relevan untuk semua pertanyaan analog. Penalti saat ini ditujukan pada penyaringan permukaan tandus, bukan validasi geologi, astrobiologi, atau sumber daya secara menyeluruh.
-- Rentang Monte Carlo adalah sensitivitas terhadap asumsi, bukan interval kepercayaan pengamatan.
-- Gravitasi, atmosfer, dan radiasi Bumi tetap berbeda. Kolom `ceiling` dan `F_total` lama disimpan untuk kompatibilitas dengan status **ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT**; tidak ditampilkan sebagai batas akurasi terkalibrasi.
+- The 585 global points are a coarse sample, not a scan of every land pixel. Candidates outside a 100 km buffer around known analogs do not yet prove the discovery of a new analog.
+- The Moon/Mars patches are explicit reference points. A 1 km patch does not describe a whole region, cave interiors, boulders, or landing safety.
+- The instruments' coverage and native resolution differ. A common baseline does not remove interpolation or DEM uncertainty.
+- POWER is reanalysis/regional: meteorology at about 0.5° latitude by 0.625° longitude; albedo is coarser.
+- Rainfall is not relevant to every analog question. The current penalty targets screening for barren surfaces, not full geological, astrobiological or resource validation.
+- The Monte Carlo ranges are sensitivity to assumptions, not observational confidence intervals.
+- Earth's gravity, atmosphere and radiation remain different. The old `ceiling` and `F_total` columns are kept for compatibility with status **ILLUSTRATIVE_HEURISTIC_NOT_PHYSICAL_LIMIT**; they are not shown as a calibrated accuracy limit.
 
-## Berkas utama
+## Main files
 
-| Berkas | Fungsi |
+| File | Purpose |
 | --- | --- |
-| `science.py` | Integritas sumber dan aturan bukti dua dunia. |
-| `fetch_verified.py` | Pengunduhan NASA dan medan Bumi dengan bukti asal data. |
-| `fetch_evaluation_data.py` | Pengunduhan Copernicus polar, konteks Diviner dan definisi observabel yang ketat. |
-| `evaluation_report.py` | Dua baseline naif dan 144 ringkasan ablasi seluruh sampel. |
-| `build_empirical_paper.py` | Makalah empiris dari hasil CSV dan audit saat ini. |
-| `analogfit_pipeline.py` | Fitur, baseline, dan geometri Matahari. |
-| `analogfit.py` | Skor, sensitivitas, diagnostik, CSV/GeoJSON, dan data aplikasi. |
-| `analogfit_config.json` | Asumsi bobot/toleransi dan nilai ilustratif; target medan terverifikasi dimuat saat build. |
-| `analogfit_background_scores.csv` | Skor semua 585 sampel global untuk pemeriksaan ulang. |
-| `index.html`, `app.js`, `vendor/` | Aplikasi tanpa server dan aset lokal. |
-| `explorer.js`, `explorer.css`, `walkthrough.js` | Peta besar, layar penuh dan tur bukti. |
-| `_backup_2026-11-15_scientific_audit/` | Cadangan sebelum audit ini. |
+| `science.py` | Source integrity and the two-world evidence rules. |
+| `fetch_verified.py` | NASA and Earth terrain downloads with data provenance. |
+| `fetch_evaluation_data.py` | Polar Copernicus downloads, Diviner context and strict observable definitions. |
+| `evaluation_report.py` | Two naive baselines and 144 ablation summaries across all samples. |
+| `build_empirical_paper.py` | Empirical paper built from the current CSV and audit results. |
+| `analogfit_pipeline.py` | Features, baselines and solar geometry. |
+| `analogfit.py` | Scores, sensitivity, diagnostics, CSV/GeoJSON and app data. |
+| `analogfit_config.json` | Weight/tolerance assumptions and illustrative values; verified terrain targets are loaded at build time. |
+| `analogfit_background_scores.csv` | Scores for all 585 global samples, for re-checking. |
+| `index.html`, `app.js`, `vendor/` | The serverless app and its local assets. |
+| `explorer.js`, `explorer.css`, `walkthrough.js` | Large map, fullscreen and the evidence tour. |
 
-Tema, logo, pembuka dan katalog sumber berada pada ui.css, ui.js dan
-assets/analogfit-mark.svg. Pengujian UI berada di tests/ui.cjs; hasilnya
-tersimpan pada test-artifacts/ui-report.json. Cadangan sebelum pembaruan visual
-ada pada _backup_2026-11-15_before_visual_refresh/.
+Theme, logo, opening and the source catalogue are in `ui.css`, `ui.js` and
+`assets/analogfit-mark.svg`. UI tests are in `tests/ui.cjs`; results are
+saved to `test-artifacts/ui-report.json`.
 
-Ekstensi citra, panel sains, dan audio berada di terrain-view.js, science-view.js,
-audio.js, serta experience.css. Jalankan python fetch_terrain_media.py untuk
-menyiapkan atau melanjutkan cache citra NASA; keluaran disimpan pada
-assets/terrain/, terrain_media.js, dan data/terrain_media_manifest.json.
-Pillow hanya digunakan untuk memeriksa respons citra kosong; gambar NASA asli
-disimpan tanpa modifikasi. Hasil uji fitur baru: test-artifacts/experience-report.json.
+The imagery, science panel and audio extensions are in `terrain-view.js`, `science-view.js`,
+`audio.js` and `experience.css`. Run `python fetch_terrain_media.py` to
+prepare or resume the NASA imagery cache; output is saved to
+`assets/terrain/`, `terrain_media.js` and `data/terrain_media_manifest.json`.
+Pillow is used only to detect blank imagery responses; the original NASA images
+are stored unmodified. New feature test results: `test-artifacts/experience-report.json`.
 
-Kode dan penjelasan disusun dan diperbaiki dengan bantuan Claude (Anthropic) dan OpenAI Codex. Nama NASA menyatakan sumber data, bukan dukungan atau sertifikasi NASA terhadap aplikasi.
+Code and documentation were written and revised with help from Claude (Anthropic) and OpenAI Codex. The NASA name identifies data sources, not NASA endorsement or certification of the app.
